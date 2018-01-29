@@ -1,0 +1,258 @@
+\chapter{Lattices of Subgroups in Special Cases}
+%%%%%%%Case8
+\begin{figure}[H]
+\centering
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\tikzstyle{selected}=[fill=gray!30]
+\begin{tikzpicture}[%
+  grow via three points={one child at (1.5,-1) and
+  two children at (1.5,-1) and (1.5,-2)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {$G_8$}
+    child { node [selected]{$[ 5, 389, 4 ]$}}
+    child [missing] {}		
+    child { node {$[  5, 607, 4  ]$}
+		child{ node[selected]{$[ 5, 98, 28 ]$}}
+		child{ node[selected]{$[ 5, 174, 2 ]$}}
+		child{ node{$ [ 5, 580, 4 ]$} 
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
+		} 
+		child[missing]{}  
+    }
+    child[missing]{}
+    child[missing]{}
+    child [missing] {}
+    child [missing] {}	
+    child [missing] {}
+    child { node {$[ 5, 917, 3 ]$}
+		child{ node[selected]{$[ 5, 57, 8 ]$}}
+		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
+    }
+    child[missing]{}
+    child[missing]{}
+    child { node{$[ 5, 952, 4  ] $} 
+		child{ node[selected]{$[ 5, 174, 5 ]$}}
+		child{ node{$ [ 5, 580, 4 ]$}
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}			
+		}
+		child[missing]{}
+		child[missing]{}
+		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
+    }
+    child [missing] {}				
+    child [missing] {}				
+    child [missing] {};
+\end{tikzpicture}
+\caption{Conjugacy classes of subgroups of $G_8$. Algorithm (1) works for the gray ones.}
+\label{G8Lat}
+\end{figure}
+
+%%%%%%Case9
+
+\begin{figure}[H]
+\centering
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\tikzstyle{selected}=[fill=gray!30]
+\begin{tikzpicture}[%
+  grow via three points={one child at (1.5,-1) and
+  two children at (1.5,-1) and (1.5,-2)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {$G_9$}
+    child { node [selected]{$[ 5, 389, 4 ]$}}
+    child [missing] {}		
+    child { node {$[ 5, 607, 9 ]$}
+		child{ node[selected]{$[ 5, 98, 28 ]$}}
+		child{ node[selected]{$[ 5, 174, 5 ]$}}
+		child{ node{$ [ 5, 580, 4 ]$} 
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
+		} 
+		child[missing]{}  
+    }
+    child[missing]{}
+    child[missing]{}
+    child [missing] {}
+    child [missing] {}	
+    child [missing] {}
+    child { node {$[ 5, 917, 4 ]$}
+		child{ node[selected]{$[ 5, 57, 8 ]$}}
+		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
+    }
+    child[missing]{}
+    child[missing]{}
+    child { node{$[ 5, 952, 2 ] $} 
+		child{ node[selected]{$[ 5, 174, 2 ]$}}
+		child{ node{$ [ 5, 580, 4 ]$}
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}			
+		}
+		child[missing]{}
+		child[missing]{}
+		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
+    }
+    child [missing] {}				
+    child [missing] {}				
+    child [missing] {};
+\end{tikzpicture}
+\caption{Conjugacy classes of subgroups of $G_9$. Algorithm (1) works for the gray ones.}
+\label{G9Lat}
+\end{figure}
+
+%%%%%%%Case10
+
+\begin{figure}[H]
+\centering
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\tikzstyle{selected}=[fill=gray!30]
+\begin{tikzpicture}[%
+  grow via three points={one child at (2,-1) and
+  two children at (2,-1) and (2,-2)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {$G_{10}$}
+    child { node {$[ 5, 391, 4 ]$}
+		child{ node[selected]{$[ 5, 18, 28 ]$}}
+		child{ node{$[ 5, 173, 4 ]$}
+			child{ node[selected]{$[ 5, 6, 3 ]$}}
+			child{ node[selected]{$[ 5, 164, 2 ]$}}		
+		}
+		child[missing]{}
+	child[missing]{}
+		child{ node[selected]{$[ 5, 174, 2 ]$}}
+		child{ node{$[ 5, 461, 4 ] $}
+			child{ node[selected]{$[ 5, 6, 3 ]$}}
+			child{ node[selected]{$[ 5, 164, 2 ]$}}		
+		}    
+    }
+	child[missing]{}
+	    child [missing] {}	
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}	
+    child [missing] {}	
+    child [missing] {}			
+    child { node {$[ 5, 608, 4 ]$}
+		child{ node[selected]{$[ 5, 99, 57 ]$}}
+		child{ node{$[ 5, 173, 4 ]$}
+			child{ node[selected]{$[ 5, 6, 3 ]$}}
+			child{ node[selected]{$[ 5, 164, 2 ]$}}			
+		}
+		child[missing]{}
+		child[missing]{}
+		child{ node{$[ 5, 580, 4 ]$} 
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
+		} 
+		child[missing]{}  
+    }
+    child[missing]{}
+    child[missing]{}
+    child [missing] {}
+       child [missing] {}
+          child [missing] {}
+    child { node[selected]{$[ 5, 918, 4 ]$}
+    }
+    child { node{$[ 5, 952, 2 ] $} 
+		child{ node[selected]{$[ 5, 174, 2 ]$}}
+		child{ node{$ [ 5, 580, 4 ]$}
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}			
+		}
+		child[missing]{}
+		child[missing]{}
+		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
+    }
+    child [missing] {}				
+    child [missing] {}				
+    child [missing] {};
+\end{tikzpicture}
+\caption{Conjugacy classes of subgroups of $G_{10}$. Algorithm (1) works for the gray ones.}
+\label{G10Lat}
+\end{figure}
+\bigskip
+
+%%%%%%%%%Case15
+
+\begin{figure}[H]
+\centering
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\tikzstyle{selected}=[fill=gray!30]
+\begin{tikzpicture}[%
+  grow via three points={one child at (2,-0.8) and
+  two children at (2,-0.8) and (2,-1.6)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {$G15$}
+    child { node [selected]{$[ 5, 81, 54 ]$}  
+    }
+    child { node {$[ 5, 391, 4 ]$}
+		child{ node[selected]{$[ 5, 18, 28 ]$}}
+		child{ node{$[ 5, 173, 4 ]$}
+			child{ node[selected]{$[ 5, 6, 3 ]$}}
+			child{ node[selected]{$[ 5, 164, 2 ]$}}		
+		}
+		child[missing]{}
+	child[missing]{}
+		child{ node[selected]{$[ 5, 174, 2 ]$}}
+		child{ node{$[ 5, 461, 4 ] $}
+			child{ node[selected]{$[ 5, 6, 3 ]$}}
+			child{ node[selected]{$[ 5, 164, 2 ]$}}		
+		}    
+    }
+    child[missing]{}
+    child[missing]{}
+    child [missing] {}
+       child [missing] {}
+          child [missing] {}
+      child [missing] {}
+        child [missing] {}
+    child { node {$[ 5, 606, 4 ]$}
+		child{ node[selected]{$[ 5, 22, 14 ]$}}
+		child{ node{$[ 5, 461, 4 ]$}
+			child{ node[selected]{$[ 5, 6, 3 ]$}}
+			child{ node[selected]{$[ 5, 164, 2 ]$}}			
+		}
+		child[missing]{}
+		child[missing]{}
+		child{ node{$[ 5, 580, 4 ]$} 
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
+		}     
+    }
+	    child [missing] {}	
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}	
+    child [missing] {}	
+    child [missing] {}		
+     child { node {$[  5, 607, 4  ]$}
+		child{ node[selected]{$[ 5, 98, 28 ]$}}
+		child{ node[selected]{$[ 5, 174, 2 ]$}}
+		child{ node{$ [ 5, 580, 4 ]$} 
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
+		} 
+		child[missing]{}  
+    }
+     child [missing] {}				
+    child [missing] {}				
+    child [missing] {}
+     child [missing] {}						
+     child { node {$[ 5, 608, 4 ]$}
+		child{ node[selected]{$[ 5, 99, 57 ]$}}
+		child{ node{$[ 5, 173, 4 ]$}
+			child{ node[selected]{$[ 5, 6, 3 ]$}}
+			child{ node[selected]{$[ 5, 164, 2 ]$}}			
+		}
+		child[missing]{}
+		child[missing]{}
+		child{ node{$[ 5, 580, 4 ]$} 
+			child{ node[selected]{$[ 5, 19, 14 ]$}}
+			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
+		} 
+		child[missing]{}  
+    };
+   
+\end{tikzpicture}
+\caption{Conjugacy classes of subgroups of $G_{15}$. Algorithm (1) works for the gray ones.}
+\end{figure}

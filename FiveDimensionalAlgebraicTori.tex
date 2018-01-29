@@ -18,12 +18,9 @@
 \usepackage{tikz-qtree,tikz-qtree-compat}
 \usetikzlibrary{trees}
 \usetikzlibrary{arrows,positioning,automata,shadows,fit,shapes}
-%\usepackage{mathtools}
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{tikz-cd}
-%\usepackage{pagecolor,lipsum}
- %\pagecolor{lightgray}
 \usepackage[english]{babel}
 %\usepackage[table]{xcolor}
 \usepackage{algorithmic}
@@ -38,9 +35,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
-%\usepackage[table]{xcolor}
-%\newcommand{\Z}{\mathbb{Z}}
-%\newcommand{\Q}{\mathbb{Q}}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
 
 
 \hypersetup{
@@ -56,32 +51,7 @@
 
 
 \bibliographystyle{amsplain}
-%\newtheorem{theorem}{Theorem}[section]
-%\newtheorem{lemma}[theorem]{Lemma}
-%\newtheorem{remark}[theorem]{Remark}
-%\newenvironment{proof}[1][Proof]{\begin{trivlist}
 
-%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-%\newenvironment{definition}[1][Definition]{\begin{trivlist}
-%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-%\newenvironment{example}[1][Example]{\begin{trivlist}
-%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-%\newenvironment{remark}[1][Remark]{\begin{trivlist}
-%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-
-%\newcommand{\qed}{\nobreak \ifvmode \relax \else
-%      \ifdim\lastskip<1.5em \hskip-\lastskip
-%      \hskip1.5em plus0em minus0.5em \fi \nobreak
-%      \vrule height0.75em width0.5em depth0.25em\fi}
-%
-%\newtheorem{exmp}[theorem]{Example}
-%\newtheorem{exmple}[theorem]{Example}
-%\newtheorem{conj}[theorem]{Conjecture}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\makeatletter
-%\@addtoreset{theorem}{chapter}
-%\makeatother
-%%%%%%%%%%%%%%%chapter2%%%%%%%%%%%%%%%
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -93,17 +63,6 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem*{remark}{Remark}
 \newtheorem{note}[theorem]{Note}
-%\counterwithin*{theorem}{chapter} 
-%\theoremstyle{definition}
-%\newtheorem{question}{Question}
-%\newtheorem{definition}{Definition}[section]
-%\newtheorem*{rmk}{Remark}
-%\newtheorem{observation}[dfn]{Observation}
-%\theoremstyle{plain}
-%\newtheorem{thm}{Theorem}[section]
-%\newtheorem{lem}[thm]{Lemma}
-%\newtheorem{cor}[thm]{Corollary}
-%\newtheorem{prop}[thm]{Proposition}
 
 
 \newcommand{\N}{\ensuremath{\mathbb{N}}}
@@ -124,7 +83,16 @@
 
 \begin{document}
 \maketitle
-\abstract{The rationality problem for algebraic tori is well known. It is known that any algebraic torus is unirational over its field of definition. The first purpose of this work is to solve rationality problem for 5 dimensional stably rational algebraic tori with an indecomposable character lattice. In order to do so, we have studied the associated character lattices of the mentioned algebraic tori. For each character lattice $L$, either we see the lattice as an associated lattice to a root system (of which rationality of its corresponding algebraic torus is known) or we find a reduced component of $L$ so that we can relate rationality of the associated algebraic torus to lower dimensions. Using these two main methods from \cite{Nicole1}, we solve rationality problem in some cases.}
+\abstract{The rationality problem for algebraic tori is well known. It is known
+ that any algebraic torus is unirational over its field of definition. The first
+  purpose of this work is to solve rationality problem for 5 dimensional stably 
+  rational algebraic tori with an indecomposable character lattice. In order to 
+  do so, we have studied the associated character lattices of the mentioned 
+  algebraic tori. For each character lattice $L$, either we see the lattice as 
+  an associated lattice to a root system (of which rationality of its corresponding 
+  algebraic torus is known) or we find a reduced component of $L$ so that we can 
+  relate rationality of the associated algebraic torus to lower dimensions. Using 
+  these two main methods from \cite{Nicole1}, we solve rationality problem in some cases.}
 \section{Introduction}
 An interesting problem in algebraic geometry is the rationality problem, i.e. 
 for a given algebraic variety, determine if it is rational or not. Naturally 
@@ -191,48 +159,82 @@ In early 90's Kunyavski classified three dimensional algebraic tori up to
 rationality. He showed that except for 15 three dimensional algebraic tori 
 which are not retract rational, the rest of them are rational.
 
-In 2012 Hoshi and Yamasaki published a paper \cite{Hoshi} in which they classified algebraic tori of dimensions 4 and 5 up to stable rationality. Their classification is based on computing the flasque classes of algebraic tori in GAP. They showed that in rank 5,  there are exactly 311 indecomposable $G$-lattices which are stably rational.  More precisely they showed their stable rationality by finding the maximal groups and proved stable rationality of their subgroups. The following table presents the maximal groups they found.
-%Hoshi and Yamasaki \cite{Hoshi} showed there are 311 Indecomposable G-lattices of rank 5 which are stably rational. Among these there are 18 maximal ones which is presented in the following table:
+In 2012 Hoshi and Yamasaki published a paper \cite{Hoshi} in which they 
+classified algebraic tori of dimensions 4 and 5 up to stable rationality. 
+Their classification is based on computing the flasque classes of algebraic 
+tori in GAP. They showed that in rank 5,  there are exactly 311 indecomposable 
+$G$-lattices which are stably rational.  More precisely they showed their 
+stable rationality by finding the maximal groups and proved stable rationality 
+of their subgroups. The following table presents the maximal groups they found.
+
 \begin{table}[H]
 \centering
 \begin{tabular}{llllll} 
-Number & CARAT ID & $G$ & $\#G$\\ \hline% & Description.\\\hline
- 1  & $(5,942,1)$ & ${\rm Imf}(5,1,1)$ & $3840$\\% & The root lattice of $B_5$ \\
-2  & $(5,953,4)$ & $\mathrm{S}_6$ & $720$ \\%&  The wight lattice of $A_5$ \\
-3  & $(5,726,4)$ & $C_2^4\rtimes \mathrm{S}_4$ & $384$  \\% & The root lattice of $B_4$  \\
-4  & $(5,919,4)$ & $C_2\times \mathrm{S}_5$ & $240$ \\% &  {\footnotesize Quot: rank 1 sign perm. Inv space $[4,31,7,1]$ $( \mathbb{Z}A_4$,$Aut ( A_4 ))$ }\\
-5 & $(5,801,3)$ & $C_2\times (\mathrm{S}_3^2\rtimes C_2)$ & $144$ \\% &{\footnotesize Quot: rank 1 sign perm. Inv space $[ 4, 29, 9, 2 ]$  }  \\
-6 & $(5,655,4)$ & $D_8^2\rtimes C_2$ & $128$ \\% & {\footnotesize Quot: rank 1 sign perm. Inv space $[4,32,17,1]$  }  \\
-7  & $(5,911,4)$ & $\mathrm{S}_5$ & $120$ \\% & $[ 4, 31, 4, 1 ]$  \\
-8 & $(5,946,2)$ & $\mathrm{S}_5$ & $120$ \\% & Irreducible \\
-9 & $(5,946,4)$ & $\mathrm{S}_5$ & $120$ \\% & Irreducible  \\
-10 & $(5,947,2)$ & $\mathrm{S}_5$ ,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\ & $120$ \\% & Irreducible  \\
-11 & $(5,337,12)$ & $D_8\times \mathrm{S}_3$ & $48$ \\% &  {\footnotesize Quot: rank 1 sign perm. Inv space $[ 4, 20, 20, 4 ]$  } &\\
-12  & $(5,341,6)$ & $D_8\times \mathrm{S}_3$ & $48$ \\% & $[ 4, 20, 17, 2 ]$ &\\
-13  & $(5,531,13)$ & $C_2\times \mathrm{S}_4$ & $48$ \\% &  {\small The inv. sp. is Wyle group of $A_3$(use $e_3$)}$[ 4, 25, 9, 2 ]$ &\\
-14  & $(5,533,8)$ & $C_2\times \mathrm{S}_4$ & $48$ \\% & $[ 4, 25, 8, 5 ]$ &\\
-15 & $(5,623,4)$ & $C_2\times \mathrm{S}_4$ & $48$\\% &  &\\
-16   & $(5,245,12)$ & $C_2^2\times \mathrm{S}_3$ & $24$\\% & $[ 4, 14, 10, 2 ]$&\\
-17  & $(5,81,42)$ & $C_2\times D_8$ & $16$ \\% & $[ 4, 13, 7, 12 ]$&\\
-18  & $(5,81,48)$ & $C_2\times D_8$ & $16$ \\% &$[ 4, 13, 7, 12 ]$ &
+Number & CARAT ID & $G$ & $\#G$\\ \hline
+ 1  & $(5,942,1)$ & ${\rm Imf}(5,1,1)$ & $3840$\\
+2  & $(5,953,4)$ & $\mathrm{S}_6$ & $720$ \\
+3  & $(5,726,4)$ & $C_2^4\rtimes \mathrm{S}_4$ & $384$  \\
+4  & $(5,919,4)$ & $C_2\times \mathrm{S}_5$ & $240$ \\
+5 & $(5,801,3)$ & $C_2\times (\mathrm{S}_3^2\rtimes C_2)$ & $144$ \\
+6 & $(5,655,4)$ & $D_8^2\rtimes C_2$ & $128$ \\
+7  & $(5,911,4)$ & $\mathrm{S}_5$ & $120$ \\
+8 & $(5,946,2)$ & $\mathrm{S}_5$ & $120$ \\
+9 & $(5,946,4)$ & $\mathrm{S}_5$ & $120$ \\
+10 & $(5,947,2)$ & $\mathrm{S}_5$ ,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\ & $120$ \\
+11 & $(5,337,12)$ & $D_8\times \mathrm{S}_3$ & $48$ \\
+12  & $(5,341,6)$ & $D_8\times \mathrm{S}_3$ & $48$ \\
+13  & $(5,531,13)$ & $C_2\times \mathrm{S}_4$ & $48$ \\
+14  & $(5,533,8)$ & $C_2\times \mathrm{S}_4$ & $48$ \\
+15 & $(5,623,4)$ & $C_2\times \mathrm{S}_4$ & $48$\\
+16   & $(5,245,12)$ & $C_2^2\times \mathrm{S}_3$ & $24$\\
+17  & $(5,81,42)$ & $C_2\times D_8$ & $16$ \\
+18  & $(5,81,48)$ & $C_2\times D_8$ & $16$ \\
 \end{tabular}
 \caption{The maximal $18$ groups 
 in the  $311$ cases found by Hoshi and Yamasaki in \cite{Hoshi}.}
 %\label{tbl:18Max}
 \end{table}
 \noindent
-In 2015 Lemire \cite{Nicole1}, proved that, except for possibly ten of the 4 dimensional stably rational algebraic tori found by Hoshi and Yamasaki, all of them are rational. The rationality of the ten exceptional cases is still unknown. The author did not use any computer based arguments except for finding generating sets of groups and lattices of subgroups in GAP. The rationality results we are presenting are based on the ideas used in \cite{Nicole1}. We present algorithms which may be applied to character lattices of algebraic tori, in order to investigate their rationality. These algorithms provide machinery to reduce the rationality problem in a specific dimension to lower dimensions.\\
+In 2015 Lemire \cite{Nicole1}, proved that, except for possibly ten of the 
+4 dimensional stably rational algebraic tori found by Hoshi and Yamasaki, 
+all of them are rational. The rationality of the ten exceptional cases is 
+still unknown. The author did not use any computer based arguments except 
+for finding generating sets of groups and lattices of subgroups in GAP. The 
+rationality results we are presenting are based on the ideas used in \cite{Nicole1}. 
+We present algorithms which may be applied to character lattices of algebraic 
+tori, in order to investigate their rationality. These algorithms provide 
+machinery to reduce the rationality problem in a specific dimension to lower dimensions.\\
 \\
-From now on we will call the groups mentioned in Table \ref{tbl:18Max} respectively $G_1$ to $G_{18}$. $L_G$ represents the corresponding $G$-lattice to a finite subgroup of $\mathrm{GL}(n,\Z)$, $G$, as defined in Definition \ref{Assumption}. When we say a group or a lattice is rational we mean their corresponding algebraic torus is rational. By a decomposable (matrix) group, we mean its corresponding lattice is decomposable. We say $G'$ is the dual group of $G$ if $G'$ is the corresponding group to the dual of $L_G$.  \\
+From now on we will call the groups mentioned in Table \ref{tbl:18Max} 
+respectively $G_1$ to $G_{18}$. $L_G$ represents the corresponding $G$-lattice 
+to a finite subgroup of $\mathrm{GL}(n,\Z)$, $G$, as defined in Definition 
+\ref{Assumption}. When we say a group or a lattice is rational we mean their 
+corresponding algebraic torus is rational. By a decomposable (matrix) group, 
+we mean its corresponding lattice is decomposable. We say $G'$ is the dual 
+group of $G$ if $G'$ is the corresponding group to the dual of $L_G$.  \\
 \\
-In this chapter we will investigate the rationality of $G_1, \ldots ,  G_{18}$. In some cases, we prove that the group is hereditarily rational. There are two main methods that we will use, both of which were used in \cite{Nicole1}. The first method is reducing the rationality of a five dimensional torus to rationality in lower dimensions. The second one is to see them as lattices of which the rationality is known.
+In this chapter we will investigate the rationality of $G_1, \ldots ,  G_{18}$. 
+In some cases, we prove that the group is hereditarily rational. There are two 
+main methods that we will use, both of which were used in \cite{Nicole1}. The 
+first method is reducing the rationality of a five dimensional torus to rationality 
+in lower dimensions. The second one is to see them as lattices of which the rationality is known.
 
 \section{GAP: Carat and CrystCat}
-GAP \cite{GAP4} stands for Groups, Algorithms, Programming, and is a computer algebra system for computations in discrete algebra with emphasis on computations in group theory. GAP is an open source system which is accessible directly or in SAGE \cite{sagemath}. GAP provides various packages for computations in matrix groups and representation theory. For our purposes we need Carat and CrystCat packages of GAP.\\
+GAP \cite{GAP4} stands for Groups, Algorithms, Programming, and is a computer 
+algebra system for computations in discrete algebra with emphasis on computations 
+in group theory. GAP is an open source system which is accessible directly or 
+in SAGE \cite{sagemath}. GAP provides various packages for computations in matrix 
+groups and representation theory. For our purposes we need Carat and CrystCat packages of GAP.\\
 \\
-The GAP package Carat provides functions of the stand-alone programs of $CARAT$, which is a package for the computations related to crystallographic groups. Carat contains the catalog of all conjugacy classes of finite subgroups of $\mathrm{GL}(n,\Z)$ for $n$ up to six. More precisely the Carat package gives access to all $\Q$-classes and $\Z$-classes and maximal classes over $\Z$ (for the number of these classes see Table \ref{tbl:Carat}).  
+The GAP package Carat provides functions of the stand-alone programs of $CARAT$, 
+which is a package for the computations related to crystallographic groups. Carat 
+contains the catalog of all conjugacy classes of finite subgroups of $\mathrm{GL}(n,\Z)$ 
+for $n$ up to six. More precisely the Carat package gives access to all 
+$\Q$-classes and $\Z$-classes and maximal classes over $\Z$ (for the number of 
+these classes see Table \ref{tbl:Carat}).  
 \begin{remark}
-The $\Q$-classes are conjugacy classes over $\Q$. We note that some $\Z$-classes may belong to the same conjugacy class over the rationals.
+The $\Q$-classes are conjugacy classes over $\Q$. We note that some $\Z$-classes 
+may belong to the same conjugacy class over the rationals.
 \end{remark}
 \begin{table}[H]
 \centering
@@ -254,152 +256,244 @@ The $\Q$-classes are conjugacy classes over $\Q$. We note that some $\Z$-classes
 \label{tbl:Carat}
 \end{table}
 \noindent
-It is worth mentioning that Carat contains information about crystallographic groups which we will not use. The CrystCat Package in GAP also provides a catalog of crystallographic groups up to dimension 4. The catalog mostly covers the data in \cite{Crystallography}. CrystCat and Carat are complement of each other. \\
+It is worth mentioning that Carat contains information about crystallographic groups 
+which we will not use. The CrystCat Package in GAP also provides a catalog of 
+crystallographic groups up to dimension 4. The catalog mostly covers the data in 
+\cite{Crystallography}. CrystCat and Carat are complement of each other. \\
 \\
-The GAP ID, $(n,m,l,k)$ of a finite subgroup $G$ of $\mathrm{GL}(n,\Z)$ means that $G$ is of rank $n$ and belongs to $k$-th $\Z$ class of the $l$-th $\Q$-class of the $m$-th crystal system. This works for $2\leq n \leq 4$. Hoshi and Yamasaki wrote a GAP code using the Carat package to have easy access to the $j$-th $\Z$-class of the $i$-th $\Q$-class group of rank $n$. They called this Carat ID. The GAP scripts written by Hoshi and Yamasaki are available from
+The GAP ID, $(n,m,l,k)$ of a finite subgroup $G$ of $\mathrm{GL}(n,\Z)$ means that 
+$G$ is of rank $n$ and belongs to $k$-th $\Z$ class of the $l$-th $\Q$-class of the 
+$m$-th crystal system. This works for $2\leq n \leq 4$. Hoshi and Yamasaki wrote 
+a GAP code using the Carat package to have easy access to the $j$-th $\Z$-class 
+of the $i$-th $\Q$-class group of rank $n$. They called this Carat ID. The GAP 
+scripts written by Hoshi and Yamasaki are available from
 \begin{center}
 http://www.math.h.kyoto-u.ac.jp/~yamasaki/Algorithm/
 \end{center}
-The algorithms introduced in the next section are implemented in GAP (needs some functions from the codes written by Hoshi and Yamasaki) and the code is available from
+The algorithms introduced in the next section are implemented in GAP (needs some 
+functions from the codes written by Hoshi and Yamasaki) and the code is available from
 \begin{center}
 https://github.com/armin-jamshidpey/Algebraic-Tori
 \end{center}
-Since the actions of matrix groups in GAP are considered from right, throughout this chapter we work with row vectors instead of columns. One may also use the columns by considering the dual groups.
+Since the actions of matrix groups in GAP are considered from right, throughout 
+this chapter we work with row vectors instead of columns. One may also use the 
+columns by considering the dual groups.
 
 \section{Basic Results}
-In this section we present some important results about rationality problem for algebraic tori. Before presenting the results we need the following definition to avoid repeating the same assumptions.
+In this section we present some important results about rationality problem for 
+algebraic tori. Before presenting the results we need the following definition 
+to avoid repeating the same assumptions.
 \begin{definition}\label{Assumption}
-If $G$ is a finite subgroup of $\mathrm{GL}(n,\Z)$, then the corresponding lattice to $G$ which is denoted by $L_G$ is the rank $n$ lattice generated by the standard basis, i.e. $L_G = \langle e_i : i  = 1, \ldots, n \rangle_\Z$ where $(e_i)_j = \delta_{ij}$. The action of $G$ on $L_G$ is given by multiplication from right on the $e_i$'s. Moreover, if $G \cong \mathrm{Gal}(K/F)$ for some finite Galois extension $K/F$ then $K[L_G] \cong K[x^{\pm 1}_1, \ldots , x^{\pm 1}_n]$, that is the Laurent polynomial ring, and $K(L_G)$ which is the quotient field of $K[L_G]$ is isomorphic to $K(x_1, \ldots , x_n)$ ($x_i$'s are algebraically independent over $K$) are equipped with an action of $G$ as
+If $G$ is a finite subgroup of $\mathrm{GL}(n,\Z)$, then the corresponding lattice 
+to $G$ which is denoted by $L_G$ is the rank $n$ lattice generated by the standard 
+basis, i.e. $L_G = \langle e_i : i  = 1, \ldots, n \rangle_\Z$ where $(e_i)_j = \delta_{ij}$. 
+The action of $G$ on $L_G$ is given by multiplication from right on the $e_i$'s.
+ Moreover, if $G \cong \mathrm{Gal}(K/F)$ for some finite Galois extension $K/F$ 
+ then $K[L_G] \cong K[x^{\pm 1}_1, \ldots , x^{\pm 1}_n]$, that is the Laurent 
+ polynomial ring, and $K(L_G)$ which is the quotient field of $K[L_G]$ is isomorphic 
+ to $K(x_1, \ldots , x_n)$ ($x_i$'s are algebraically independent over $K$) are equipped 
+ with an action of $G$ as
 \begin{itemize}
 \item $G$ acts as Galois group on $K$ 
-\item $\forall g \in G, \,\,\, g(x_i) = \prod_{j=1}^{j=n} x_j^{a_{ij}}$  where $a_{ij}$'s are given by $g(e_i) = \sum_{j=1}^{j=n} a_{ij}e_j$.
+\item $\forall g \in G, \,\,\, g(x_i) = \prod_{j=1}^{j=n} x_j^{a_{ij}}$  where $a_{ij}$'s 
+are given by $g(e_i) = \sum_{j=1}^{j=n} a_{ij}e_j$.
 \end{itemize}
-Also $T_G$ is the corresponding algebraic torus to $L_G$ i.e. $T_G$ is an algebraic torus defined on $F$ which splits over $K$, with character lattice $L_G$. 
+Also $T_G$ is the corresponding algebraic torus to $L_G$ i.e. $T_G$ is an algebraic 
+torus defined on $F$ which splits over $K$, with character lattice $L_G$. 
 \end{definition}
 \noindent
-By the duality explained before, $K(L_G)^G$ is the rational function field of $T_G$. From now on we work with finite subgroups of $\mathrm{GL}(n,\Z)$ (up to conjugacy) and when we consider their corresponding lattice (or algebraic torus), $L_G$ ($T_G$), we mean the lattice (algebraic torus) defined in Definition \ref{Assumption}. 
-%
-% Then for $g \in \G$, $ g.m_i = \sum_{j=1}^{j=n} a_{ij}m_j$. If $L = F(x_1, \cdots ,x_n)$ we can define an action on L $$ g. x_i = \prod_{j=1}^{j=n} x_j^{a_{ij}}$$ 
-%Assume that \G \, is a finite subgroup of \mathrm{GL}(n,\Z). Let M be a lattice of rank n. Then G acts on M since it is a subgroup of Aut(M). Hence M is a \glat \,\,. Let ${m_1, \cdots , m_n}$ be a \Z -basis for M. Then for $g \in \G$, $ g.m_i = \sum_{j=1}^{j=n} a_{ij}m_j$. If $L = F(x_1, \cdots ,x_n)$ we can define an action on L $$ g. x_i = \prod_{j=1}^{j=n} x_j^{a_{ij}}$$
+By the duality explained before, $K(L_G)^G$ is the rational function field of $T_G$. 
+From now on we work with finite subgroups of $\mathrm{GL}(n,\Z)$ (up to conjugacy) and 
+when we consider their corresponding lattice (or algebraic torus), $L_G$ ($T_G$), we 
+mean the lattice (algebraic torus) defined in Definition \ref{Assumption}. 
 \label{action}
 \begin{theorem}\cite{Speiser}\label{NoNameLemma}
-(No Name Lemma) Let $M$ be a permutation \glat \,\,and $F$ be a \G-field. Then $F(M)^\G$ is rational over $F^\G$. 
+(No Name Lemma) Let $M$ be a permutation \glat \,\,and $F$ be a \G-field. Then $F(M)^\G$ 
+is rational over $F^\G$. 
 \end{theorem}
 \begin{proof}
-Let $\lbrace x_1, \ldots , x_n \rbrace$ be a $\Z$-basis which is permuted by $G$ and $V = \sum^n_{i=1}Fx_i$ be a $F$ vector space. Applying Proposition \ref{Speiser'sLemma} to $V$, we find $y_1, \ldots , y_n \in V^G $ such that $V = \sum^n_{i=1}Fy_i$. This implies $F(M) = F(x_1, \ldots, x_n) = F(y_1, \ldots, y_n)$. Hence $$F(M)^G = F(y_1, \ldots , y_n)^G = F^G(y_1, \dots, y_n).$$ 
+Let $\lbrace x_1, \ldots , x_n \rbrace$ be a $\Z$-basis which is permuted by $G$ and 
+$V = \sum^n_{i=1}Fx_i$ be a $F$ vector space. Applying Proposition \ref{Speiser'sLemma} 
+to $V$, we find $y_1, \ldots , y_n \in V^G $ such that $V = \sum^n_{i=1}Fy_i$. This 
+implies $F(M) = F(x_1, \ldots, x_n) = F(y_1, \ldots, y_n)$. Hence 
+$$F(M)^G = F(y_1, \ldots , y_n)^G = F^G(y_1, \dots, y_n).$$ 
 \end{proof}
 \noindent
-Note that if $\G = \mathrm{Gal} (F/K)$, then $F^\G = K$. For another version of the No Name Lemma see \cite{Domokos}.
+Note that if $\G = \mathrm{Gal} (F/K)$, then $F^\G = K$. For another version of the 
+No Name Lemma see \cite{Domokos}.
 \begin{theorem}\cite[Proposition 9.5.1]{Lorenz}\label{SignPermRational}
-Assume $L$ is a sign permutation $G$-lattice and $F$ is a $G$-field. Then $F(M)^G$ is rational over $F^G$.
+Assume $L$ is a sign permutation $G$-lattice and $F$ is a $G$-field. Then $F(M)^G$ 
+is rational over $F^G$.
 \end{theorem}
 \noindent
-The rationality problem for algebraic tori of dimension one was concrete. For dimension two Voskresenskii used a geometric method to prove the below result. 
+The rationality problem for algebraic tori of dimension one was concrete. For 
+dimension two Voskresenskii used a geometric method to prove the below result. 
 \begin{theorem}
 \cite{Vos67} Any 2 dimensional algebraic torus over k, is k-rational.
 \end{theorem} 
 \noindent
-We talked about the duality between category of algebraic tori and category of \glat . Having the duality in hand one may ask how to interpret the notions from one side to the other side. One of the important results about translating the facts about the rationality of algebraic tori, into the language of \glat s is given below.
+We talked about the duality between category of algebraic tori and category of \glat . 
+Having the duality in hand one may ask how to interpret the notions from one side to 
+the other side. One of the important results about translating the facts about the 
+rationality of algebraic tori, into the language of \glat s is given below.
 \begin{theorem}\cite{Vos74}
-Let $M$ and $M'$ be two \glat s  and F/K be a finite Galois extension with Galois Group \G . Then $[M]^{fl}=[M']^{fl}$ if and only if $ F(M)^\G $ and $ F(M')^\G$ are stably isomorphic.
+Let $M$ and $M'$ be two \glat s  and F/K be a finite Galois extension with Galois 
+Group \G . Then $[M]^{fl}=[M']^{fl}$ if and only if $ F(M)^\G $ and $ F(M')^\G$ are 
+stably isomorphic.
 \end{theorem}
 \noindent
-The next two results give us necessary and sufficient conditions for stable rationality and retract rationality in terms of \glat  s. Having these two criteria gives us some control over the
-birational classification of algebraic tori of small dimension.
+The next two results give us necessary and sufficient conditions for stable rationality 
+and retract rationality in terms of \glat  s. Having these two criteria gives us some 
+control over the birational classification of algebraic tori of small dimension.
 \begin{theorem}\cite[Theorem 9.5.4]{Lorenz} Let M be a \glat \,
-and $F/K$ be a finite Galois extension with Galois group $G$. $[M]^{fl}$ is invertible if and only if $F(M)^\G$ is retract $K$-rational.
+and $F/K$ be a finite Galois extension with Galois group $G$. $[M]^{fl}$ is invertible 
+if and only if $F(M)^\G$ is retract $K$-rational.
 \end{theorem}
 
 \begin{theorem}\cite[Theorem 1.6]{EndoMiyata}Let M be a \glat \,\, 
-and F/K be a finite Galois extension with Galois group $G$. $[M]^{fl}=0$ if and only if  $F(M)^\G$ is stably K-rational.
+and F/K be a finite Galois extension with Galois group $G$. $[M]^{fl}=0$ if and only if  
+$F(M)^\G$ is stably K-rational.
 \end{theorem}
 \noindent
-The above two theorems can be used to see any stably rational algebraic torus is retract rational.\\
+The above two theorems can be used to see any stably rational algebraic torus is retract 
+rational.\\
 \\
-The following two theorems classifies algebraic tori of dimension 4 and  5 up to stable rationality. In \cite{Hoshi} the authors gave a complete classification of mentioned tori, however they did not say anything about rationality of tori of dimension 4 and 5. The main idea of their work was to investigate the last 3 results above, by means of computer algebra system, GAP. 
+The following two theorems classifies algebraic tori of dimension 4 and  5 up to stable 
+rationality. In \cite{Hoshi} the authors gave a complete classification of mentioned tori, 
+however they did not say anything about rationality of tori of dimension 4 and 5. The 
+main idea of their work was to investigate the last 3 results above, by means of computer 
+algebra system, GAP. 
 \begin{theorem}\cite[Theorem 1.9]{Hoshi}
-Let F/K be a finite Galois extension with Galois Group $\G \leqslant \mathrm{GL}(4, \Z)$. Assume $G$ acts on $L = F(x_1,x_2,x_3,x_4)$ as above. (For tables of the below subgroups see \cite[Page 4]{Hoshi})
+Let F/K be a finite Galois extension with Galois Group $\G \leqslant \mathrm{GL}(4, \Z)$. 
+Assume $G$ acts on $L = F(x_1,x_2,x_3,x_4)$ as above. (For tables of the below subgroups 
+see \cite[Page 4]{Hoshi})
 \\ 
-(i) $L^\G$ is stably K-rational if $G$ is (up to conjugacy) one of a list of 487 subgroups of $\mathrm{GL}(4,\Z)$.
+(i) $L^\G$ is stably K-rational if $G$ is (up to conjugacy) one of a list of 487 
+subgroups of $\mathrm{GL}(4,\Z)$.
 \\ 
-(ii)  $L^\G$ is not stably but retract K-rational if $G$ is (up to conjugacy) one of a list of 7 subgroups of $\mathrm{GL}(4,\Z)$.
+(ii)  $L^\G$ is not stably but retract K-rational if $G$ is (up to conjugacy) one 
+of a list of 7 subgroups of $\mathrm{GL}(4,\Z)$.
 \\
-(iii) $L^\G$ is not retract K-rational if G is (up to conjugacy) one of a list of 216 subgroups of $\mathrm{GL}(4,\Z)$.
+(iii) $L^\G$ is not retract K-rational if G is (up to conjugacy) one of a list of 
+216 subgroups of $\mathrm{GL}(4,\Z)$.
  \end{theorem}
  \noindent
-In 2015, Lemire showed that except for possibly ten, all stably rational groups found by Hoshi and Yamasaki are rational (see \cite{Nicole1}).
+In 2015, Lemire showed that except for possibly ten, all stably rational groups found 
+by Hoshi and Yamasaki are rational (see \cite{Nicole1}).
 \begin{theorem}\label{H}\cite[Theorem 1.12]{Hoshi}
-Let F/K be a finite Galois extension with Galois Group $\G  \leqslant \mathrm{GL}(5, \Z)$. Assume G acts on $L = F(x_1,x_2,x_3,x_4,x_5)$ as above. (for tables of below subgroups see \cite[Pages 134-144]{Hoshi})
+Let F/K be a finite Galois extension with Galois Group $\G  \leqslant \mathrm{GL}(5, \Z)$. 
+Assume G acts on $L = F(x_1,x_2,x_3,x_4,x_5)$ as above. (for tables of below subgroups see 
+\cite[Pages 134-144]{Hoshi})
 \\ 
-(i) $L^\G$ is stably K-rational if G is (up to conjugacy) one of a list 3051 subgroups of $\mathrm{GL}(5,\Z)$.
+(i) $L^\G$ is stably K-rational if G is (up to conjugacy) one of a list 3051 subgroups 
+of $\mathrm{GL}(5,\Z)$.
 \\ 
-(ii)  $L^\G$ is not stably but retract K-rational if G is (up to conjugacy) one of a list 25 subgroups of $\mathrm{GL}(5,\Z)$.
+(ii)  $L^\G$ is not stably but retract K-rational if G is (up to conjugacy) one of a list 
+25 subgroups of $\mathrm{GL}(5,\Z)$.
 \\
-(iii) $L^\G$ is not retract K-rational if G is (up to conjugacy) one of a list of 3003 subgroups of $\mathrm{GL}(5,\Z)$.
+(iii) $L^\G$ is not retract K-rational if G is (up to conjugacy) one of a list of 3003 
+subgroups of $\mathrm{GL}(5,\Z)$.
  \end{theorem}
  \noindent
-There are examples of varieties which are stably rational but not rational. So in general being stably rational is not the same as being rational. However, there is a conjecture about the equivalence of stable rationality and rationality for algebraic tori.\\ \\
- \textbf{Conjecture}. \cite[Section 2.6.1]{Voskresenskii} Any stably rational algebraic torus is rational.\\
+There are examples of varieties which are stably rational but not rational. So in general 
+being stably rational is not the same as being rational. However, there is a conjecture 
+about the equivalence of stable rationality and rationality for algebraic tori.\\ \\
+ \textbf{Conjecture}. \cite[Section 2.6.1]{Voskresenskii} Any stably rational algebraic 
+ torus is rational.\\
  \\
 % 
 % \section{Research Problem}
-According to Theorem \ref{H} we know all stably rational algebraic tori of dimension 5. However, the theorem does not say anything about rationality of those tori. An interesting problem is to find all rational tori between 3051 mentioned tori in the theorem.\\
+According to Theorem \ref{H} we know all stably rational algebraic tori of dimension 5. 
+However, the theorem does not say anything about rationality of those tori. An interesting 
+problem is to find all rational tori between 3051 mentioned tori in the theorem.\\
 \\
-%We already discussed about the relation of rationality problem for algebraic tori and finite subgroups of \mathrm{GL}(n,\Z). In this special case, $n=5$, there are 6079 finite subgroups (up to conjugacy) and 17 of those are maximal (see \cite{Plesken}). Studying just the maximal finite subgroups is not enough to talk about rationality, but starting from maximal ones one can have a better control on the situation.\\
-%\\
-We call $\G \leq \mathrm{GL}(n,\Z)$ irreducible (resp. indecomposable), if the corresponding lattice to $G$ be irreducible (resp. indecomposable).
+
+We call $\G \leq \mathrm{GL}(n,\Z)$ irreducible (resp. indecomposable), if the corresponding 
+lattice to $G$ be irreducible (resp. indecomposable).
 \\
-%\\
-%For $n\leqslant 5$ maximal indecomposable finite subgroups of \mathrm{GL}(n,\Z) coincide with irreducible maximal ones. However, it is not true for $n=6$. There are 7 indecomposable one among 17 maximal finite subgroups of \mathrm{GL}(5,\Z). For decomposable one we can use the information of $n\leqslant 4$.
-%\\
-%\\
-%In order to solve the problem our idea is to interpret the 7 lattices as lattices related to root systems $A_5, B_5 \, and \, C_5$. Four of those are \Z -forms of the $\Q (Aut A_5)$-module $ \Q A_5$, namely $ \Z A_5$, $\Lambda (A_5)$ and two intermediate lattices. The other 3 are \Z -forms of the $\Q W(B_5)$- module, $\Q B_5$.
  
 \section{Families of Rational Algebraic Tori}
-In the next chapter, we investigate on rationality of stably rational algebraic tori of dimension 5.  We will try to reduce their rationality to the rationality of some well understood algebraic torus. In this small section we present some families of algebraic tori which are rational, so that we can relate our algebraic tori to one of these families. It is already mentioned that every $n$ dimensional algebraic torus has a corresponding finite subgroup of $\mathrm{GL}(n,\Z)$. In order to study the rationality of algebraic tori, we study its corresponding group. We would rather to consider maximal groups and prove rationality for their subgroups, instead of proving it case by case. The following definitions are borrowed from \cite{Nicole1}.
+In the next chapter, we investigate on rationality of stably rational algebraic tori 
+of dimension 5.  We will try to reduce their rationality to the rationality of some 
+well understood algebraic torus. In this small section we present some families of 
+algebraic tori which are rational, so that we can relate our algebraic tori to one 
+of these families. It is already mentioned that every $n$ dimensional algebraic torus 
+has a corresponding finite subgroup of $\mathrm{GL}(n,\Z)$. In order to study the 
+rationality of algebraic tori, we study its corresponding group. We would rather to 
+consider maximal groups and prove rationality for their subgroups, instead of proving 
+it case by case. The following definitions are borrowed from \cite{Nicole1}.
 
 \begin{definition}
-Let $L$ be a $G$-lattice for $G\leq \mathrm{GL}(n,\Z)$. If all algebraic tori with character lattice $L\downarrow_H^G$ and splitting group $H$ are rational, for any subgroup $H \leq G$, then we call $L$ hereditarily rational. 
+Let $L$ be a $G$-lattice for $G\leq \mathrm{GL}(n,\Z)$. If all algebraic tori with 
+character lattice $L\downarrow_H^G$ and splitting group $H$ are rational, for any 
+subgroup $H \leq G$, then we call $L$ hereditarily rational. 
 \end{definition} 
 \begin{definition}
-If $T$ is an algebraic torus and $L$ is its corresponding lattice, then $T$ is called hereditarily rational if $L$ is hereditarily rational.
+If $T$ is an algebraic torus and $L$ is its corresponding lattice, then $T$ is called 
+hereditarily rational if $L$ is hereditarily rational.
 \end{definition}
 \noindent
-By Theorem \ref{NoNameLemma}, a quasi-split torus is rational. For a permutation $G$-lattice $L$ and any subgroup $H\leq G$, since $L\downarrow_H^G$ is a permutation lattice, the corresponding torus to $L\downarrow_H^G$ is rational. In other words a quasi split torus is hereditarily rational. Simillarly by Theorem \ref{SignPermRational} and above argument for (a sign permutation lattice), we conclude that any algebraic torus with a sign permutation character lattice is hereditarily rational. \\ \\
-%\begin{theorem}\cite[Proposition 3.9]{Nicole1} 
-%Let $L$ be a hereditarily rational $G$ lattice of rank $n$. Suppose $M$ be the natural $G^n \rtimes \mathrm{S}_n $ (the wreath product) lattice. Then M is hereditarily rational $G^n \rtimes \mathrm{S}_n$ lattice.
-%\end{theorem}
-In particular this is true for an algebraic torus with character lattice the root lattice $\Z B_n$ as an $W(B_n)$-lattice. It is also known that any rank $n$ sign permutation lattice, is isomorphic to the restriction of $\Z B_n$ to a subgroup of $W(B_n)$. 
-%\\
-%\\
-%The above theorem implies rationality of root lattice of $B_n$, i.e.  $\Z B_n$ as a $W(B_n)$ lattice. 
+By Theorem \ref{NoNameLemma}, a quasi-split torus is rational. For a permutation 
+$G$-lattice $L$ and any subgroup $H\leq G$, since $L\downarrow_H^G$ is a permutation 
+lattice, the corresponding torus to $L\downarrow_H^G$ is rational. In other words a 
+quasi split torus is hereditarily rational. Simillarly by Theorem \ref{SignPermRational} 
+and above argument for (a sign permutation lattice), we conclude that any algebraic 
+torus with a sign permutation character lattice is hereditarily rational. \\ \\
+
+In particular this is true for an algebraic torus with character lattice the root 
+lattice $\Z B_n$ as an $W(B_n)$-lattice. It is also known that any rank $n$ sign 
+permutation lattice, is isomorphic to the restriction of $\Z B_n$ to a subgroup 
+of $W(B_n)$. 
 \begin{proposition}\cite[Proposition 1.5]{Lenstra}
-Suppose $P$ is a permutation projective $G$-lattice and $G$ is the Galois group of a finite Galois extension, $K/F$. If $$0 \longrightarrow M \longrightarrow L \longrightarrow P \longrightarrow 0 $$ is an exact sequence of $G$-lattices, then the fields $K(L)^G$ and $K(M \oplus P)^G$ are isomorphic over $F$. 
+Suppose $P$ is a permutation projective $G$-lattice and $G$ is the Galois group 
+of a finite Galois extension, $K/F$. If 
+$$0 \longrightarrow M \longrightarrow L \longrightarrow P \longrightarrow 0 $$ is 
+an exact sequence of $G$-lattices, then the fields $K(L)^G$ and $K(M \oplus P)^G$ are isomorphic over $F$. 
 \end{proposition}
 \noindent
-One can use the above proposition and Theorem \ref{NoNameLemma} to conclude the following theorem.
+One can use the above proposition and Theorem \ref{NoNameLemma} to conclude the 
+following theorem.
 \begin{theorem}\cite[Proposition 1.6]{Lenstra}\label{method2}
-Suppose $P$ is a permutation $G$-lattice and $G$ is the Galois group of a finite Galois extension, $K/F$.  If $$0 \longrightarrow M \longrightarrow L \longrightarrow P \longrightarrow 0 $$ is an exact sequence of $G$-lattices, then $K(L)^G$ is rational over $K(M)^G$.
+Suppose $P$ is a permutation $G$-lattice and $G$ is the Galois group of a finite 
+Galois extension, $K/F$.  If 
+$$0 \longrightarrow M \longrightarrow L \longrightarrow P \longrightarrow 0 $$ is 
+an exact sequence of $G$-lattices, then $K(L)^G$ is rational over $K(M)^G$.
 \end{theorem}
 \noindent
-An important corollary of the above theorem will be used frequently in chapter 3, in order to prove the rationality of algebraic tori.
+An important corollary of the above theorem will be used frequently in chapter 3, 
+in order to prove the rationality of algebraic tori.
 \begin{corollary}\label{permcoker}
-Suppose $P$ is a permutation $G$-lattice and $G$ is the Galois group of a finite Galois extension, $K/F$.  If $$0 \longrightarrow M \longrightarrow L \longrightarrow P \longrightarrow 0 $$ is an exact sequence of $G$-lattices and $K(M)^G$ is rational over $F$, then $K(L)^G$ is rational over $F$.
+Suppose $P$ is a permutation $G$-lattice and $G$ is the Galois group of a finite 
+Galois extension, $K/F$.  If $$0 \longrightarrow M \longrightarrow L \longrightarrow P \longrightarrow 0 $$ 
+is an exact sequence of $G$-lattices and $K(M)^G$ is rational over $F$, then $K(L)^G$ is rational over $F$.
 \end{corollary}
 \noindent
-In \cite[Section 2.4.8]{Voskresenskii} the author has shown that any algebraic torus with an augmentation ideal lattice is hereditarily rational. More precisely let $T$ be an algebraic torus defined over $F$ and splits over $K$ and $G = \mathrm{Gal}(K/F)$. Assume the character lattice of $T$ is $I_X$ (the kernel of the augmentation map), and $\Z [X]$ is a $G$-permuattion lattice, where 
+In \cite[Section 2.4.8]{Voskresenskii} the author has shown that any algebraic 
+torus with an augmentation ideal lattice is hereditarily rational. More precisely 
+let $T$ be an algebraic torus defined over $F$ and splits over $K$ and $G = \mathrm{Gal}(K/F)$. 
+Assume the character lattice of $T$ is $I_X$ (the kernel of the augmentation map), 
+and $\Z [X]$ is a $G$-permuattion lattice, where 
 \begin{equation}\label{Chevalley}
 0 \longrightarrow I_X \longrightarrow \Z [X] \overset{\varepsilon} \longrightarrow  \Z \longrightarrow 0
 \end{equation}
-is an exact sequence and $\varepsilon : \Z [X]  \rightarrow \Z $, $x \rightarrow 1$ is the augmentation map. The exact sequence (\ref{Chevalley}) corresponds to the exact sequence of $F$ algebraic tori
+is an exact sequence and $\varepsilon : \Z [X]  \rightarrow \Z $, $x \rightarrow 1$ 
+is the augmentation map. The exact sequence (\ref{Chevalley}) corresponds to the exact 
+sequence of $F$ algebraic tori
 $$0 \longrightarrow \mathbb{G}_m \longrightarrow R_{K_1/F}(\mathbb{G}_m) \times \cdots \times R_{K_t/F}(\mathbb{G}_m) \longrightarrow  T \longrightarrow 0$$
-where $K_i/F$ (for $i = 1, \ldots ,t $) are intermediate fields of $K/F$ and $K/K_i$ is Galois. Now $T = \prod^t_{i = 1}R_{K_i/F}(\mathbb{G}_m)/\mathbb{G}_m$ and is rational. We note that for any subgroup $H$ of $G$, ${I_X}\downarrow^G_H$ is also an augmentation ideal. Hence an algebraic tori with augmentation ideal character lattice is hereditarily rational.\\
+where $K_i/F$ (for $i = 1, \ldots ,t $) are intermediate fields of $K/F$ and $K/K_i$ is 
+Galois. Now $T = \prod^t_{i = 1}R_{K_i/F}(\mathbb{G}_m)/\mathbb{G}_m$ and is rational. 
+We note that for any subgroup $H$ of $G$, ${I_X}\downarrow^G_H$ is also an augmentation 
+ideal. Hence an algebraic tori with augmentation ideal character lattice is hereditarily 
+rational.\\
 \\
 It is worth mentioning that passing to dual lattices in \ref{Chevalley} we get 
 $$0 \longrightarrow \Z \longrightarrow \Z [X] \overset{\varepsilon} \longrightarrow  J_{X} \longrightarrow 0$$
-where $J_{X}= I^{\ast}_X$ is called Chevalley module. The corresponding algebraic torus to $J_X$ has interesting properties and is called norm one torus. Chevalley was the first one who discovered that norm one torus is not necessarily rational. \\
+where $J_{X}= I^{\ast}_X$ is called Chevalley module. The corresponding algebraic 
+torus to $J_X$ has interesting properties and is called norm one torus. Chevalley 
+was the first one who discovered that norm one torus is not necessarily rational. \\
 \\
-The following lemma was used in \cite{Nicole1} to show that a given $G$-lattice is isomorphic to $J_{G/H}$.
+The following lemma was used in \cite{Nicole1} to show that a given $G$-lattice 
+is isomorphic to $J_{G/H}$.
 \begin{lemma}\cite[Remark 4.1]{Nicole1}
 Let $L$ be a $G$-lattice. If there exist $x\in L$ such that,
 \begin{itemize}
@@ -411,53 +505,63 @@ then $L \cong J_{G/H}$.
 \end{lemma}
 
 \section{Reduction Algorithms}
-Assume $$0 \rightarrow M  \rightarrow L_G \rightarrow N \rightarrow 0$$ is a short exact sequence of $G$-lattices such that $N$ is a permutation projective $G$-lattice. If $K/F$ is a finite Galois extension with $G \cong \mathrm{Gal}(K/F)$, then by Theorem (\ref{method2}), $K(L_G)^G$ is rational over $K(M)^G$. Thus, rationality of $K(M)^G$ over $F$ implies rationality of $K(L_G)^G$ over $F$.\\
+Assume $$0 \rightarrow M  \rightarrow L_G \rightarrow N \rightarrow 0$$ is a short 
+exact sequence of $G$-lattices such that $N$ is a permutation projective $G$-lattice. 
+If $K/F$ is a finite Galois extension with $G \cong \mathrm{Gal}(K/F)$, then by 
+Theorem (\ref{method2}), $K(L_G)^G$ is rational over $K(M)^G$. Thus, rationality 
+of $K(M)^G$ over $F$ implies rationality of $K(L_G)^G$ over $F$.\\
 \\
-Suppose $L_G$ is an indecomposable $G$-lattice. In this section, we present methods to examine the possibility of existence of such a short exact sequence for $L_G$, with $N$ a permutation $G$-lattice.\\
+Suppose $L_G$ is an indecomposable $G$-lattice. In this section, we present methods 
+to examine the possibility of existence of such a short exact sequence for $L_G$, with
+ $N$ a permutation $G$-lattice.\\
 \\
-Although sign permutation lattices are not permutation projective, constructing a short exact sequence of $G$-lattices $$0 \rightarrow M  \rightarrow L_G \rightarrow N \rightarrow 0$$ where $N$ is a rank one sign permutation $G$-lattice might help to determine rationality of the associated algebraic torus to $L_G$. Note that existence of such a sequence does not directly imply rationality. However, under some conditions the rationality may be concluded. \\
+Although sign permutation lattices are not permutation projective, constructing a 
+short exact sequence of $G$-lattices $$0 \rightarrow M  \rightarrow L_G \rightarrow N \rightarrow 0$$ 
+where $N$ is a rank one sign permutation $G$-lattice might help to determine 
+rationality of the associated algebraic torus to $L_G$. Note that existence of 
+such a sequence does not directly imply rationality. However, under some conditions 
+the rationality may be concluded. \\
 \\
-The goal of this section is to provide tools to get exact sequences mentioned above for a given indecomposable $G$-lattice. The idea behind all of the methods is a simple fact which we explain briefly here.  \\
+The goal of this section is to provide tools to get exact sequences mentioned above 
+for a given indecomposable $G$-lattice. The idea behind all of the methods is a simple 
+fact which we explain briefly here.  \\
 \\
-A lattice $L_G$, is reducible as a $G$-lattice if and only if $\Q L_G = L_G \otimes_{\Z} \Q$ has a proper $\Q[G]$-submodule $W$ of dimension $0 < m < n$. Let $L_G$ be a $G$-lattice of rank $n$ and $W$ is an $m$ dimensional proper $\Q[G]$-submodule of $\Q L_G$. Then $L_G \cap W$ is a sublattice of $L_G$ of rank $m$ such that $\Q (L_G \cap W) = W$. Then
-%On the other hand $L/(L \cap W)$ is torsion free. If $nx \in L \cap W$ for $n \in \mathbb{N}$ and $x \in L$, then $nx = \pi_W(nx) = n \pi_W(x)$ where $\pi_W: \Q L \rightarrow W$ is a $G$ invariant projection map (which exists since $\Q L = W \oplus W' $). So $n(\pi_W(x) -x) = 0$ so that $\pi_W(x) = x$ which implies $x \in L \cap W$. Now we have 
+A lattice $L_G$, is reducible as a $G$-lattice if and only if $\Q L_G = L_G \otimes_{\Z} \Q$ 
+has a proper $\Q[G]$-submodule $W$ of dimension $0 < m < n$. Let $L_G$ be a $G$-lattice of 
+rank $n$ and $W$ is an $m$ dimensional proper $\Q[G]$-submodule of $\Q L_G$. Then $L_G \cap W$ 
+is a sublattice of $L_G$ of rank $m$ such that $\Q (L_G \cap W) = W$. Then
+
 $$0 \rightarrow L_G \cap W  \rightarrow L_G \rightarrow L_G/(L_G \cap W) \rightarrow 0$$
- is a short exact sequence of $G$-lattices. Note that this implies in particular that $L_G/(L_G \cap W)$ is torsion free so that a $\Z$-basis of $L_G \cap W$ can be extended to a $\Z$-basis of $L_G$.\\
+ is a short exact sequence of $G$-lattices. Note that this implies in particular that $L_G/(L_G \cap W)$ 
+ is torsion free so that a $\Z$-basis of $L_G \cap W$ can be extended to a $\Z$-basis of $L_G$.\\
 \\
-%Suppose $L_G$ is a $G$-lattice of rank $n$. We want to see if there exist a sublattice $M$ such that $$0 \rightarrow L \cap W  \rightarrow L_G \rightarrow L/(L \cap W) \rightarrow 0$$ is an exact sequence of $G$-lattices. That is, we are looking for an $n-1$ dimensional proper $\Q[G]$ submodule of $\Q L$. \\
-%\\
-In the next paragraphs we are specifically looking for an $n-1$ dimensional proper $\Q[G]$-submodule of $\Q L_G$.\\
+In the next paragraphs we are specifically looking for an $n-1$ dimensional proper 
+$\Q[G]$-submodule of $\Q L_G$.\\
 \\
-If we start with the dual lattice $L^*_G$, and we are able to find a rank 1 permutation sublattice of $L^*_G$, we get 
-$$0 \rightarrow \Z  \rightarrow L^*_G \rightarrow M \rightarrow 0,$$ where $M = L^*_G/\Z$ is of rank $n-1$. Then by dualizing the sequence we have $$0 \rightarrow M^*  \rightarrow L_G \rightarrow \Z \rightarrow 0$$ as desired.
-%In \cite{LatticeBase} the authors presented a corollary of theorem (\ref{Newman}) which gives the matrix $U$ explicitly. 
-%The above results are useful to prove the following result.\\
-%\\
-%\begin{proposition}
-%Suppose $L$ is a $G$-lattice of rank $n$. For $\sigma \in G$ let $E_\sigma$ be the left nullspace of $\sigma -I_n$. $L$ has a permutation sublattice of rank one if and only if $ \bigcap\limit\mathrm{S}_{\sigma \in G} E_\sigma \neq 0.$
-%\end{proposition}
-%\begin{proof}
-%Assume $L$ has a trivial rank one sublattice. Thus there exist a nonzero vector $v$, in $L$ such that $G$ acts trivially on $v$. In other words 
-%$$\forall \sigma \in G \,\,\, v \sigma = v. $$ Hence $v \in  \bigcap\limits_{\sigma \in G} E_\sigma \neq 0. $ \\
-%\\
-%Now let  $E =\bigcap\limits_{\sigma \in G} E_\sigma \neq 0$. So there exist a nonzero $v \in E$ such that $v \sigma = v $ for any $\sigma \in G$. In other words $G$ acts trivially on $v$. We define $M = \Z v$ which is a permutation rank one sublattice of $L$. \QEDA
-%\end{proof}
-%\begin{proposition}
-%With the assumptions of the previous proposition, $ \bigcap\limits_{\sigma \in G} E_\sigma \neq 0$ if and only if there exists a $G$-lattice $M$ such that 
-%$$0\longrightarrow \Z \longrightarrow L \longrightarrow M \longrightarrow 0$$
-%is an exact sequence of $G$-lattices.
-%\end{proposition}
-%\begin{proof}
-%If there exist $M$ such that the above sequence is exact, then there exist a nonzero vector $v\in L$ (the image of generator of $\Z$) such that $G$ acts trivially on $v$. Thus $v \in E$ as desired.
-%Now if $ \bigcap\limits_{\sigma \in G} E_\sigma \neq 0$ then choose a nonzero $v = (a_1, \ldots , a_n) \in E$. It is not hard to see there exist a constant $c \in \Z $ such that $(ca_1, \ldots , ca_n) \in L$ and $\gcd(ca_1, \ldots , ca_n) =1$. By applying lemma (\ref{BaseExtend}) to $u =cv$ we get a basis $\lbrace u_1, \ldots , u_{n-1}, u \rbrace$ for $L$. Moreover we know that $G$ acts trivially on $u$ so we can define $\Z u$ as our rank one permutation lattice and $M = L/\Z u$ hence $$0\longrightarrow \Z \longrightarrow L \longrightarrow M \longrightarrow 0$$
-%is an exact sequence of $G$-lattices and we are done. \QEDA
-% \end{proof}
+If we start with the dual lattice $L^*_G$, and we are able to find a rank 1 permutation 
+sublattice of $L^*_G$, we get $$0 \rightarrow \Z  \rightarrow L^*_G \rightarrow M \rightarrow 0,$$ 
+where $M = L^*_G/\Z$ is of rank $n-1$. Then by dualizing the sequence we have 
+$$0 \rightarrow M^*  \rightarrow L_G \rightarrow \Z \rightarrow 0$$ as desired.
  \\
 \\
-Now, we explain how to find a permutation rank one sublattice of $L^*_G$. In order to get a one dimensional $\Q[G]$-submodule of $\Q L^*_G$, we use the eigenspaces of the transposes of a generating set of $G$. Let  $\lbrace \sigma_1, \ldots, \sigma_m\rbrace$ be the transposes of a generating set of $G$ and let  $G^* = \langle \sigma_1, \ldots, \sigma_m\rangle$. Suppose $E_{1,\sigma_i}$ is the left nullspace of $\sigma_i-I$ over $\Q$. We define $$E_1 = E_{1,\sigma_1}\cap \cdots \cap E_{1,\sigma_n}. $$
-Note that $G^*$ acts trivially on $E_1$. If $E_1\neq {0}$ then we can choose a nonzero vector $u \in E_1$. Let $u = (\frac{a_1}{b_1}, \frac{a_2}{b_2}, \ldots , \frac{a_n}{b_n})\in E_1$ such that $\gcd(a_i, b_i) = 1$. If $m = \mathrm{lcm}(b_1, \ldots, b_n)$ then $m u = (a'_1, \ldots, a'_n) \in\Z^n$. If $\gcd (a'_1, \ldots, a'_n) = d$ then $v =\frac{m}{d} u \in L_G \cap E_1$ and the $\gcd$ of its entries is 1. \\
+Now, we explain how to find a permutation rank one sublattice of $L^*_G$. In order 
+to get a one dimensional $\Q[G]$-submodule of $\Q L^*_G$, we use the eigenspaces of 
+the transposes of a generating set of $G$. Let  $\lbrace \sigma_1, \ldots, \sigma_m\rbrace$ 
+be the transposes of a generating set of $G$ and let  $G^* = \langle \sigma_1, \ldots, \sigma_m\rangle$. 
+Suppose $E_{1,\sigma_i}$ is the left nullspace of $\sigma_i-I$ over $\Q$. 
+We define $$E_1 = E_{1,\sigma_1}\cap \cdots \cap E_{1,\sigma_n}. $$
+Note that $G^*$ acts trivially on $E_1$. If $E_1\neq {0}$ then we can choose a 
+nonzero vector $u \in E_1$. Let $u = (\frac{a_1}{b_1}, \frac{a_2}{b_2}, \ldots , \frac{a_n}{b_n})\in E_1$ 
+such that $\gcd(a_i, b_i) = 1$. If $m = \mathrm{lcm}(b_1, \ldots, b_n)$ then 
+$m u = (a'_1, \ldots, a'_n) \in\Z^n$. If $\gcd (a'_1, \ldots, a'_n) = d$ then 
+$v =\frac{m}{d} u \in L_G \cap E_1$ and the $\gcd$ of its entries is 1. \\
 \\
-As a consequence, we can extend $\lbrace v \rbrace$ to a $\Z$-basis of $L^*_G$. A general algorithm to do this extension is given by Magliveras et al in \cite{LatticeBase}; GAP also has a function which does the job. In most of the cases that we will see in the next section, $v$ had a $\pm 1$ as an entry, which makes the basis extension so simple: if $v_j$ is $\pm 1$ then $\lbrace e_1, \ldots , e_{j-1}, e_{j+1}, \ldots, e_n , v \rbrace$ forms a $\Z$-basis for $L^*_G$.\\
+As a consequence, we can extend $\lbrace v \rbrace$ to a $\Z$-basis of $L^*_G$. 
+A general algorithm to do this extension is given by Magliveras et al in 
+\cite{LatticeBase}; GAP also has a function which does the job. In most of the 
+cases that we will see in the next section, $v$ had a $\pm 1$ as an entry, which makes 
+the basis extension so simple: if $v_j$ is $\pm 1$ then 
+$\lbrace e_1, \ldots , e_{j-1}, e_{j+1}, \ldots, e_n , v \rbrace$ forms a $\Z$-basis for $L^*_G$.\\
 \\  
 Since it is possible to extend $v$ to a basis for the lattice $L^*_G$, there exists a change of basis matrix $T$ in $\mathrm{GL}(n,\Z)$ such that
 $$T \sigma_i T^{-1} = \left[ \begin{array}{c|c}
@@ -483,15 +587,6 @@ The explained method above is presented as an algorithm here.
 		\end{array} \right]
 		$ where $\delta_i \in \mathrm{GL}(n-1,\Z)$, and sublattices $M, N$ such that $0\longrightarrow N \longrightarrow L^*_G \longrightarrow M \longrightarrow 0$ is an exact sequence of lattices.
 		\bigskip
-%		\STATE  $gens \gets GeneratorsOfGroup(Gp)$
-%		\STATE $I \gets IdentityMat(n)$
-%		\STATE $E \gets List(I, i \rightarrow [])$
-%	   \STATE for $g$ in $gens$ do\\
-%	   \hspace{0.5 in} $ E \gets [E\, | \, g-I]$	\\
-%%	    \hspace{0.5 in} for $i$ in $[1..n]$ do\\
-%%	    \hspace{1 in} Append($E[i], (g-I)[i]$)\\
-%%	    \hspace{0.5 in} end do\\
-%	    end do
 		\STATE $E \gets \left[ \begin{array}{c|c|c|c}
 		\sigma^t_1-I & \sigma^t_2 -I & \cdots & \sigma^t_n -I
 		\end{array} \right]$
@@ -501,8 +596,6 @@ The explained method above is presented as an algorithm here.
 	    \hspace{0.5 in} if $v \notin \Z^n$ \\
 	    \hspace{1in} find $c \in \Z$ s.t $cv \in \Z^n$ and $\gcd(cv) = 1$\\
 	    \hspace{1in} $v \gets cv$\\
-%	    \hspace{1in} $D \gets List(W[1], w \rightarrow Denominator(w))$\\
-%	    \hspace{1in} $L \gets lcm(D)$\\
 	    \hspace{0.5 in} end if\\
 	    \hspace{0.5in} apply the algorithm in \cite{LatticeBase} to extend $v$ to a basis $B = \lbrace \beta_1, \ldots, \beta_{n-1},v\rbrace$ for $L_G$\\
 	    \hspace{0.5in} $T \gets \begin{bmatrix}
@@ -511,11 +604,6 @@ The explained method above is presented as an algorithm here.
 		\hspace{0.5in} $N \gets \Z v$\\
 		\hspace{0.5in} $M \gets L/N$\\
 		\hspace{0.5in} \textbf{return} $M,N, T$\\
-%	    \hspace{1in} $H \gets ConjugateGroup(Gd,T)$\\
-%	    \hspace{1 in} $K \gets DualGroup(H)$\\
-%	    \hspace{1 in} $L \gets List(GeneratorsOfGroup(K), k \rightarrow SubMatrix([1,n-1],[1,n-1]))$\\
-%	    \hspace{1in}$SG \gets GroupByGenerators(L)$\\
-%	    \hspace{1in} \textbf{return} $SG$\\
 	  \hspace{0.5in} end if\\
 	  else\\
 	     \hspace{0.5in}  \textbf{return} fail\\
@@ -621,17 +709,6 @@ $$
 \noindent
 We call the above process the fixed point algorithm. One can generalize it as follows. Assume $E_{\lambda,\sigma}$ be the left kernel of $\sigma-\lambda I$ over the  rationals. Now define $E_{\pm 1,\sigma}$ to be  the set $\lbrace E_{1,\sigma}, E_{-1,\sigma}\rbrace$. Assume $E_{\pm 1, G}$ is the Cartesian product of $E_{\pm1, \sigma}$ for all $\sigma \in G^*$, i.e. 
 $$E_{\pm 1,G} = E_{\pm 1, \sigma_1} \times \cdots \times E_{\pm 1, \sigma_n}.$$ 
-%\begin{proposition}
-%Suppose $G\leq \mathrm{GL}(n,\Z)$ be a finite subgroup and $L$ is the corresponding lattice to $G$. There exist $A\in E_{\pm 1,  G}$ such that $ \bigcap\limits_{B \in A} B \neq 0$ if and only if there exists a $G$-lattice $M$ such that 
-%$$0\longrightarrow \Z^- \longrightarrow L \longrightarrow M \longrightarrow 0$$
-%is an exact sequence of $G$-lattices.
-%\end{proposition}
-%\begin{proof}
-%If there exist $M$ such that the above sequence is exact, then there exist a nonzero vector $v\in L$ (the image of generator of $\Z$) such that $G$ acts as sign permutation on $v$. Thus for any $\sigma \in G$,  $v \in E_{1,\sigma}$ or $v \in E_{-1,\sigma}$. This implies the existence of such an $A \in E_{\pm 1, G}$.\\
-%\\
-%Now assume there exist $A\in E_{\pm 1,  G}$ such that $ \bigcap\limits_{B \in A} B \neq 0$. Choose a random nonzero $v = (a_1, \ldots , a_n) \in \bigcap\limits_{B \in A} B$. It is not hard to see there exist a constant $c \in \Z $ such that $(ca_1, \ldots , ca_n) \in L$ and $\gcd(ca_1, \ldots , ca_n) =1$. By applying lemma (\ref{BaseExtend}) to $u =cv$ we get a basis $\lbrace u_1, \ldots , u_{n-1}, u \rbrace$ for $L$. Moreover we know that elements of $G$ act either trivially on $u$ or send it to $-u$ so we can define $\Z u$ as our rank one sign permutation lattice and $M = L/\Z u$ hence $$0\longrightarrow \Z u \longrightarrow L \longrightarrow M \longrightarrow 0$$
-%is an exact sequence of $G$-lattices and we are done. \QEDA
-% \end{proof}
 If there exist $A\in E_{\pm 1,  G}$ such that $W = \bigcap\limits_{B \in A} B \neq 0$, then we can find a nonzero $v \in L^*_G \cap W$. As we have seen in the fixed point algorithm, we can extend a multiple of $v$ to a $\Z$-basis for $L^*_G$. Then we can get a change of basis matrix $T$, such that 
 $$T \sigma_i T^{-1} = \left[ \begin{array}{c|c}
 \delta_i & \ast\\
@@ -646,46 +723,6 @@ $$0 \longrightarrow M^* \longrightarrow L^*_{G'} \longrightarrow \Z^- \longright
 Again note that $L^*_{G'}$ is isomorphic to $L_G$.\\
 \\
 This process will be called the sign fixed point algorithm and it is presented as an algorithm here. 
-%\begin{algorithm}[H]
-%	\caption{Sign Fixed Point Algorithm}
-%	\label{alg:Fixed Point}
-%	\begin{algorithmic}[1]
-%		\REQUIRE A finite subgroup,$G$ of $\mathrm{GL}(n,\Z)$.
-%		\ENSURE A finite subgroup, $G'$ of $\mathrm{GL}(n-1,\Z)$.
-%		\STATE $Gp \gets DualGroup(G)$
-%		\STATE  $gens \gets GeneratorsOfGroup(Gp)$
-%		\STATE for $g$ in $gens$ do\\
-%		\hspace{0.5in} $E_g \gets SetOfEigenspaces(\Q,g)$\\
-%		end do
-%		\STATE $ E \gets CartesianProduct(E_g : g \in gens)$
-%		\STATE $W \gets 0$
-%		\STATE $i \gets 1$
-%		\STATE while $W = 0$ and $i< Size(E)$ do\\
-%		\hspace{ .5in} $W \gets Intersection(E[i])$\\
-%		\hspace{.5in} $i \gets i+1 $\\
-%		end do
-%	    \STATE if $W <> 0$ then\\
-%	    \hspace{0.5 in} if $W[1] \notin \Z^n$ \\
-%	    \hspace{1in} find $c \in \Z$ s.t $cW[1] \in \Z^n$\\
-%	    \hspace{1in} $W[1] \gets cW[1]$\\
-%%	    \hspace{1in} $D \gets List(W[1], w \rightarrow Denominator(w))$\\
-%%	    \hspace{1in} $L \gets lcm(D)$\\
-%	    \hspace{0.5 in} end if\\
-%	    \hspace{0.5in} $T \gets ExtendBasis(\Z^n, W[1]) $\\
-%	    \hspace{0.5in} if $T<> fail$ then \\
-%	    \hspace{1in} $H \gets ConjugateGroup(Gd,T)$\\
-%	    \hspace{1 in} $K \gets DualGroup(H)$\\
-%	    \hspace{1 in} $L \gets List(GeneratorsOfGroup(K), k \rightarrow SubMatrix([1,n-1],[1,n-1]))$\\
-%	    \hspace{1in}$SG \gets GroupByGenerators(L)$\\
-%	    \hspace{1in} \textbf{return} $SG$\\
-%	    \hspace{0.5in}else\\
-%	   \hspace{1in}  \textbf{return} fail\\
-%	  \hspace{0.5in} end if\\
-%	  else\\
-%	     \hspace{1in}  \textbf{return} fail\\
-%	     end if
-%	 	\end{algorithmic}
-%\end{algorithm}
 \begin{algorithm}[H]
 	\caption{Sign Fixed Point Algorithm}
 	\label{alg:Sign Fixed Point}
@@ -701,15 +738,6 @@ This process will be called the sign fixed point algorithm and it is presented a
 		\STATE	 for g in $\lbrace	\sigma^t_1, \ldots , \sigma^t_m \rbrace$ do\\
 		\hspace{0.5 in} $E_g \gets $ the set of left nullspaces of $g \pm I$ over $\Q$\\
 		end do
-%		\STATE  $gens \gets GeneratorsOfGroup(Gp)$
-%		\STATE $I \gets IdentityMat(n)$
-%		\STATE $E \gets List(I, i \rightarrow [])$
-%	   \STATE for $g$ in $gens$ do\\
-%	   \hspace{0.5 in} $ E \gets [E\, | \, g-I]$	\\
-%%	    \hspace{0.5 in} for $i$ in $[1..n]$ do\\
-%%	    \hspace{1 in} Append($E[i], (g-I)[i]$)\\
-%%	    \hspace{0.5 in} end do\\
-%	    end do
 		\STATE $E \gets E_{\sigma^t_1} \times E_{\sigma^t_2} \times \cdots \times E_{\sigma^t_m}$
 		\STATE $W \gets 0$
 		\STATE while $W = 0$ and $E \neq \emptyset$ do\\
@@ -722,8 +750,6 @@ This process will be called the sign fixed point algorithm and it is presented a
 	    \hspace{0.5 in} if $v \notin \Z^n$ \\
 	    \hspace{1in} find $c \in \Z$ s.t $cv \in \Z^n$ and $\gcd(cv) = 1$\\
 	    \hspace{1in} $v \gets cv$\\
-%	    \hspace{1in} $D \gets List(W[1], w \rightarrow Denominator(w))$\\
-%	    \hspace{1in} $L \gets lcm(D)$\\
 	    \hspace{0.5 in} end if\\
 	    \hspace{0.5in} apply the algorithm in \cite{LatticeBase} to extend $v$ to get a basis $B = \lbrace \beta_1, \ldots, \beta_{n-1},v\rbrace$ for $L$\\
 	    \hspace{0.5in} $T \gets \begin{bmatrix}
@@ -732,11 +758,6 @@ This process will be called the sign fixed point algorithm and it is presented a
 		\hspace{0.5in} $N \gets \Z v$\\
 		\hspace{0.5in} $M \gets L/N$\\
 		\hspace{0.5in} \textbf{return} $M,N,T$\\
-%	    \hspace{1in} $H \gets ConjugateGroup(Gd,T)$\\
-%	    \hspace{1 in} $K \gets DualGroup(H)$\\
-%	    \hspace{1 in} $L \gets List(GeneratorsOfGroup(K), k \rightarrow SubMatrix([1,n-1],[1,n-1]))$\\
-%	    \hspace{1in}$SG \gets GroupByGenerators(L)$\\
-%	    \hspace{1in} \textbf{return} $SG$\\
 	  \hspace{0.5in} end if\\
 	  else\\
 	     \hspace{0.5in}  \textbf{return} fail\\
@@ -822,12 +843,7 @@ $$
 as a generating set for a conjugate of $G$. By defining $M\subset L_G$ generated by $e_1, e_2$ and $e_3$ the following exact sequence will be obtained
 $$0 \longrightarrow M \longrightarrow L_G \longrightarrow \Z^- \longrightarrow 0.$$
 \end{example}
-%The idea behind the above algorithms is to find a permutation (or sign permutation) sublattice in a given lattice. The presented algorithms test if a given lattice has a rank 1 permutation or sign permutation sublattice. One might also be interested in finding permutation (or sign permutation) sublattices of higher ranks. The following argument provides a naive algorithm to do this. However, it will not be efficient for high ranks.
-%\subsection{$\Q$-Class Decomposition Algorithm}
-%Our previous algorithms are useful in case that there exist such an exact sequence of lattices. However, there are lattices which has no rank one permutation or sign permutation sublattices. In case that the corresponding vector space (over rationals) to the lattice is decomposable we present an algorithm which returns an exact sequence of lattices as 
-%$$0 \longrightarrow M \longrightarrow L \longrightarrow N \longrightarrow 0$$
-%for some lattices $M$ and $N$.\\
-%\\ 
+
 \noindent
 In general to get a $\Q[G]$-submodule $W$ of $\Q L$, where $L = L_G$ is a $G$-lattice, one can use the decomposition of $\Q L$ (provided that it is decomposable). It is not always easy to find the decomposition of a $\Q[G]$-module. The most well-known tool for module decomposition is the meataxe algorithm. The algorithm was first introduced by Parker in \cite{Parker} in order to check irreducibility of a finite dimensional module over a finite field and finding explicit submodules in case of reducibility. Later on Parker extended the idea of the meataxe algorithm to characteristic zero (see \cite{Parker2}). His algorithm can be used to decompose an integral representation of a finite group. In \cite{Plesken2}, the authors provided machinery which enables us to decompose $\Q[G]$-modules up to dimension 200. So there are algorithms which give the decomposition over $\Q$. We invite the reader to see \cite{Lux} and \cite{Holt} for more details. \\
 \\
@@ -846,62 +862,7 @@ as an exact sequence of lattices.\\
 \\
 The above idea can be turned into an algorithm. In order to do so, one need to compute the decomposition of $\Q L$ (meataxe or any other algorithm can be applied). If in the previous step the change of basis, namely $T$, to get the decomposition is not computed, it should be done next. The next step is to choose a component of the decomposition, say $\Q M$ and a basis of it. After that, $M = T^{-1}(\Q M) \cap L$ is a sublattice of $L$. The last step is to extend a basis of $M$ to $L$ (see \cite{LatticeBase} for an algorithm). \\
 \\
-%\begin{algorithm}[H]
-%	\caption{$\Q$-Class Decomposition}
-%	\label{alg:Decompose}
-%	\begin{algorithmic}[1]
-%		\REQUIRE A finite subgroup $G$ of $\mathrm{GL}(n,\Z)$ such that the $G$-lattice $L$ is decomposable over $\Q$, i.e $L_\Q$ is decomposable.
-%	   \ENSURE Lattices $M, N$ such that $0\longrightarrow N \longrightarrow L_G \longrightarrow M \longrightarrow 0$ is an exact sequence of lattices.
-%		\STATE apply the MeatAxe algorithm to decompose $L_\Q$		
-%		\STATE find $T \in \mathrm{GL}(n,\Q)$ which gives the decomposition.
-%		\STATE  $M \gets \, \text{a}\, G$-stable subspace of $L_\Q$ 
-%		\STATE $\alpha_1, \ldots , \alpha_m \gets$ a basis of $M$ over $\Q$ 
-%		\STATE $M' \gets \langle T^{-1}(\alpha_1), \ldots, T^{-1}(\alpha_1) \rangle_\Q$
-%		\STATE $N \gets L \cap M'$
-%		\STATE $\beta_1, \ldots , \beta_m \gets$ a $\Z$-basis for $N$
-%		\STATE If $\beta_1, \ldots , \beta_m$ is a primitive set then\\
-%		\hspace{0.5in} extend $\beta_1, \ldots , \beta_m$ to a basis $A$ for $L$\\
-%		\hspace{0.5in} \textbf{return} $\langle \beta_1, \ldots , \beta_m \rangle_\Z$ and $\langle A \setminus \lbrace \beta_1, \ldots , \beta_m\rbrace \rangle_\Z$ \\
-%		else\\
-%		\hspace{0.5in} \textbf{return} fail\\
-%		end if 
-%%		\STATE for $g$ in $gens$ do\\
-%%		\hspace{0.5in} $E_g \gets SetOfEigenspaces(\Q,g)$\\
-%%		end do
-%%		\STATE $ E \gets CartesianProduct(E_g : g \in gens)$
-%%		\STATE $W \gets 0$
-%%		\STATE $i \gets 1$
-%%		\STATE while $W = 0$ and $i< Size(E)$ do\\
-%%		\hspace{ .5in} $W \gets Intersection(E[i])$\\
-%%		\hspace{.5in} $i \gets i+1 $\\
-%%		end do
-%%	    \STATE if $W <> 0$ then\\
-%%	    \hspace{0.5 in} if $W[1] \notin \Z^n$ \\
-%%	    \hspace{1in} find $c \in \Z$ s.t $cW[1] \in \Z^n$\\
-%%	    \hspace{1in} $W[1] \gets cW[1]$\\
-%%%	    \hspace{1in} $D \gets List(W[1], w \rightarrow Denominator(w))$\\
-%%%	    \hspace{1in} $L \gets lcm(D)$\\
-%%	    \hspace{0.5 in} end if\\
-%%	    \hspace{0.5in} $T \gets ExtendBasis(\Z^n, W[1]) $\\
-%%	    \hspace{0.5in} if $T<> fail$ then \\
-%%	    \hspace{1in} $H \gets ConjugateGroup(Gd,T)$\\
-%%	    \hspace{1 in} $K \gets DualGroup(H)$\\
-%%	    \hspace{1 in} $L \gets List(GeneratorsOfGroup(K), k \rightarrow SubMatrix([1,n-1],[1,n-1]))$\\
-%%	    \hspace{1in}$SG \gets GroupByGenerators(L)$\\
-%%	    \hspace{1in} \textbf{return} $SG$\\
-%%	    \hspace{0.5in}else\\
-%%	   \hspace{1in}  \textbf{return} fail\\
-%%	  \hspace{0.5in} end if\\
-%%	  else\\
-%%	     \hspace{1in}  \textbf{return} fail\\
-%%	     end if
-%	 	\end{algorithmic}
-%\end{algorithm}
-%\medskip
-%\begin{remark}
-%$\lbrace v_1, \ldots, v_m \rbrace \subset L$ is called a primitive  set if $v_1, \ldots , v_m$ are linearly independent over $\mathbb{R}$ and $$L \cap \langle v_1, \ldots , v_m \rangle_\mathbb{R} = \langle v_1, \ldots , v_m \rangle_\mathbb{Z}.$$
-%It is known that any primitive set of vectors can be extended to a basis for the lattice (see \cite{LatticeBase}).
-%\end{remark} 
+
 Here is an example which shows the above idea in practice. The $\Q$-class of the group is presented from the list of $\Q$-classes in rank $4$ provided in \cite{Hoshi}.
 \begin{example}\label{exmp:Decompose}
 Consider the group $G$ generated by 
@@ -1176,37 +1137,12 @@ This shows that the lattice is isomorphic to $J_{\mathrm{S}_6/\mathrm{S}_5}$ and
 \bigskip
 
 \subsection{Case $G_3$}
-%The order of group suggests that there is a relation between the lattice and the rank 4 lattice for $\mathbb{Z}B_4$. The group is generated by 
-%$$
-%\left[ \begin {array}{ccccc} 1&0&1&1&0\\  0&0&-1&0&0
-%\\  -1&0&0&0&-1\\  0&1&0&0&0
-%\\  -1&0&-1&0&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&1&0&0&0\\  -1&0&0&0&-
-%1\\  0&0&1&0&0\\  0&-1&0&0&0
-%\\  -1&-1&0&-1&0\end {array} \right].
-%$$
-%The dual group is generated by
-%$$
-%\left[ \begin {array}{ccccc} 1&0&-1&0&-1\\  0&0&0&1&0
-%\\  1&-1&0&0&-1\\  1&0&0&0&0
-%\\  0&0&-1&0&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&-1&0&0&-1\\  1&0&0&-1
-%&-1\\  0&0&1&0&0\\  0&0&0&0&-1
-%\\  0&-1&0&0&0\end {array} \right] 
-%$$
 By applying Algorithm 1 to the dual lattice, we get the change of basis matrix
 $$
  \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&0&0&0&-1\end {array} \right] 
 $$
-%$$
-% \left[ \begin {array}{ccccc} 0&0&0&1&1\\  1&0&0&0&0
-%\\  0&1&0&0&0\\  0&0&1&0&0
-%\\  0&0&0&1&0\end {array} \right].
-%$$
 Now changing the basis and dualizing gives us the group
 $$
 \left[ \begin {array}{cccc|c} 0&-1&0&0&0\\ 0&0&0&-1&0
@@ -1219,180 +1155,21 @@ $$
 $$
 This yields the following exact sequence of lattices
 $$0 \longrightarrow M \longrightarrow L_{G_3} \longrightarrow \Z \longrightarrow 0$$ where $M$ corresponds to 
-%$H$ generated by
-%$$
-%\left[ \begin {array}{ccccc} 0&-1&0&0\\ 0&0&0&-1
-%\\ 1&0&0&0\\ 0&0&1&0
-%\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&0&0&-1\\ 0&1&0&0
-%\\-1&0&0&0\\ 0&0&-1&0
-%\end {array} \right] 
-%$$
-%GAP ID for the above group is 
-%\begin{verbatim}
-%gap> G3info:= Rank1PermQuot(G3);;
-%gap> G3info.ZClassSubLat;
 [ 4, 32, 21, 1 ].
-%\end{verbatim}
 In \cite{Nicole1} the author has proved the corresponding lattice to [ 4, 32, 21, 1 ] is $\mathbb{Z}B_4$ which is hereditarily rational. This proves that $T_{G_3}$ is hereditarily rational.\\
 \\ Alternatively one can see from the above generators of $H$, that $M$ is a sign permutation lattice which is hereditarily rational.
-%\begin{verbatim}
-%gap> BaseFixedSpace(GG3);
-%[ [ -1, -1, -1, -1, 1 ] ]
-%\end{verbatim}
-%\medskip
-%BasedFixedSpace(L) command in gap returns the common eigenspace of all matrices in the input list, L (here GG3), for the eigenvalue 1. Since the lattice has an inveariant sublattice it is reducible.
-%
-%\begin{verbatim}
-%gap> Display(a);
-%[ [  1,  0,  0,  0,  0 ],
-%  [  0,  1,  0,  0,  0 ],
-%  [  0,  0,  1,  0,  0 ],
-%  [  0,  0,  0,  1,  0 ],
-%  [  1,  1,  1,  1,  1 ] ]
-%  
-%gap> Gp3:= ConjugateGroup(G3,a^(-1));
-%<matrix group of size 384 with 2 generators>
-%
-%gap> Gen_Dis(Gp3);
-%[ [   1,   0,   1,   1,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   1,   1,   1,  -1 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   2,   0,   2,  -1 ] ]
-%---------------------------------------
-%[ [   1,   1,   0,   0,   0 ],
-%  [   0,   1,   1,   1,  -1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,   2,   0,  -1 ] ]
-%---------------------------------------
-%
-%gap> T:= Sub_Matrix(Gp3,[2,5],[2,5]);
-%[ [ [ 0, -1, 0, 0 ], [ 1, 1, 1, -1 ], [ 1, 0, 0, 0 ], [ 2, 0, 2, -1 ] ]
-%, [ [ 1, 1, 1, -1 ], [ 0, 1, 0, 0 ], [ -1, 0, 0, 0 ], [ 0, 2, 0, -1 ] ] ]
-%
-%gap> H:= GroupByGenerators(T);
-%<matrix group with 2 generators>
-%
-%gap> StructureDescription(H);
-%"((((C2 x D8) : C2) : C3) : C2) : C2"
-%
-%gap> IsConjugate(GeneralLinearGroup(5,Integers),H, MatGroupZClass(4,32,21,1));
-%true
-%
-%\end{verbatim}
 
-%As it can be seen the irreducible component is conjugate to GAP ID (4,32,21,1) which is the Wyle group of $\mathbb{Z}B_4$ (Nicole).
 
 \bigskip
 
 \subsection{Case $G_4$}
-%This is a reducible lattice. 
-%\begin{verbatim}
-%gap> Gen_Dis(G4)
-%> ;
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -1,   0,   1,   0,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   1,   1,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   1,   0,   0,   0,  -1 ],
-%  [  -1,  -1,   1,   0,   1 ],
-%  [   0,  -1,   0,  -1,   0 ],
-%  [   1,   1,   0,   0,   0 ],
-%  [   0,   0,   0,   0,  -1 ] ]
-%---------------------------------------
-%
-%gap> V1:= Eigenspaces(Rationals,GG4[1]);
-%[ <vector space over Rationals, with 4 generators>
-%, <vector space over Rationals, with 1 generators> ]
-%
-%gap> V2:= Eigenspaces(Rationals,GG4[2]);
-%[ <vector space over Rationals, with 1 generators>
-%, <vector space over Rationals, with 2 generators> ]
-%
-%gap> V:= Intersection(V1[1],V2[2]);
-%<vector space of dimension 1 over Rationals>
-%
-%gap> GeneratorsOfVectorSpace(V);
-%[ [ 1, 1, -1, -1, 1 ] ]
-%\end{verbatim}
-%
-%\begin{verbatim}
-%gap> Display(a);
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [  -1,  -1,   1,   1,   1 ] ]
-%
-%gap> Gp4:= ConjugateGroup(G4,a);
-%<matrix group of size 240 with 2 generators>
-%
-%gap> Gen_Dis(Gp4);
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -2,  -1,   2,   1,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   2,   1,  -1,  -1,  -1 ],
-%  [  -2,  -2,   2,   1,   1 ],
-%  [   0,  -1,   0,  -1,   0 ],
-%  [   1,   1,   0,   0,   0 ],
-%  [   0,   0,   0,   0,  -1 ] ]
-%---------------------------------------
-%
-%\end{verbatim}
-%The group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\-1&0&1&0&1
-%\\0&0&1&0&0\\0&0&0&1&0
-%\\1&1&-1&0&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&0&0&0&-1\\-1&-1&1&0
-%&1\\0&-1&0&-1&0\\1&1&0&0&0
-%\\0&0&0&0&-1\end {array} \right] 
-%$$
-%The dual group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&-1&0&0&1\\0&0&0&0&1
-%\\0&1&1&0&-1\\0&0&0&1&0
-%\\0&1&0&0&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&-1&0&1&0\\0&-1&-1&1
-%&0\\0&1&0&0&0\\0&0&-1&0&0
-%\\-1&1&0&0&-1\end {array} \right] 
-%$$
-%\begin{verbatim}
-%gap> Gen_Dis(G7);        
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -1,   0,   1,   0,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   1,   1,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   1,   0,  -1,  -1,  -1 ],
-%  [  -1,   0,   0,   1,   1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -1,   0,  -1,  -1 ],
-%  [   1,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%
+
 Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
 $$
  \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&0&-1&-1&2\end {array} \right] 
 $$
-%$$
-%\left[ \begin {array}{ccccc} 0&1&1&-2&1\\1&0&0&0&0
-%\\0&1&0&0&0\\0&0&1&0&0
-%\\0&0&0&1&0\end {array} \right]
-%$$
 With the above transformation we can see the new representative for $G_4$ is generated by 
 $$
 \left[ \begin {array}{cccc|c} 0&1&0&1&0\\0&1&0&0&0
@@ -1403,16 +1180,7 @@ $$
 1&0\\1&0&0&-1&0\\0&0&0&1&0
 \\ \hline0&0&0&-1&-1\end {array} \right] 
 $$
-%Now by considering $M_{G_4}$ to be the corresponding lattice to 
-%$$
-% \left[ \begin {array}{cccc} 0&1&0&1\\0&1&0&0
-%\\0&0&1&0\\1&-1&0&0\end {array}
-% \right] 
-% \tand
-% \left[ \begin {array}{cccc} -1&1&0&1\\-1&0&-1&-1
-%\\1&0&0&-1\\0&0&0&1\end {array}
-% \right] 
-%$$
+
 Now we can produce
 $$
 \exactseqs{G_4}
@@ -1421,115 +1189,12 @@ $$
 where $M_{G_4}$ corresponds to [4,31,7,1]. One can verify that $M_{G_4}^*$ is the Chevalley module $J_{\mathrm{S}_5/\mathrm{S}_4}$ (apply Lemma Nicole with $e_1 =[1,0,0,0]$), thus its dual lattice is hereditarily rational. However, since $L_{G_4}/M_{G_4}$ is sign permutation, we can not conclude rationality of $G_4$.
 
 \subsection{Case $G_5$}
-
-%This is a reducible lattice.
-%\begin{verbatim}
-%gap> Gen_Dis(G5);
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   0,   0,  -1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   0,   0,   1,  -1,   0 ],
-%  [   0,   0,   0,  -1,  -1 ],
-%  [   1,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -1,   0,  -1,   0 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ] ]
-%---------------------------------------
-%gap> Display(t);
-%[ [  1,  0,  0,  1,  0 ],
-%  [  0,  1,  0,  1,  0 ],
-%  [  0,  0,  1,  0,  0 ],
-%  [  0,  0,  0,  0,  1 ],
-%  [  0,  0,  0,  1,  0 ] ]
-%
-%gap> Determinant(t);
-%-1
-%gap> Gp5:= ConjugateGroup(G5,t^(-1));
-%<matrix group of size 144 with 3 generators>
-%gap> Gen_Dis(Gp5);
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   1,   0,   0,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [  -1,   1,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   1,   0,   0,  -1 ] ]
-%---------------------------------------
-%
-%
-%\end{verbatim}
-%The group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\0&1&0&0&0
-%\\0&0&0&0&-1\\0&0&0&1&0
-%\\0&0&-1&0&0\end {array} \right] 
-%\,\,\, , \,\,\,
-% \left[ \begin {array}{ccccc} 0&0&1&-1&0\\0&0&0&-1&
-%-1\\1&0&0&1&0\\0&0&0&1&0
-%\\0&-1&0&-1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} -1&0&0&0&0\\0&0&0&1&0
-%\\0&0&0&0&1\\0&1&0&0&0
-%\\0&0&1&0&0\end {array} \right] 
-%$$
-%The generators of the group corresponding to the dual lattice are 
-%$$
-%\left[ \begin {array}{ccccc} 1&0&0&0&0\\0&1&0&0&0
-%\\0&0&0&0&-1\\0&0&0&1&0
-%\\0&0&-1&0&0\end {array} \right] 
-%\,\,\, , \,\,\,
-% \left[ \begin {array}{ccccc} 0&0&1&0&0\\0&0&0&0&-1
-%\\1&0&0&0&0\\-1&-1&1&1&-1
-%\\0&-1&0&0&0\end {array} \right]
-%\tand 
-% \left[ \begin {array}{ccccc} -1&0&0&0&0\\0&0&0&1&0
-%\\0&0&0&0&1\\0&1&0&0&0
-%\\0&0&1&0&0\end {array} \right] 
-%$$
-%\begin{verbatim}
-%gap> Gen_Dis(G7);        
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -1,   0,   1,   0,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   1,   1,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   1,   0,  -1,  -1,  -1 ],
-%  [  -1,   0,   0,   1,   1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -1,   0,  -1,  -1 ],
-%  [   1,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%
 Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
 $$
  \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&1&0&-1&0\end {array} \right]
 $$
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\-1&0&1&0&1
-%\\0&1&0&0&0\\0&0&1&0&0
-%\\0&0&0&1&0\end {array} \right] 
-%$$
 With the above transformation we can see the new generators for $G_5$ are given by 
 $$
 \left[ \begin {array}{cccc|c} 1&0&0&0&0\\0&0&0&-1&0
@@ -1544,78 +1209,19 @@ $$
 \\0&0&1&0&0\\0&1&0&0&0
 \\ \hline 0&0&1&0&-1\end {array} \right] 
 $$
-%Now by considering $M_{G_5}$ to be the lattice corresponding to the grouop generated by 
-%$$
-%\left[ \begin {array}{cccc} 1&0&0&0\\0&0&0&-1
-%\\0&0&1&0\\0&-1&0&0\end {array}
-% \right] 
-% \left[ \begin {array}{cccc} 0&1&0&1\\1&0&1&0
-%\\0&0&0&-1\\0&0&-1&0\end {array}
-% \right] 
-% \left[ \begin {array}{cccc} -1&0&-1&0\\0&0&0&1
-%\\0&0&1&0\\0&1&0&0\end {array}
-% \right] 
-%$$
 Now we can produce
 $$
 \exactseqs{G_5}
 .$$
 The corresponding group to $M_{G_5}$ has GAP ID [4,29,9,2]. 
 \subsection{Case $G_6$}
-% The group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\0&0&0&1&0
-%\\0&0&1&0&0\\0&1&0&0&0
-%\\0&0&0&0&1\end {array} \right] 
-%\,\,\, , \,\,\,
-% \left[ \begin {array}{ccccc} -1&0&0&0&0\\0&0&-1&0&0
-%\\0&-1&0&0&0\\1&0&0&0&1
-%\\1&0&0&1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&1&0&0&0\\0&-1&0&0&0
-%\\0&0&1&0&0\\0&0&0&1&0
-%\\0&-1&0&0&1\end {array} \right] 
-%$$
-%The group corresponding to the dual lattice is generated by
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\0&0&0&1&0
-%\\0&0&1&0&0\\0&1&0&0&0
-%\\0&0&0&0&1\end {array} \right] 
-%\,\,\, , \,\,\,
-% \left[ \begin {array}{ccccc} -1&0&0&1&1\\0&0&-1&0&0
-%\\0&-1&0&0&0\\0&0&0&0&1
-%\\0&0&0&1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\1&-1&0&0&-
-%1\\0&0&1&0&0\\0&0&0&1&0
-%\\0&0&0&0&1\end {array} \right] 
-%$$
-%\begin{verbatim}
-%gap> Gen_Dis(G7);        
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -1,   0,   1,   0,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   1,   1,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   1,   0,  -1,  -1,  -1 ],
-%  [  -1,   0,   0,   1,   1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -1,   0,  -1,  -1 ],
-%  [   1,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%
 Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
 $$
  \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&0&0&0&-1\end {array} \right]
 $$
-%$$
-%\left[ \begin {array}{ccccc} 0&0&0&1&1\\ 1&0&0&0&0
-%\\ 0&1&0&0&0\\ 0&0&1&0&0
-%\\ 0&0&0&1&0\end {array} \right] 
-%$$
+
 With the above transformation we can see the new generators for $G_6$ are given by 
 $$
  \left[ \begin {array}{cccc|c} 0&0&1&0&0\\ 0&1&0&0&0
@@ -1630,159 +1236,22 @@ $$
 \\ 0&0&1&0&0\\ 0&0&0&1&0
 \\ \hline 1&0&0&0&1\end {array} \right] 
 $$
-%Now by considering $M_{G_6}$ to be the corresponding lattice to , $H$, generated by
-%$$
-% \left[ \begin {array}{cccc} 0&0&1&0\\ 0&1&0&0
-%\\ 1&0&0&0\\ 0&0&0&1\end {array}
-% \right] 
-% \,\,\,
-% \left[ \begin {array}{cccc} 0&-1&0&0\\ -1&0&0&0
-%\\ 0&0&0&1\\ 0&0&1&0\end {array}
-% \right] 
-% \tand
-% \left[ \begin {array}{cccc} -1&0&0&0\\ 0&1&0&0
-%\\ 0&0&1&0\\ 0&0&0&1\end {array}
-% \right] 
-%$$
 Now we can produce
 $$
 \exactseqs{G_6}
 .$$
 $M_{G_6}$ is a sign permutation lattice and therefore hereditarily rational. However, since $L_{G_6}/M_{G_6}$ is sign permutation, we can not conclude rationality of $G_6$.
-%\begin{verbatim}
-%gap> Gen_Dis(G6);
-%[ [  1,  0,  0,  0,  0 ],
-%  [  0,  0,  0,  1,  0 ],
-%  [  0,  0,  1,  0,  0 ],
-%  [  0,  1,  0,  0,  0 ],
-%  [  0,  0,  0,  0,  1 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   1,   0,   0,   0,   1 ],
-%  [   1,   0,   0,   1,   0 ] ]
-%---------------------------------------
-%[ [   1,   1,   0,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -1,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%gap> V1:= Eigenspaces(Rationals,GG6[1]);
-%[ <vector space over Rationals, with 4 generators>
-%, <vector space over Rationals, with 1 generators> ]
-%
-%gap> V2:= Eigenspaces(Rationals,GG6[2]);
-%[ <vector space over Rationals, with 2 generators>
-%, <vector space over Rationals, with 3 generators> ]
-%
-%gap> V3:= Eigenspaces(Rationals,GG6[3]);
-%[ <vector space over Rationals, with 4 generators>
-%, <vector space over Rationals, with 1 generators> ]
-%
-%gap> V:= Intersection(V1[1],V2[2],V3[1]);
-%<vector space of dimension 1 over Rationals>
-%
-%gap> GeneratorsOfVectorSpace(V);
-%[ [ 1, 1, 1, 1, -1 ] ]
-%
-%\end{verbatim}
-%
-%\begin{verbatim}
-%
-%gap> Display(a);                     
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [  -1,  -1,  -1,  -1,   1 ] ]
-%
-%gap> Gp6:= ConjugateGroup(G6,a);     
-%<matrix group of size 128 with 3 generators>
-%
-%gap> Gen_Dis(Gp6);              
-%[ [  1,  0,  0,  0,  0 ],
-%  [  0,  0,  0,  1,  0 ],
-%  [  0,  0,  1,  0,  0 ],
-%  [  0,  1,  0,  0,  0 ],
-%  [  0,  0,  0,  0,  1 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,  -1,  -1,  -1,   1 ],
-%  [   0,  -2,  -2,   0,   1 ] ]
-%---------------------------------------
-%[ [   1,   1,   0,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -2,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%gap> T:= Sub_Matrix(Gp6,[2,5],[2,5]);
-%[ [ [ 0, 0, 1, 0 ], [ 0, 1, 0, 0 ], [ 1, 0, 0, 0 ], [ 0, 0, 0, 1 ] ]
-%, [ [ 0, -1, 0, 0 ], [ -1, 0, 0, 0 ], [ -1, -1, -1, 1 ], [ -2, -2, 0, 1 ] ]
-%, [ [ -1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ -2, 0, 0, 1 ] ] ]
-%
-%gap> H:= GroupByGenerators(T);       
-%<matrix group with 3 generators>
-%
-%gap> StructureDescription(H); 
-%"(D8 x D8) : C2"
-%
-%\end{verbatim}
 
 
 \subsection{Case $G_7$}
-%The group is generated by 
-%$$
-%\left[ \begin {array}{ccccc} 1&0&0&0&0\\  -1&0&1&0&1
-%\\  0&0&1&0&0\\  0&0&0&1&0
-%\\  1&1&-1&0&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&0&-1&-1&-1\\  -1&0&0&
-%1&1\\  0&0&0&1&0\\  0&-1&0&-1&-1
-%\\ 1&0&0&-1&0\end {array} \right] 
-%$$
-%The group corresponding to the dual lattice is generated by
-%$$
-% \left[ \begin {array}{ccccc} 1&-1&0&0&1\\  0&0&0&0&1
-%\\  0&1&1&0&-1\\  0&0&0&1&0
-%\\  0&1&0&0&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&-1&0&0&1\\  0&0&0&-1&0
-%\\  -1&0&0&0&0\\  -1&1&1&-1&-1
-%\\  -1&1&0&-1&0\end {array} \right] 
-%$$
-%\begin{verbatim}
-%gap> Gen_Dis(G7);        
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -1,   0,   1,   0,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   1,   1,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   1,   0,  -1,  -1,  -1 ],
-%  [  -1,   0,   0,   1,   1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -1,   0,  -1,  -1 ],
-%  [   1,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%
+
 Algorithm \ref{alg:Fixed Point} produces the change of basis matrix 
 $$
 \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&0&-1&-1&2\end {array} \right] 
 $$
-%$$
-%\left[ \begin {array}{ccccc} 0&1&1&-2&1\\  1&0&0&0&0
-%\\  0&1&0&0&0\\  0&0&1&0&0
-%\\  0&0&0&1&0\end {array} \right] 
-%$$
+
 With the above transformation we can see the new representative for $G_7$ is generated by 
 $$
 \left[ \begin {array}{cccc|c} 0&1&0&1&0\\  0&1&0&0&0
@@ -1793,149 +1262,10 @@ $$
 \\  -1&-1&-2&-2&0\\  0&2&1&2&0
 \\ \hline 0&-1&-1&-1&1\end {array} \right] 
 $$
-%Now by considering $M_{G_7}$ to be the corresponding lattice to the group generated by
-%$$
-%\left[ \begin {array}{ccccc} 0&1&0&1\\  0&1&0&0
-%\\  0&0&1&0\\  1&-1&0&0
-%\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&0&1&1\\  0&-1&0&-1
-%\\  -1&-1&-2&-2\\  0&2&1&2
-%\end {array} \right] 
-%$$
-%we can produce
-$$
-\exactseq{G_7}
-.$$
-On the other hand the GAP ID of $M_{G_7}$ is 
-%\begin{verbatim}
-%gap> G7info:= Rank1PermQuot(G7);;
-%gap> G7info.ZClassSubLat;
-%[ 4, 31, 4, 1 ]
-%\end{verbatim}%
- [4,31,4,1].
-%  $H$, is isomorphic to $\mathrm{S}_5$ and can be generated by 
-%$$
-%\left[ \begin {array}{cccc} 0&0&1&0\\ 0&0&0&1
-%\\ 1&0&0&0\\ -1&-1&-1&-1
-%\end {array} \right] ,
-% \left[ \begin {array}{cccc} 0&0&0&1\\ -1&-1&-1&-1
-%\\ 0&1&0&0\\ 0&0&1&0\end {array}
-% \right] 
-% \tand
-% \left[ \begin {array}{cccc} 0&0&1&0\\ 0&0&0&1
-%\\ 0&1&0&0\\ 1&0&0&0\end {array}
-% \right]. 
-%$$
-%For $e_1 = [1\,\, 0\,\,0\,\,0]$,
-%$$
-%e_1 \left[ \begin {array}{cccc} 0&0&1&0\\ 0&0&0&1
-%\\ 1&0&0&0\\ -1&-1&-1&-1
-%\end {array} \right]  = [0\,\,0\,\,1\,\,0]
-%$$
-%$$
-%e_1 \left[ \begin {array}{cccc} 0&0&0&1\\ -1&-1&-1&-1
-%\\ 0&1&0&0\\ 0&0&1&0\end {array}
-% \right] = [0\,\,0\,\,0\,\,1]
-%$$
-%$$
-%e_1 \left[ \begin {array}{cccc} 0&0&0&1\\ -1&-1&-1&-1
-%\\ 0&1&0&0\\ 0&0&1&0\end {array}
-% \right] \left[ \begin {array}{cccc} 0&0&1&0\\ 0&0&0&1
-%\\ 1&0&0&0\\ -1&-1&-1&-1
-%\end {array} \right] = [-1\,-1\,-1\,-1]
-%$$
-% The stabilizer subgroup of $e_1$ in $H$ can be calculated as
-% \begin{verbatim}
-% gap> S:= Stabilizer(H,e);
-%<matrix group with 7 generators>
-%gap> StructureDescription(S);
-%"S4"
-% \end{verbatim}
-% Moreover, 
-% \begin{verbatim}
-% gap> n:= [0,0,0,0];
-%[ 0, 0, 0, 0 ]
-%gap> for h in H do n:= n + e*h; od; n;
-%[ 0, 0, 0, 0 ]
-% \end{verbatim}
+
 One can verify that its dual is the Chevalley module $J_{\mathrm{S}_5/\mathrm{S}_4}$ (apply Lemma Nicole with $e_1 = [1,0,0,0] $).
 Alternatively in \cite{Nicole1} the author has proved that [4,31,7,1] is hereditarily rational. Using GAP we can verify that [4,31,4,1] (up to conjugacy) is a subgroup of [4,31,7,1]. This proves rationality of $T_{G_7}$.
-%ap> BaseFixedSpace(GG7);
-%[ [ 1, 1, -1, -1, 1 ] ]
-%\end{verbatim}
-%We can change the basis to $e_1, \cdots e_4$ and $[ 1, 1, -1, -1, 1 ]$. Using this basis we can form the matrix
-%\begin{verbatim}
-%gap> Display(a);
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [  -1,  -1,   1,   1,   1 ] ]
-%
-%\end{verbatim}
-%And then we have
 
-%\begin{verbatim}
-%gap> Gp7:= ConjugateGroup(G7,a);
-%<matrix group of size 120 with 2 generators>
-%gap> Gen_Dis(Gp7);
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -2,  -1,   2,   1,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   2,   1,  -2,  -2,  -1 ],
-%  [  -2,  -1,   1,   2,   1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   1,   0,  -1,  -2,  -1 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%\end{verbatim}
-%
-%On the other hand G7 is self dual.
-%
-%\begin{verbatim}
-%gap> Self_Dual(G7);
-%True
-%\end{verbatim}
-%Now we can get a sequence as below:
-%
-%$$ \mathbb{Z} \rightarrowtail M_{Gp7} \twoheadrightarrow M_H $$
-%
-%where the generators of H are:
-%
-%\begin{verbatim}
-%gap> H:= GroupByGenerators(Sub_Matrix(Gp7,[1,4],[1,4]));
-%
-%gap> Gen_Dis(H);
-%[ [   1,   0,   0,   0 ],
-%  [  -2,  -1,   2,   1 ],
-%  [   0,   0,   1,   0 ],
-%  [   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   2,   1,  -2,  -2 ],
-%  [  -2,  -1,   1,   2 ],
-%  [   0,   0,   0,   1 ],
-%  [   1,   0,  -1,  -2 ] ]
-%---------------------------------------
-%
-%\end{verbatim}
-%
-%Since G7 is self dual so is Gp7. So we have the dual sequence as below
-%
-%$$ M^*_{H} \rightarrowtail M_{Gp7} \twoheadrightarrow  \mathbb{Z} $$
-%Where $ M^*_{H}$ is the lattice corresponding to the group group generated by transposed of generators of H. Assume we name the corresponding group K.
-%
-%\begin{verbatim}
-%gap> K:=GDual(H);
-%<matrix group with 2 generators>
-%
-%gap> CrystCatZClass(K);
-%[ 4, 31, 4, 1 ]
-%
-%\end{verbatim}
 \subsection{Cases $G_8$, $G_9$ and $G_{10}$}
 It is well known that a representation $\rho$ is absolutely irreducible if and only if $\langle \chi_{\rho},\chi_{\rho} \rangle =1 $ where $\chi_{\rho}$ is the corresponding character to $\rho$. Since the groups are of small order, 120, we can test if $\langle \chi_{\rho},\chi_{\rho} \rangle $ is one or not. We recall $$\langle \chi_{\rho},\chi_{\rho} \rangle = \frac{1}{n} \sum_{\sigma \in G} (tr(\sigma)^2)$$ where $G\leq \mathrm{GL}(n,\Q)$ and $|G| = n$.\\
 \\
@@ -1968,365 +1298,16 @@ gap> n;
 Since all 3 groups are irreducible, we consider their maximal subgroups up to conjugacy and check if their maximal subgroups are reducible. In case that a maximal subgroup is irreducible we consider its maximal subgroups again and continue this process. \\
 \\
 Figures \ref{G8Lat}, \ref{G9Lat} and \ref{G10Lat} respectively present lattices of subgroups of $G_8$, $G_9$ and $G_{10}$. These are not the complete lattices of the mentioned groups. We just considered the lattices up to the level where algorithm one returns an output. Appendix (a) is devoted to show that the shaded groups are hereditarily rational.
-%\newpage
-%\begin{tikzpicture} %[scale=.6,transform shape] %<-- uncomment this to see the effect
-%\tikzstyle{level 1}=[sibling distance=50mm] 
-%\tikzstyle{level 2}=[sibling distance=10mm] 
-%\tikzstyle{level 3}=[sibling distance=18mm]
-% \node{country} 
-%  child{node{name} child{ node{ France }}}
-%  child{node{city} child{node{ Paris }}}
-%  child{node{region} 
-%     child{node{name}
-%     child{node{ Nord-Pas De Calais }}}
-%     child{node{population} child{node{ 3996 }}}
-%     child{node{city} child{node{ Lille }}}
-%  } 
-%  child{node{region}
-%      child{node{name}   child{node{ Valle du Rhone }}} 
-%      child{node{city} child{node{ Lyon }}} 
-%      child{node{city}child{node{ Valence }}}
-%  }; 
-% \end{tikzpicture}
-% \begin{sidewaysfigure}
-%\begin{tikzpicture}[sibling distance=8em,
-%  every node/.style = {shape=rectangle, rounded corners,
-%    draw, align=center
-%   }]]
-%\tikzstyle{level 1}=[sibling distance=50mm] 
-%\tikzstyle{level 2}=[sibling distance=35mm] 
-%\tikzstyle{level 3}=[sibling distance=30mm]
-%  \node {$G_8$}
-%    child { node {$[ 5, 389, 4 ]$} }
-%    child { node {$[ 5, 607, 9 ] $} 
-%    	child{node{$[ 5, 98, 28 ]$}}
-%    	child{node{$ [ 5, 174, 5 ]$}}
-%    	child{node{$ [ 5, 580, 4 ]$}}}
-%    child { node {$[ 5, 917, 4 ] $} }
-%   child { node {$[ 5, 952, 2 ] $}
-%		child{node{$[ 5, 174, 2 ] $}}
-%		child{node{$[ 5, 580, 4 ]$}}
-%		child{node{$[ 5, 901, 3 ] $}} }
-%      ;
-%\end{tikzpicture}
-%\end{sidewaysfigure}
 
 %%%%%%%%%%case9
-\begin{figure}[H]
-\centering
-\tikzstyle{every node}=[draw=black,thick,anchor=west]
-\tikzstyle{selected}=[fill=gray!30]
-\begin{tikzpicture}[%
-  grow via three points={one child at (1.5,-1) and
-  two children at (1.5,-1) and (1.5,-2)},
-  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-  \node {$G_8$}
-    child { node [selected]{$[ 5, 389, 4 ]$}}
-    child [missing] {}		
-    child { node {$[  5, 607, 4  ]$}
-		child{ node[selected]{$[ 5, 98, 28 ]$}}
-		child{ node[selected]{$[ 5, 174, 2 ]$}}
-		child{ node{$ [ 5, 580, 4 ]$} 
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
-		} 
-		child[missing]{}  
-    }
-    child[missing]{}
-    child[missing]{}
-    child [missing] {}
-    child [missing] {}	
-    child [missing] {}
-    child { node {$[ 5, 917, 3 ]$}
-		child{ node[selected]{$[ 5, 57, 8 ]$}}
-		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
-    }
-    child[missing]{}
-    child[missing]{}
-    child { node{$[ 5, 952, 4  ] $} 
-		child{ node[selected]{$[ 5, 174, 5 ]$}}
-		child{ node{$ [ 5, 580, 4 ]$}
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}			
-		}
-		child[missing]{}
-		child[missing]{}
-		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
-    }
-    child [missing] {}				
-    child [missing] {}				
-    child [missing] {};
-\end{tikzpicture}
-\caption{Conjugacy classes of subgroups of $G_8$. Algorithm (1) works for the gray ones.}
-\label{G8Lat}
-\end{figure}
 
-\bigskip
-
-\newpage
-
-%\begin{tikzpicture}[sibling distance=8em,
-%  every node/.style = {shape=rectangle, rounded corners,
-%    draw, align=center
-%   }]]
-%  \node {$G_9$}
-%    child { node {$[ 5, 389, 4 ]$} }
-%    child { node {$[ 5, 607, 4 ] $} }
-%    child { node {$[ 5, 917, 3 ] $} }
-%   child { node {$[ 5, 952, 4 ]$}
-%		child{node{$[ 5, 174, 5 ] $}}
-%		child{node{$[ 5, 580, 4 ]$}}
-%		child{node{$[ 5, 901, 3 ] $}} }
-%      ;
-%\end{tikzpicture}
-
-\begin{figure}[H]
-\centering
-\tikzstyle{every node}=[draw=black,thick,anchor=west]
-\tikzstyle{selected}=[fill=gray!30]
-\begin{tikzpicture}[%
-  grow via three points={one child at (1.5,-1) and
-  two children at (1.5,-1) and (1.5,-2)},
-  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-  \node {$G_9$}
-    child { node [selected]{$[ 5, 389, 4 ]$}}
-    child [missing] {}		
-    child { node {$[ 5, 607, 9 ]$}
-		child{ node[selected]{$[ 5, 98, 28 ]$}}
-		child{ node[selected]{$[ 5, 174, 5 ]$}}
-		child{ node{$ [ 5, 580, 4 ]$} 
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
-		} 
-		child[missing]{}  
-    }
-    child[missing]{}
-    child[missing]{}
-    child [missing] {}
-    child [missing] {}	
-    child [missing] {}
-    child { node {$[ 5, 917, 4 ]$}
-		child{ node[selected]{$[ 5, 57, 8 ]$}}
-		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
-    }
-    child[missing]{}
-    child[missing]{}
-    child { node{$[ 5, 952, 2 ] $} 
-		child{ node[selected]{$[ 5, 174, 2 ]$}}
-		child{ node{$ [ 5, 580, 4 ]$}
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}			
-		}
-		child[missing]{}
-		child[missing]{}
-		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
-    }
-    child [missing] {}				
-    child [missing] {}				
-    child [missing] {};
-\end{tikzpicture}
-\caption{Conjugacy classes of subgroups of $G_9$. Algorithm (1) works for the gray ones.}
-\label{G9Lat}
-\end{figure}
-
-\bigskip
-%%%%%%%%%%%case10
-\newpage
-\begin{figure}[H]
-\centering
-\tikzstyle{every node}=[draw=black,thick,anchor=west]
-\tikzstyle{selected}=[fill=gray!30]
-\begin{tikzpicture}[%
-  grow via three points={one child at (2,-1) and
-  two children at (2,-1) and (2,-2)},
-  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-  \node {$G_{10}$}
-    child { node {$[ 5, 391, 4 ]$}
-		child{ node[selected]{$[ 5, 18, 28 ]$}}
-		child{ node{$[ 5, 173, 4 ]$}
-			child{ node[selected]{$[ 5, 6, 3 ]$}}
-			child{ node[selected]{$[ 5, 164, 2 ]$}}		
-		}
-		child[missing]{}
-	child[missing]{}
-		child{ node[selected]{$[ 5, 174, 2 ]$}}
-		child{ node{$[ 5, 461, 4 ] $}
-			child{ node[selected]{$[ 5, 6, 3 ]$}}
-			child{ node[selected]{$[ 5, 164, 2 ]$}}		
-		}    
-    }
-	child[missing]{}
-	    child [missing] {}	
-    child [missing] {}
-    child [missing] {}
-    child [missing] {}	
-    child [missing] {}	
-    child [missing] {}			
-    child { node {$[ 5, 608, 4 ]$}
-		child{ node[selected]{$[ 5, 99, 57 ]$}}
-		child{ node{$[ 5, 173, 4 ]$}
-			child{ node[selected]{$[ 5, 6, 3 ]$}}
-			child{ node[selected]{$[ 5, 164, 2 ]$}}			
-		}
-		child[missing]{}
-		child[missing]{}
-		child{ node{$[ 5, 580, 4 ]$} 
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
-		} 
-		child[missing]{}  
-    }
-    child[missing]{}
-    child[missing]{}
-    child [missing] {}
-       child [missing] {}
-          child [missing] {}
-    child { node[selected]{$[ 5, 918, 4 ]$}
-    }
-    child { node{$[ 5, 952, 2 ] $} 
-		child{ node[selected]{$[ 5, 174, 2 ]$}}
-		child{ node{$ [ 5, 580, 4 ]$}
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}			
-		}
-		child[missing]{}
-		child[missing]{}
-		child{ node[selected]{$ [ 5, 901, 3 ]$}}    
-    }
-    child [missing] {}				
-    child [missing] {}				
-    child [missing] {};
-\end{tikzpicture}
-\caption{Conjugacy classes of subgroups of $G_{10}$. Algorithm (1) works for the gray ones.}
-\label{G10Lat}
-\end{figure}
-\bigskip
-%\begin{sidewaysfigure}
-%
-%\begin{tikzpicture}[sibling distance=8em,
-%  every node/.style = {shape=rectangle, rounded corners,
-%    draw, align=center
-%   }]]
-%  \node {$G_{10}$}
-%    child { node {$[ 5, 391, 4 ]$} }
-%    child { node {$[ 5, 608, 4 ] $} }
-%    child { node {$[ 5, 918, 4 ]$} }
-%   child { node {$[ 5, 952, 2 ]$}
-%		child{node{$[ 5, 174, 2 ] $}}
-%		child{node{$[ 5, 580, 4 ]$}}
-%		child{node{$[ 5, 901, 3 ] $}} }
-%      ;
-%\end{tikzpicture}
-%\end{sidewaysfigure}
-\bigskip
-\newpage
 \subsection{Case $G_{11}$}
-%
-%\begin{verbatim}
-%gap> Gen_Dis(G11);        
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,   1,  -1,  -1,  -1 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,   0,   0,  -1 ] ]
-%---------------------------------------
-%[ [   1,   0,   1,   1,   1 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,   0,   0,  -1 ] ]
-%---------------------------------------
-%[ [   0,  -1,   0,   1,   1 ],
-%  [  -1,   0,   0,  -1,  -1 ],
-%  [   0,   0,   0,   0,  -1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%
-%gap> Display(t);                                                                    
-%[ [  1,  1,  0,  0,  0 ],
-%  [  0,  2,  0,  0,  1 ],
-%  [  0,  0,  1,  0,  1 ],
-%  [  0,  0,  0,  1,  1 ],
-%  [  0,  1,  0,  0,  0 ] ]
-%gap> Determinant(t);
-%-1
-%gap> Gp11:= ConjugateGroup(G11,t^(-1));
-%<matrix group of size 48 with 3 generators>
-%gap> Gen_Dis(Gp11);
-%[ [  -1,   1,  -1,  -1,   0 ],
-%  [   0,   1,  -2,  -2,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   1,  -1,  -1,  -1 ] ]
-%---------------------------------------
-%[ [   1,  -1,   1,   1,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,   0,   0,  -1 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   0,   0 ],
-%  [  -2,   1,   0,  -3,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,   1,  -1,   0 ],
-%  [  -1,   0,   0,  -1,   1 ] ]
-%---------------------------------------
-%
-% The group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} -1&0&0&0&0\\ 0&1&-1&-1
-%&-1\\ 0&0&0&-1&0\\ 0&0&-1&0&0
-%\\ 0&0&0&0&-1\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} 1&0&1&1&1\\ 0&-1&0&0&0
-%\\ 0&0&-1&0&0\\ 0&0&0&-1&0
-%\\ 0&0&0&0&-1\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&-1&0&1&1\\ -1&0&0&-1
-%&-1\\ 0&0&0&0&-1\\ 0&0&1&0&0
-%\\ 0&0&0&-1&0\end {array} \right] 
-%$$
-%The dual group is generated by
-%$$
-% \left[ \begin {array}{ccccc} -1&0&0&0&0\\ 0&1&0&0&0
-%\\ 0&-1&0&-1&0\\ 0&-1&-1&0&0
-%\\ 0&-1&0&0&-1\end {array} \right]
-%\,\,\,
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&-1&0&0&0
-%\\ 1&0&-1&0&0\\ 1&0&0&-1&0
-%\\ 1&0&0&0&-1\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&-1&0&0&0\\ -1&0&0&0&0
-%\\ 0&0&0&1&0\\ 1&-1&0&0&-1
-%\\ 1&-1&-1&0&0\end {array} \right] 
-%$$
-%\begin{verbatim}
-%gap> Gen_Dis(G7);        
-%[ [   1,   0,   0,   0,   0 ],
-%  [  -1,   0,   1,   0,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   1,   1,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   1,   0,  -1,  -1,  -1 ],
-%  [  -1,   0,   0,   1,   1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,  -1,   0,  -1,  -1 ],
-%  [   1,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%\end{verbatim}
 Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
 $$
  \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&-1&-2&-2&2\end {array} \right]
 $$
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 1&-2&-2&2&
-%-1\\ 0&1&0&0&0\\ 0&0&1&0&0
-%\\ 0&0&0&1&0\end {array} \right]
-%$$
 With the above transformation we can see a new representative for $G_{11}$ is generated by 
 $$
 \left[ \begin {array}{cccc|c} -1&-1&-1&-1&0\\ 0&2&1&
@@ -2341,20 +1322,6 @@ $$
 \\ 2&1&2&2&0\\ -2&0&-3&-2&0
 \\ \hline 1&0&1&1&1\end {array} \right] 
 $$
-%Now by considering $M_{G_{11}}$ to be the corresponding lattice to the group $H$ generated by 
-%$$
-% \left[ \begin {array}{cccc} -1&-1&-1&-1\\ 0&2&1&2
-%\\ 0&1&2&2\\ 0&-2&-2&-3
-%\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{cccc} 1&1&1&1\\ 0&-1&0&0
-%\\ 0&0&-1&0\\ 0&0&0&-1\end {array}
-% \right] 
-% \tand
-% \left[ \begin {array}{cccc} -1&0&0&0\\ 2&0&2&1
-%\\ 2&1&2&2\\ -2&0&-3&-2
-%\end {array} \right]
-%$$
  Now we can produce
 $$
 \exactseqs{G_{11}}
@@ -2375,45 +1342,14 @@ $$
 As we can see its corresponding lattice decompose into 2 rank two lattices which are hereditarily rational.
 
 \subsection{Case $G_{12}$}
-%The group is isomorphic to $D_8 \times \mathrm{S}_4$ and is generated by 
-%$$
-%\left[ \begin {array}{ccccc} 1&0&1&0&1\\  0&1&-1&0&-
-%1\\  0&0&0&0&-1\\  0&0&0&1&0
-%\\  0&0&-1&0&0\end {array} \right] 
-%\,\,\, ,
-% \left[ \begin {array}{ccccc} 0&1&-1&-1&-1\\  1&0&1&1
-%&1\\  0&0&1&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&0&0&1&1\\  0&-1&1&0&0
-%\\  0&0&0&0&-1\\  0&0&1&0&0
-%\\  0&0&0&-1&0\end {array} \right].
-%$$
-%Its dual is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&1&0&0&0
-%\\  1&-1&0&0&-1\\  0&0&0&1&0
-%\\  1&-1&-1&0&0\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} 0&1&0&0&0\\  1&0&0&0&0
-%\\  -1&1&1&0&0\\  -1&1&0&1&0
-%\\  -1&1&0&0&1\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&-1&0&0&0
-%\\  0&1&0&1&0\\  1&0&0&0&-1
-%\\  1&0&-1&0&0\end {array} \right] 
-%$$
+
 Algorithm \ref{alg:Fixed Point} provides the matrix 
 $$
  \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&-1&-2&-2&2\end {array} \right]
 $$
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  1&-2&-2&2&
-%-1\\  0&1&0&0&0\\  0&0&1&0&0
-%\\  0&0&0&1&0\end {array} \right] 
-%$$
+
 as our desired change of basis which gives us a new representative for the conjugacy class of $G_{12}$, namely the group generated by
 $$
 \left[ \begin {array}{cccc|c} 1&0&0&0&0\\  0&2&0&1&0
@@ -2428,30 +1364,11 @@ $$
 \\  0&-1&0&0&0\\  0&2&-1&0&0
 \\ \hline 0&-1&0&0&1\end {array} \right]
 $$
-%Now we can define $M_{G_{12}}$ to be the corresponding lattice to the group generated by
-%$$
-%\left[ \begin {array}{cccc} 1&0&0&0\\  0&2&0&1
-%\\  0&2&1&2\\  0&-3&0&-2\end {array}
-% \right] 
-% \,\,\,
-% \left[ \begin {array}{cccc} 1&0&0&0\\  -2&-1&-2&-2
-%\\  -2&-2&-1&-2\\  2&2&2&3
-%\end {array} \right]
-%\tand 
-% \left[ \begin {array}{cccc} 1&1&1&1\\  0&-2&0&-1
-%\\  0&-1&0&0\\  0&2&-1&0\end {array}
-% \right] 
-%$$
 Now we get the following exact sequence for $L_{G_{12}}$
 $$
 \exactseq{G_{12}},
 $$
-%The ZClass of $M_{G_{12}}$ is given by GAP as
-%\begin{verbatim}
-%gap> G12info:= Rank1PermQuot(G12);;
-%gap> G12info.ZClassSubLat;
-%[ 4, 20, 17, 2 ]
-%\end{verbatim}
+
 where $M_{G_{12}}$ has gap ID [4,20,17,2]. A generating set of [4,20,17,2] is given by  
 $$
 \left[ \begin {array}{cccc} 0&1&0&0\\ 1&0&0&0
@@ -2467,108 +1384,14 @@ $$
 $$
 and its corresponding lattice is decomposable to rank 2 lattices which we know their rationality. Thus, $M_{G_{12}}$ is hereditarily rational and this implies that $T_{G_{12}}$ is hereditarily rational.
 \bigskip
-%
-%\begin{verbatim}
-%gap> Gen_Dis(G12);                       
-%[ [   1,   0,   1,   0,   1 ],
-%  [   0,   1,  -1,   0,  -1 ],
-%  [   0,   0,   0,   0,  -1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,  -1,   0,   0 ] ]
-%---------------------------------------
-%[ [   0,   1,  -1,  -1,  -1 ],
-%  [   1,   0,   1,   1,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   1,   0,   0,   1,   1 ],
-%  [   0,  -1,   1,   0,   0 ],
-%  [   0,   0,   0,   0,  -1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%
-%\end{verbatim}
-%
-%This is better:
-%
-%\begin{verbatim}
-%gap> Display(a);
-%[ [  1,  0,  0,  0,  0 ],
-%  [  0,  1,  0,  0,  0 ],
-%  [  0,  0,  1,  0,  0 ],
-%  [  0,  0,  0,  1,  0 ],
-%  [  0,  0,  1,  1,  1 ] ]
-%  
-%gap> Gp12:= ConjugateGroup(G12,a);
-%<matrix group of size 48 with 3 generators>
-%
-%gap> Gen_Dis(Gp12);
-%[ [   1,   0,   2,   1,   1 ],
-%  [   0,   1,  -2,  -1,  -1 ],
-%  [   0,   0,  -1,  -1,  -1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   0,   1,  -2,  -2,  -1 ],
-%  [   1,   0,   2,   2,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   1,   0,   1,   2,   1 ],
-%  [   0,  -1,   1,   0,   0 ],
-%  [   0,   0,  -1,  -1,  -1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%gap> H:= GroupByGenerators(Sub_Matrix(Gp12,[1,4],[1,4]));
-%<matrix group with 3 generators>
-%
-%gap> K:= GDual(H);
-%<matrix group with 3 generators>
-%
-%gap> CrystCatZClass(K);
-%[ 4, 20, 17, 2 ]
-%
-%\end{verbatim}
-%
-%
 
 \subsection{Case $G_{13}$}
-%A generating set of $G_{13}$ is 
-%$$
-%\left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&0&-1&0&1
-%\\  0&-1&0&0&1\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%\tand 
-% \left[ \begin {array}{ccccc} 0&1&0&1&-1\\  0&-1&1&0&0
-%\\  0&-1&0&0&0\\  1&-1&0&0&1
-%\\  0&-2&0&0&1\end {array} \right] 
-%$$
-%The dual group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&0&-1&0&0
-%\\  0&-1&0&0&0\\  0&0&0&1&0
-%\\  0&1&1&0&1\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&0&0&1&0\\  1&-1&-1&-1
-%&-2\\  0&1&0&0&0\\  1&0&0&0&0
-%\\  -1&0&0&1&1\end {array} \right].
-%$$
 By algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
 $$
 \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&0&0&1&0\end {array} \right] 
 $$
-%$$
-%\left[ \begin {array}{ccccc} 0&0&-1&0&1\\  1&0&0&0&0
-%\\  0&1&0&0&0\\  0&0&1&0&0
-%\\  0&0&0&1&0\end {array} \right] 
-%$$
 which provides the new generators of the representative of the conjugacy class of $G_{13}$ as
 $$
 \left[ \begin {array}{cccc|c} 0&-1&0&1&0\\  -1&0&0&1&0
@@ -2579,126 +1402,17 @@ $$
 \\  -2&0&-1&2&0\\  -2&0&0&1&0
 \\ \hline  1&0&1&-1&1\end {array} \right] 
 $$
-%Now by defining $M_{G_{13}}$ to be the corresponding lattice to the group generated by 
-%$$
-%\left[ \begin {array}{cccc} 0&-1&0&1\\  -1&0&0&1
-%\\  0&0&1&0\\  0&0&0&1\end {array}
-% \right] 
-% \tand
-% \left[ \begin {array}{cccc} -1&1&0&0\\  -1&0&0&0
-%\\  -2&0&-1&2\\  -2&0&0&1
-%\end {array} \right] 
-%$$
 Now we can get 
 $$\exactseq{G_{13}}.$$
 On the other hand GAP returns the GAP ID of $M_{G_{13}}$ 
-% as 
-%\begin{verbatim}
-%gap> G13info:= Rank1PermQuot(G13);;
-%gap> G13info.ZClassSubLat;
-%[ 4, 25, 9, 2 ]
-%\end{verbatim}
 In \cite{Nicole1} the author has proved that [4,25,9,2] is hereditarily rational which means $T_{G_{13}}$ is hereditarily rational.
-%\begin{verbatim}
-%
-%gap> Display(T[1]);
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,   0,   0,  -1 ] ]
-%  
-%gap> Gp13:=ConjugateGroup(G13,T[1]);
-%<matrix group of size 48 with 2 generators>
-%
-%gap> Gen_Dis(Gp13);                  
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   0,  -1,   1 ],
-%  [   0,   0,  -1,   0,   1 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   0,   1,   1,   0,  -1 ],
-%  [   1,   0,  -1,   0,   1 ],
-%  [   0,   0,  -1,   1,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,  -2,   0,   1 ] ]
-%---------------------------------------
-%
-%\end{verbatim}
-%
-%{\LARGE \textbf{Case $G_{14}$.}}
-%
-%\begin{verbatim}
-%gap> Gen_Dis(G14); 
-%[ [   0,  -1,   1,   1,   1 ],
-%  [   1,  -1,   0,   1,   1 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,   0,   0,   1 ],
-%  [   0,   0,   0,   1,   0 ] ]
-%---------------------------------------
-%[ [   0,  -1,   1,   1,   1 ],
-%  [   0,  -1,   0,   1,   1 ],
-%  [  -1,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%gap> Display(t);
-%[ [  1,  0,  0,  0,  0 ],
-%  [  0,  1,  0,  0,  0 ],
-%  [  0,  1,  1,  0,  0 ],
-%  [  0,  0,  2,  1,  1 ],
-%  [  0,  0,  0,  0,  1 ] ]
-%gap> Gp14:= ConjugateGroup(G14,t^(-1));
-%<matrix group of size 48 with 2 generators>
-%gap> Gen_Dis(Gp14);
-%[ [   0,   0,  -1,   1,   0 ],
-%  [   1,   1,  -2,   1,   0 ],
-%  [   1,   0,  -2,   1,   0 ],
-%  [   0,   0,  -2,   1,   0 ],
-%  [   0,   2,  -2,   1,  -1 ] ]
-%---------------------------------------
-%[ [   0,   0,  -1,   1,   0 ],
-%  [   0,   1,  -2,   1,   0 ],
-%  [  -1,   0,  -1,   1,   0 ],
-%  [  -2,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%\end{verbatim}
 \subsection{Case $G_{14}$}
-%A generating set of $G_{14}$ is 
-%$$
-%\left[ \begin {array}{ccccc} 0&-1&1&1&1\\  1&-1&0&1&
-%1\\  0&-1&0&0&0\\  0&0&0&0&1
-%\\  0&0&0&1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&-1&1&1&1\\  0&-1&0&1&
-%1\\  -1&0&1&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%$$
-%The dual group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 0&1&0&0&0\\  -1&-1&-1&0
-%&0\\  1&0&0&0&0\\  1&1&0&0&1
-%\\  1&1&0&1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&0&-1&0&0\\  -1&-1&0&0
-%&0\\  1&0&1&0&0\\  1&1&0&1&0
-%\\  1&1&0&0&1\end {array} \right] 
-%$$
 By algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
 $$
  \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 0&1&-1&1&1\end {array} \right] 
 $$
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&1&-1&-1&
-%1\\  0&1&0&0&0\\  0&0&1&0&0
-%\\  0&0&0&1&0\end {array} \right] 
-%$$
 which provides the new representative of the conjugacy class of $G_{14}$ as
 $$
 \left[ \begin {array}{cccc|c} 0&1&1&1&0\\  1&0&1&1&0
@@ -2709,24 +1423,9 @@ $$
 \\  0&0&0&-1&0\\  0&0&-1&0&0
 \\  \hline 0&0&1&1&1\end {array} \right] 
 $$
-%Now by defining $M_{G_{14}}$ to be the corresponding lattice to the group generated by 
-%$$
-%\left[ \begin {array}{cccc} 0&1&1&1\\  1&0&1&1
-%\\  -1&0&-1&0\\  -1&0&0&-1
-%\end {array} \right] 
-%\tand
-% \left[ \begin {array}{cccc} 0&1&1&1\\  -1&1&1&1
-%\\  0&0&0&-1\\  0&0&-1&0\end {array}
-% \right] 
-%$$
 Now we can get 
 $$\exactseq{G_{14}}.$$
 On the other hand GAP returns the GAP ID of $M_{G_{14}}$  as [ 4, 25, 8, 5 ].
-%\begin{verbatim}
-%gap> G14info:= Rank1PermQuot(G14);;
-%gap> G14info.ZClassSubLat;
-%[ 4, 25, 8, 5 ]
-%\end{verbatim}
 In \cite{Nicole1} it is shown that the subgroups of [4,25,8,5] are rational except for possibly 8 subgroups $$[4, 6, 2, 11], [4, 12, 4, 13], [4, 13, 2, 6], [4, 13, 3, 6], [4, 13, 7, 12], [4, 24, 4, 6], [4, 25, 4, 5], [4, 25, 8, 5].$$
 Each of the above groups corresponds to a subgroup of $G_{14}$ and except for them, the rest are rational.
 \\
@@ -2743,17 +1442,6 @@ $$
 \\ -1&0&0&0&0\end {array} \right].
 $$
 This is the $G$-lattice discussed in Example \ref{exmp:Decompose}. So the information is being recalled from that example.
-%By looking at the list of rank 5 $\Q$-classes provided in \cite{Hoshi} we can see that a generating set for the $\Q$-class is 
-%$$
-%\left[ \begin {array}{ccc|cc} 0&0&1&0&0\\1&-1&1&0&0
-%\\0&-1&0&0&0\\ \hline 0&0&0&0&1
-%\\0&0&0&1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccc|cc} 1&-1&1&0&0\\1&0&0&0&0
-%\\0&0&-1&0&0\\ \hline 0&0&0&0&1
-%\\0&0&0&-1&-1\end {array} \right]. 
-%$$
-%It is clear that $L_\Q$ is decomposable to $M'= \langle e_1, e_2 ,e_3 \rangle_\Q$ and $N' = \langle e_4, e_5 \rangle_\Q$. Since we have a decomposition we can easily apply (\ref{alg:Decompose}). Since the group is generated with two elements we can get a transformation exactly by the same method we used in example (\ref{exmp:Decompose}). By forming a linear system and solving it we obtain 
 $$
 T = \left[ \begin {array}{ccccc} 1&0&1&0&-1\\ 0&1&0&0&1
 \\0&0&0&1&1\\0&0&1&0&0
@@ -2768,8 +1456,7 @@ $$
  \left[ \begin {array}{ccc|cc} 0&0&-1&0&0\\-1&0&0&0&0
 \\0&-1&0&0&0\\ \hline 0&0&0&0&-1
 \\-1&0&0&1&-1\end {array} \right].
-$$
-%Now we can define $M = \langle e_1, e_2, e_3 \rangle_\Z \subset L_{G_{15}}$ to 
+$$ 
 Now we get 
 $$0 \longrightarrow M \longrightarrow L_{G_{15}}\longrightarrow L/M \longrightarrow 0.$$
 One can see that $L/M$ is  a rank 2 lattice which is the corresponding lattice to the group, $H$ generated by 
@@ -2785,196 +1472,14 @@ $$
 \end{bmatrix}.
 $$ 
 $H$ is isomorphic to $\mathrm{S}_3$ and its corresponding lattice is not even sign permutation. We can consider maximal subgroups of $G_{15}$ as we did for the irreducible lattices.
-%\begin{verbatim}
-%gap> Gen_Dis(cryst5[623]);
-%[ [   0,   0,   1,   0,   0 ],
-%  [   1,  -1,   1,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   0,   0,   0,   1 ],
-%  [   0,   0,   0,   1,   0 ] ]
-%---------------------------------------
-%[ [   1,  -1,   1,   0,   0 ],
-%  [   1,   0,   0,   0,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,   0,   0,   1 ],
-%  [   0,   0,   0,  -1,  -1 ] ]
-%---------------------------------------
-%
-%gap> Display(t);
-%[ [   0,   0,   0,  -1,  -1 ],
-%  [   1,  -1,   1,   1,  -1 ],
-%  [   0,   1,   0,   0,   1 ],
-%  [   1,   0,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ] ]
-%gap> Determinant(t);
-%-1
-%gap> Gp15:= ConjugateGroup(G15,t^(-1));
-%<matrix group of size 48 with 2 generators>
-%gap> Gen_Dis(Gp15);
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   2,   1,   2,   0,   0 ],
-%  [  -1,  -1,  -1,   0,   0 ],
-%  [  -1,  -1,  -1,   1,   0 ],
-%  [   1,   1,   2,  -1,  -1 ] ]
-%---------------------------------------
-%[ [   0,   0,   1,   0,   0 ],
-%  [   2,   1,   0,   0,   0 ],
-%  [  -1,  -1,  -1,   0,   0 ],
-%  [   0,  -1,  -1,   0,   1 ],
-%  [   1,   1,   1,  -1,  -1 ] ]
-%---------------------------------------
-%
-%gap> H:= Sub_Lattice(Gp15,[1,3],[1,3]);
-%Group([ [ [ -1, 0, 0 ], [ 2, 1, 2 ], [ -1, -1, -1 ] ], 
-%			[ [ 0, 0, 1 ], [ 2, 1, 0 ], [ -1, -1, -1 ] ] ])
-%gap> CrystCatZClass(H);
-%[ 3, 7, 5, 1 ]
-%
-%
-%\end{verbatim}
-\newpage
-\begin{figure}[H]
-\centering
-\tikzstyle{every node}=[draw=black,thick,anchor=west]
-\tikzstyle{selected}=[fill=gray!30]
-\begin{tikzpicture}[%
-  grow via three points={one child at (2,-0.8) and
-  two children at (2,-0.8) and (2,-1.6)},
-  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-  \node {$G15$}
-    child { node [selected]{$[ 5, 81, 54 ]$}
-%		child{ node[selected]{$[ 5, 18, 28 ]$}}
-%		child{ node{$[ 5, 173, 4 ]$}
-%			child{ node[selected]{$[ 5, 6, 3 ]$}}
-%			child{ node[selected]{$[ 5, 164, 2 ]$}}		
-%		}
-%		child[missing]{}
-%		child[missing]{}
-%		child{ node[selected]{$[ 5, 174, 2 ]$}}
-%		child{ node{$[ 5, 461, 4 ] $}
-%			child{ node[selected]{$[ 5, 6, 3 ]$}}
-%			child{ node[selected]{$[ 5, 164, 2 ]$}}		
-%		}    
-    }
-%	child[missing]{}
-%	    child [missing] {}	
-%    child [missing] {}
-%    child [missing] {}
-%    child [missing] {}	
-%    child [missing] {}	
-%    child [missing] {}			
-    child { node {$[ 5, 391, 4 ]$}
-		child{ node[selected]{$[ 5, 18, 28 ]$}}
-		child{ node{$[ 5, 173, 4 ]$}
-			child{ node[selected]{$[ 5, 6, 3 ]$}}
-			child{ node[selected]{$[ 5, 164, 2 ]$}}		
-		}
-		child[missing]{}
-	child[missing]{}
-		child{ node[selected]{$[ 5, 174, 2 ]$}}
-		child{ node{$[ 5, 461, 4 ] $}
-			child{ node[selected]{$[ 5, 6, 3 ]$}}
-			child{ node[selected]{$[ 5, 164, 2 ]$}}		
-		}    
-    }
-    child[missing]{}
-    child[missing]{}
-    child [missing] {}
-       child [missing] {}
-          child [missing] {}
-      child [missing] {}
-        child [missing] {}
-    child { node {$[ 5, 606, 4 ]$}
-		child{ node[selected]{$[ 5, 22, 14 ]$}}
-		child{ node{$[ 5, 461, 4 ]$}
-			child{ node[selected]{$[ 5, 6, 3 ]$}}
-			child{ node[selected]{$[ 5, 164, 2 ]$}}			
-		}
-		child[missing]{}
-		child[missing]{}
-		child{ node{$[ 5, 580, 4 ]$} 
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
-		}     
-    }
-	    child [missing] {}	
-    child [missing] {}
-    child [missing] {}
-    child [missing] {}	
-    child [missing] {}	
-    child [missing] {}		
-     child { node {$[  5, 607, 4  ]$}
-		child{ node[selected]{$[ 5, 98, 28 ]$}}
-		child{ node[selected]{$[ 5, 174, 2 ]$}}
-		child{ node{$ [ 5, 580, 4 ]$} 
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
-		} 
-		child[missing]{}  
-    }
-     child [missing] {}				
-    child [missing] {}				
-    child [missing] {}
-     child [missing] {}						
-     child { node {$[ 5, 608, 4 ]$}
-		child{ node[selected]{$[ 5, 99, 57 ]$}}
-		child{ node{$[ 5, 173, 4 ]$}
-			child{ node[selected]{$[ 5, 6, 3 ]$}}
-			child{ node[selected]{$[ 5, 164, 2 ]$}}			
-		}
-		child[missing]{}
-		child[missing]{}
-		child{ node{$[ 5, 580, 4 ]$} 
-			child{ node[selected]{$[ 5, 19, 14 ]$}}
-			child{ node[selected]{$ [ 5, 164, 2 ]$}}		
-		} 
-		child[missing]{}  
-    };
-   
-\end{tikzpicture}
-\caption{Conjugacy classes of subgroups of $G_{15}$. Algorithm (1) works for the gray ones.}
-\end{figure}
 
 \subsection{Case $G_{16}$.}
-%A generating set of $G_{16}$ is 
-%$$
-%\left[ \begin {array}{ccccc} 1&0&-1&-1&1\\  0&1&-1&-
-%1&1\\  0&0&1&0&0\\  0&0&-1&0&1
-%\\  0&0&1&1&0\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} 1&0&-1&-1&0\\  0&1&-1&-
-%1&0\\  0&0&0&0&1\\  0&0&-1&-1&-1
-%\\  0&0&1&0&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} -1&0&0&1&-1\\  0&1&0&0&0
-%\\  0&0&1&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%$$
-%The dual group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&1&0&0&0
-%\\  -1&-1&1&-1&1\\  -1&-1&0&0&1
-%\\  1&1&0&1&0\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&1&0&0&0
-%\\  -1&-1&0&-1&1\\  -1&-1&0&-1&0
-%\\  0&0&1&-1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} -1&0&0&0&0\\  0&1&0&0&0
-%\\  0&0&1&0&0\\  1&0&0&1&0
-%\\  -1&0&0&0&1\end {array} \right] 
-%$$
 Algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
 $$
  \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 0&1&0&0&0\end {array} \right] 
 $$
-%$$
-%\left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&0&0&0&1
-%\\  0&1&0&0&0\\  0&0&1&0&0
-%\\  0&0&0&1&0\end {array} \right] 
-%$$
 which provides the new generators of the representative of the conjugacy class of $G_{16}$ as
 $$
 \left[ \begin {array}{cccc|c} 1&-1&-1&1&0\\  0&1&0&0&0
@@ -2989,93 +1494,19 @@ $$
 \\  0&0&1&0&0\\  0&0&0&1&0
 \\ \hline 0&0&0&0&1\end {array} \right] 
 $$
-%Now by defining $M_{G_{16}}$ to be the corresponding lattice to the group generated by 
-%$$
-% \left[ \begin {array}{cccc} 1&-1&-1&1\\  0&1&0&0
-%\\  0&-1&0&1\\  0&1&1&0\end {array}
-% \right] 
-% \,\,\,
-% \left[ \begin {array}{cccc} 1&-1&-1&0\\  0&0&0&1
-%\\  0&-1&-1&-1\\  0&1&0&0
-%\end {array} \right]
-%\tand 
-% \left[ \begin {array}{cccc} -1&0&1&-1\\  0&1&0&0
-%\\  0&0&1&0\\  0&0&0&1\end {array}
-% \right] 
-%$$
 Now we can get 
 $$\exactseq{G_{16}}.$$
 On the other hand GAP returns the GAP ID of $M_{G_{16}}$  as [ 4, 14, 10, 2 ].
-%\begin{verbatim}
-%gap> G16info:= Rank1PermQuot(G16);;
-%gap> G16info.ZClassSubLat;         
-%[ 4, 14, 10, 2 ]
-%\end{verbatim}
 In \cite{Nicole1} it is shown that [4, 31, 7, 1] is hereditarily rational. Using GAP one can verify that [4,14,10,2] (up to conjugacy) is a subgroup of [4,31,7,1] which means $T_{G_{16}}$ is hereditarily rational.\\
 \\
-%\begin{verbatim}
-%gap> Gen_Dis(G16);                       
-%[ [   1,   0,  -1,  -1,   1 ],
-%  [   0,   1,  -1,  -1,   1 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,  -1,   0,   1 ],
-%  [   0,   0,   1,   1,   0 ] ]
-%---------------------------------------
-%[ [   1,   0,  -1,  -1,   0 ],
-%  [   0,   1,  -1,  -1,   0 ],
-%  [   0,   0,   0,   0,   1 ],
-%  [   0,   0,  -1,  -1,  -1 ],
-%  [   0,   0,   1,   0,   0 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   1,  -1 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%\end{verbatim}
 
 \subsection{Case $G_{17}$}
-%A generating set of $G_{17}$ is 
-%$$
-%\left[ \begin {array}{ccccc} 0&0&-1&0&0\\  0&1&0&0&0
-%\\  -1&0&0&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} -1&0&0&1&-1\\  0&-1&0&-
-%1&1\\  0&0&-1&-1&1\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&1&0&0&0\\  0&-1&0&0&0
-%\\  0&-1&1&0&0\\  0&1&0&1&0
-%\\  0&-1&0&0&1\end {array} \right] 
-%$$
-%The dual group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 0&0&-1&0&0\\  0&1&0&0&0
-%\\  -1&0&0&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} -1&0&0&0&0\\  0&-1&0&0&0
-%\\  0&0&-1&0&0\\  1&-1&-1&1&0
-%\\  -1&1&1&0&1\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  1&-1&-1&1&
-%-1\\  0&0&1&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%$$
 Algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
 $$
  \left[ \begin {array}{ccccc} 1&0&0&-1&0\\ 0&1&0&0&0
 \\ 0&0&1&0&0\\ 0&0&0&0&1
 \\ 0&0&0&1&1\end {array} \right] 
 $$
-%$$
-%\left[ \begin {array}{ccccc} 1&0&0&-1&1\\  0&1&0&0&0
-%\\  0&0&1&0&0\\  0&0&0&-1&1
-%\\  0&0&0&1&0\end {array} \right] 
-%$$
 which provides the new generators of the representative of the conjugacy class of $G_{17}$ as
 $$
  \left[ \begin {array}{cccc|c} 0&0&-1&0&0\\  0&1&0&0&0
@@ -3090,128 +1521,19 @@ $$
 \\  0&-1&1&0&0\\  0&-3&0&1&0
 \\ \hline 0&2&0&0&1\end {array} \right] 
 $$
-%Now by defining $M_{G_{17}}$ to be the corresponding lattice to the group generated by 
-%$$
-%\left[ \begin {array}{cccc} 0&0&-1&0\\  0&1&0&0
-%\\  -1&0&0&0\\  1&0&1&1\end {array}
-% \right] 
-% \,\,\,
-% \left[ \begin {array}{cccc} -2&0&0&-1\\  1&-1&0&1
-%\\  1&0&-1&1\\  3&0&0&2\end {array}
-% \right] 
-% \tand
-% \left[ \begin {array}{cccc} 1&1&0&0\\  0&-1&0&0
-%\\  0&-1&1&0\\  0&-3&0&1\end {array}
-% \right] 
-%$$
 we can get 
 $$\exactseq{G_{17}}.$$
 On the other hand GAP returns the GAP ID of $M_{G_{17}}$  as [ 4, 13, 7, 12 ].
-%\begin{verbatim}
-%gap> G17info:= Rank1PermQuot(G17);;
-%gap> G17info.ZClassSubLat;         
-%[ 4, 13, 7, 12 ]
-%\end{verbatim}
 In \cite{Nicole1} it is shown that the subgroups of [4,13,7,12] are rational except for possibly 5 subgroups $$[4, 6, 2, 11], [4, 12, 4, 13], [4, 13, 2, 6], [4, 13, 3, 6], [4, 13, 7, 12]$$
 Each of the above groups corresponds to a subgroup of $G_{17}$ and except for them, the rest are rational.
 
-%\begin{verbatim}
-%
-%gap> Gen_Dis(G17);
-%[ [   0,   0,  -1,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [  -1,   0,   0,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   1,  -1 ],
-%  [   0,  -1,   0,  -1,   1 ],
-%  [   0,   0,  -1,  -1,   1 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [   1,   1,   0,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,  -1,   1,   0,   0 ],
-%  [   0,   1,   0,   1,   0 ],
-%  [   0,  -1,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%
-%gap> Display(t);
-%[ [  1,  0,  1,  0,  0 ],
-%  [  0,  1,  0,  0,  0 ],
-%  [  0,  0,  0,  1,  0 ],
-%  [  0,  0,  0,  0,  1 ],
-%  [  0,  0,  1,  0,  0 ] ]
-%gap> Determinant(t);
-%1
-%gap> Gp17:= ConjugateGroup(G17,t^(-1));
-%<matrix group of size 16 with 3 generators>
-%gap> Gen_Dis(Gp17);                    
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [  -1,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,  -1,  -1,   1,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,  -1,   1,  -1 ] ]
-%---------------------------------------
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,  -1,   0,   0,   0 ],
-%  [   0,   1,   1,   0,   0 ],
-%  [   0,  -1,   0,   1,   0 ],
-%  [   0,  -1,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%
-%
-%\end{verbatim}
-
 \subsection{Case $G_{18}$}
-%A generating set of $G_{18}$ is 
-%$$
-%\left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&1&0&0&0
-%\\  0&0&1&0&0\\  0&0&0&0&-1
-%\\  0&0&0&-1&0\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} 0&-1&1&1&-1\\  -1&0&-1&0
-%&0\\  0&0&-1&-1&1\\  0&0&0&0&-1
-%\\  0&0&0&-1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&0&-1&0&0\\  0&1&0&0&0
-%\\  -1&0&0&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%$$
-%The dual group is generated by 
-%$$
-% \left[ \begin {array}{ccccc} 1&0&0&0&0\\  0&1&0&0&0
-%\\  0&0&1&0&0\\  0&0&0&0&-1
-%\\  0&0&0&-1&0\end {array} \right] 
-%\,\,\,
-% \left[ \begin {array}{ccccc} 0&-1&0&0&0\\  -1&0&0&0&0
-%\\  1&-1&-1&0&0\\  1&0&-1&0&-1
-%\\  -1&0&1&-1&0\end {array} \right] 
-%\tand
-% \left[ \begin {array}{ccccc} 0&0&-1&0&0\\  0&1&0&0&0
-%\\  -1&0&0&0&0\\  0&0&0&1&0
-%\\  0&0&0&0&1\end {array} \right] 
-%$$
 Algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
 $$
  \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
 \\ 0&0&0&1&0\\ 0&0&0&0&1
 \\ 1&0&-1&1&-1\end {array} \right]
 $$
-%$$
-%\left[ \begin {array}{ccccc} 0&1&-1&1&1\\  1&0&0&0&0
-%\\  0&1&0&0&0\\  0&0&1&0&0
-%\\  0&0&0&1&0\end {array} \right] 
-%$$
 which provides the new generators of the representative of the conjugacy class of $G_{18}$ as
 $$
 \left[ \begin {array}{cccc|c} 1&0&0&0&0\\  0&1&0&0&0
@@ -3226,83 +1548,11 @@ $$
 \\  0&1&1&0&0\\  0&-1&0&1&0
 \\ \hline 0&-1&0&0&1\end {array} \right] 
 $$
-%Now by defining $M_{G_{18}}$ to be the corresponding lattice to the group generated by 
-%$$
-%\left[ \begin {array}{cccc} 1&0&0&0\\0&1&0&0
-%\\0&0&0&-1\\0&0&-1&0\end {array}
-% \right] 
-% \left[ \begin {array}{cccc} 0&-1&0&0\\-1&0&0&0
-%\\1&-1&-1&0\\-1&1&0&-1
-%\end {array} \right] 
-% \left[ \begin {array}{cccc} 1&0&0&0\\0&-1&0&0
-%\\0&1&1&0\\0&-1&0&1\end {array}
-% \right] 
-%$$
 Now we can get 
 $$\exactseq{G_{18}}.$$
 On the other hand GAP returns the GAP ID of $M_{G_{18}}$  as [ 4, 13, 7, 12 ].
-%\begin{verbatim}
-%gap> G18info:= Rank1PermQuot(G18);;
-%gap> G18info.ZClassSubLat;
-%[ 4, 13, 7, 12 ]
-%\end{verbatim}
 In \cite{Nicole1} it is shown that the subgroups of [4,13,7,12] are rational except for possibly 5 subgroups $$[4, 6, 2, 11], [4, 12, 4, 13], [4, 13, 2, 6], [4, 13, 3, 6], [4, 13, 7, 12]$$
 Each of the above groups corresponds to a subgroup of $G_{18}$ and except for them, the rest are rational.
-%\begin{verbatim}
-%gap> Gen_Dis(G18);                   
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   0,  -1 ],
-%  [   0,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%[ [   0,  -1,   1,   1,  -1 ],
-%  [  -1,   0,  -1,   0,   0 ],
-%  [   0,   0,  -1,  -1,   1 ],
-%  [   0,   0,   0,   0,  -1 ],
-%  [   0,   0,   0,  -1,   0 ] ]
-%---------------------------------------
-%[ [   0,   0,  -1,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [  -1,   0,   0,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%gap> Display(t);
-%[ [   1,   0,   1,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [   0,   0,   0,   0,   1 ],
-%  [   0,   0,   1,  -1,   0 ] ]
-%gap> Determinant(t);
-%1
-%gap> Gp18:= ConjugateGroup(G18,t(-1));
-%<func> must be a function (not a list (plain,dense))
-%gap> Gp18:= ConjugateGroup(G18,t^(-1));
-%<matrix group of size 16 with 3 generators>
-%gap> Gen_Dis(Gp18);                    
-%[ [   1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,   1,   1,   1 ] ]
-%---------------------------------------
-%[ [   0,  -1,   0,   0,   0 ],
-%  [  -1,   0,   0,   0,   0 ],
-%  [   0,   0,   0,  -1,   0 ],
-%  [   0,   0,  -1,   0,   0 ],
-%  [   0,   0,  -2,   2,  -1 ] ]
-%---------------------------------------
-%[ [  -1,   0,   0,   0,   0 ],
-%  [   0,   1,   0,   0,   0 ],
-%  [   0,   0,   1,   0,   0 ],
-%  [   0,   0,   0,   1,   0 ],
-%  [  -1,   0,   0,   0,   1 ] ]
-%---------------------------------------
-%
-%
-%\end{verbatim}
 \subsection{Conclusion}\label{conc}
 The 18 maximal indecomposable stably rational lattices found in \cite{Hoshi} are divided into 4 families. The first family are the ones interpreted as lattices of root systems which are hereditarily rational. The second family contains all lattices on which Algorithm \ref{alg:Fixed Point} will not fail. The third family contains lattices on which  Algorithm \ref{alg:Sign Fixed Point} does not fail while Algorithm \ref{alg:Fixed Point} fails. The last family contains all lattices on which either, both Algorithms \ref{alg:Fixed Point} and \ref{alg:Sign Fixed Point} fail but still the general idea of reduction works, or they are irreducible.\\
 \\
@@ -3486,42 +1736,16 @@ Number & CARAT ID & $G$ & $\#G$ & Description.\\\hline
 The union of the set of groups in Table \ref{SubIrreducible} and the set of subgroups of the groups in Table \ref{IrreducibleSubs}, is the set of all subgroups of $G_8, G_9, G_{10}$ and $G_{15}$.
 \end{remark}
 Appendix B presents tables of conjugacy classes of indecomposable subgroups of $\mathrm{GL}(5,\Z)$ which correspond to stably rational tori of dimension 5 from Hoshi and Yamasaki's list. From this list, those stably rational tori of dimension 5 whose rationality is unknown are listed.
-% \begin{table}[H]
-%\centering
-%\begin{tabular}{llllll} 
-%Number & CARAT ID & $G$ & $\#G$ & Description.\\\hline
-% 1 (done) & $(5,942,1)$ & ${\rm Imf}(5,1,1)$ & $3840$ & The root lattice of $B_5$ \\
-%2 (done) & $(5,953,4)$ & $S_6$ & $720$ &  The root lattice of $A_5$ \\
-%3 (done) & $(5,726,4)$ & $C_2^4\rtimes S_4$ & $384$   & The root lattice of $B_4$  \\
-%4  & $(5,919,4)$ & $C_2\times S_5$ & $240$  &  {\footnotesize Quot: rank 1 sign perm. Inv space $[4,31,7,1]$ $( \mathbb{Z}A_4$,$Aut ( A_4 ))$ }\\
-%5 & $(5,801,3)$ & $C_2\times (S_3^2\rtimes C_2)$ & $144$  &{\footnotesize Quot: rank 1 sign perm. Inv space $[ 4, 29, 9, 2 ]$  }  \\
-%6 & $(5,655,4)$ & $D_4^2\rtimes C_2$ & $128$  & {\footnotesize Quot: rank 1 sign perm. Inv space $[4,32,17,1]$  }  \\
-%7 (done) & $(5,911,4)$ & $S_5$ & $120$  & $[ 4, 31, 4, 1 ]$  \\
-%8 & $(5,946,2)$ & $S_5$ & $120$  & Irreducible \\
-%9 & $(5,946,4)$ & $S_5$ & $120$  & Irreducible  \\
-%10 & $(5,947,2)$ & $S_5$ ,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\ & $120$ & Irreducible  \\
-%11 & $(5,337,12)$ & $D_4\times S_3$ & $48$  &  {\footnotesize Quot: rank 1 sign perm. Inv space $[ 4, 20, 20, 4 ]$  } &\\
-%12 (done) & $(5,341,6)$ & $D_4\times S_3$ & $48$  & $[ 4, 20, 17, 2 ]$ &\\
-%13 (done) & $(5,531,13)$ & $C_2\times S_4$ & $48$  &  {\small The inv. sp. is Wyle group of $A_3$(use $e_3$)}$[ 4, 25, 9, 2 ]$ &\\
-%14  (done)& $(5,533,8)$ & $C_2\times S_4$ & $48$  & $[ 4, 25, 8, 5 ]$ &\\
-%15 & $(5,623,4)$ & $C_2\times S_4$ & $48$ &  &\\
-%16  (done) & $(5,245,12)$ & $C_2^2\times S_3$ & $24$ & $[ 4, 14, 10, 2 ]$&\\
-%17  (done)& $(5,81,42)$ & $C_2\times D_4$ & $16$  & $[ 4, 13, 7, 12 ]$&\\
-%18  (done)& $(5,81,48)$ & $C_2\times D_4$ & $16$  &$[ 4, 13, 7, 12 ]$ &
-%\end{tabular}
-%\caption{Table $1$: the maximal $18$ groups 
-%in the remaining $311$ cases\vspace*{2mm}}
-%\end{table}
-%\addcontentsline{toc}{chapter}{Bibliography}
-%%% ***   Set the bibliography style.   ***
-%Appendices.
-%\begin{appendices}
-%%\include{appendixa}
-%\include{appendixb}
-%\end{appendices}
-%
+
+\begin{appendices}
+%\include{appendixa}
+\include{appendixb}
+\include{appendixc}
+\include{appendixd}
+\end{appendices}
+
 \bibliographystyle{plain} % (change according to your preference)
 %%%% ***   Set the bibliography file.   ***
-\bibliography{westernthesis}{}
+\bibliography{bibliography}{}
 %%%
 \end{document}
