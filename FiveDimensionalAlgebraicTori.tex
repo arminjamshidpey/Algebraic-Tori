@@ -35,7 +35,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
-\usepackage[a4paper, total={7in, 10in}]{geometry}
+%\usepackage[a4paper, total={7in, 10in}]{geometry}
 
 
 \hypersetup{
@@ -110,9 +110,9 @@ $X$ is a subfield of a purely transcendental extension of $F$. Geometrically
 this means there exist a dominant rational map from $\mathbb{A}^n$ to $X$ for
 some $n$. 
 
-It can be seen that rationality implies stable rationality and it implies 
-unirationality. It is well-known that the converses of these implications
-do not hold in general. 
+It can be seen that rationality implies stable rationality and the later implies 
+unirationality. It is well-known that none of the converses of these implications
+hold in general for varieties. 
 
 Assume $X$ is a quasi projective $F$-variety. A $F$-variety $Y$ is called an 
 $F$-form of $X$ if $X \otimes_k \bar{F} \cong Y$. A $d$-dimensoinal algebraic 
@@ -219,6 +219,134 @@ main methods that we will use, both of which were used in \cite{Nicole1}. The
 first method is reducing the rationality of a five dimensional torus to rationality 
 in lower dimensions. The second one is to see them as lattices of which the rationality is known.
 
+\section{$G$-Lattices}\label{G-Lattices}
+It is known that there is a duality between algebraic tori and \glat s. In order to be able to discuss the duality, we briefly introduce \glat s in this section. For a more detailed discussion see \cite[Chapters 1 and 2]{Lorenz}.\\ \\
+A lattice is a free $\mathbb{Z}$-module of finite rank. As a $\Z$-module, it is isomorphic to $\mathbb{Z}^n$ for some $n$. If we have a group $G$, we can endow the lattice with an action of $G$. If $G$ acts on a lattice $L$ by automorphisms i.e. there exists $$ G \longrightarrow GL(M) \cong \mathrm{GL}(n,\mathbb{Z}),$$ 
+we say $L$ is a $G$-lattice. We can equivalently say that $\G$-lattices are free $\Z$-modules of finite rank which is also $\mathbb{Z}[G]$-modules, for $\mathbb{Z}[G]$ the integral group ring over $G$. A $G$-equivariant, $ \mathbb{Z}$-linear map between $G$-lattices is called a homomorphism of $G$-lattices.\\
+\\For a given \glat \, $L$ we define $$ L^\G = \lbrace l \in L : g.l=l,  \,\, \,\,  \forall g \in \G \rbrace. $$
+
+Now let $R$ be an arbitrary commutative (unital) ring. For any \glat  \, $L$ we can form the group algebra $R[L]$ and the action of $G$ on $L$ can be extended to an action on $R[L]$. The subalgebra of all $G$-invariant elements in $R[L]$ $$ R[L]^ \G = \lbrace l \in R[L] : g.l = l, \,\,\, \forall g \in \G \rbrace$$ is called the multiplicative invariant algebra. Studying this algebra is the subject of multiplicative invariant theory. 
+\\
+\\
+The group algebra $R[L]$ of a \glat , is isomorphic to the Laurent polynomial algebra \linebreak $R[x_1^{\pm 1}, x_2^{\pm 1}, \ldots , x_n^{\pm 1}] $ and the lattice itself becomes a multiplicative subgroup of all monomials.
+\\
+\\
+If $L$ and $L'$ are two \glat  s then $\mathrm{Hom}_{\Z}(L,L')$, the set of all $\Z$-linear maps from $L$ to $L'$, is a \glat \,\, with the following action $$ (g.f)(m) = g.(f(g^{-1}.m)).$$
+For $L'=\Z$ (with trivial action of $G$), we get the \glat \,\,  $L^* = \mathrm{Hom}_{\Z}(L,\Z)$ which is called the dual lattice of $L$.\\
+\\Suppose $L$ is a $G$-lattice and $H$ is a subgroup of $G$. $L$ can be considered as an $H$-lattice. The new $H$-lattice is called restricted and is denoted by $L\downarrow^G_H$.\\
+\\Assume $H$ is a finite index subgroup of $G$ and $L$ is an $H$-lattice. The $G$ module $\Z[H] \otimes_{\Z[G]} L$ is a $G$-lattice which is called the induced $G$-lattice and is denoted by $L\uparrow_H^G$. 
+\begin{definition}
+A \glat \,\, $L$ is called a permutation lattice if there exists a $\Z$ -basis $X$ for $L$ such that, $G$ acts as permutation group on $X$. We denote $L$ by $\Z[X]$.
+\end{definition}
+%\begin{example} Let $H$ be a finite index subgroup of a group $G$ and $G/H =\lbrace g_1H,g_2H, \ldots , g_nH \rbrace$ be a complete representative set of left cosets of $H$ in $G$. Then $ \Z [G/H]$ is a $G$-lattice with the action $g.g_iH = (gg_i)H$. It is easy to see that $G$ acts as a permutation group on the basis so it is a permutation lattice.
+%\end{example}
+%It is known that the permutation $G$-lattice $\Z[G/H]$ is isomorphic to $\Z\uparrow_H^G$.
+%\begin{lemma}\cite[Proposition 10.28]{Curtis}
+%If $L$ is a $H$-lattice and $H$ is a subgroup of $G$ of finite index, then $$L^*\uparrow_H^G \cong (L\uparrow_H^G)^*.$$
+%\end{lemma} 
+%\begin{lemma}\cite[Section 2.2]{Lorenz}
+% A \glat \,$L$ is a permutation lattice if and only if $ L \cong \bigoplus_H \Z [\G/H]$ where $H$ is a finite index subgroup of $G$.
+%\end{lemma}
+%\noindent
+%Since the trivial $H$-lattice $\Z$ is self dual, as a corollary of the above lemmas we can conclude that, any permutation lattice is self dual.\\
+%\\
+%It is important to notice that direct sum (and tensor product) of permutation lattices is still permutation.
+\begin{definition}
+We call a \glat \,$L$, decomposable if there are nontrivial \glat s $L_1$ and $ L_2$ such that $ L\cong L_1 \oplus L_2$. $L$ is called indecomposable if it is not decomposable.
+\end{definition}
+\noindent
+If $L$ is decomposable then it is reducible, but the converse is not true for lattices.
+\begin{definition}
+A \glat \,$L$ is called reducible if $L$ has a nontrivial $G$-invariant subspace $M$ such that $L/M$ is torsion free. $L$ is called irreducible if it is not reducible. 
+\end{definition}
+%\noindent
+%Now let $L$ and $L'$ are two \glat s. $L$ and $L'$ are stably permutation equivalent if and only if there exist permutation lattices $P$ and $P'$ such that $$ L \oplus P \cong L' \oplus P'.$$
+%In fact the above notion defines an equivalence relation on \glat s. We denote the equivalence class of $L$ by $[L]$.
+%\begin{definition}
+%A \glat \,$L$ is called stably permutation if $[L] = [0]$ i.e. there exist permutation lattices $P$ and $P'$ such that $$L \oplus P \cong P'$$
+%\end{definition}
+%\noindent
+%We can also define addition on the set of all equivalence classes of stably permutation equivalence relation. For $G$-lattices $L$ and $L'$, define $$ [L] + [L'] = [L \oplus L'] $$ Note that it is well defined.\\
+%\\
+%Having this addition on the set of equivalence classes turns the set to an additive monoid which we denote it by $\mathrm{SP}_{\G}$. This is obviously a commutative monoid with [0] as the identity.
+%\begin{definition}
+%A \glat \,is called permutation projective or invertible if its corresponding class in $\mathrm{SP}_\G$ is invertible. i.e. there exists an $L'$ such that $ [L] +[L']=[0]$.
+%\end{definition}
+%\noindent
+%The above definition says, there are $P$ and $P'$ permutation lattices such that $ L \oplus L' \oplus P \cong P' $. So $L$ is invertible if and only if $L$ is a direct summand of a permutation lattice.\\
+%\\ 
+%Let $G$ be a finite group. Let us denote the Tate cohomology functor by $\hat{H}^i(G,.)$ (for $i \in \Z$) (See \cite[Chapter 6]{Brown}). Here we are just interested in  $\hat{H}^{\pm 1}(G,.)$. 
+%%We know that $\hat{H}^{ i}(G,.) = H^{ i}(G,.)$ for $i>0$. For a \glat \,\,$L$ and a subgroup $H$ of $G$ we can see $\hat{H}^{- 1}(H,L)$ as below $$ \hat{H}^{-1}(H,L) = L(H)/[H,L]$$  Where $$ [H,L] = \sum_{g \in H} [g,L], \,\,\,\, [g,L]= \lbrace g(l)-l : l \in L \rbrace, \,\,\,\, L(H) = \lbrace l \in L : \sum_{h \in H} h(l)=0 \rbrace.$$
+% \begin{definition}
+% A \glat \,$L$ is $\hat{H}^i$- trivial if $\hat{H}^{i}(H,L) = 0$  for all $H \leqslant \G$.
+% \end{definition}
+%\begin{definition}
+%We  call a \glat \,$L$, flasque (coflasque) if it is $\hat{H}^{-1}$- trivial ($\hat{H}^1$- trivial).
+%\end{definition}
+%
+%\begin{lemma}\cite[Page 36]{Lorenz}
+%Let $L$ be a \glat \,\,then $$ \hat{H}^i(\G, L) \cong \hat{H}^{-i}(\G , L^*).$$
+%\end{lemma}
+%
+%%\begin{lemma}
+%%Let L be an invertible \glat \,\, , then for all $H \leqslant G$ $$ \hat{H}^1(H, L) = \hat{H}^{-1}(H , L)=0.$$
+%%\end{lemma}
+%
+%\begin{definition}
+%An exact sequence of \glat s $$ 0 \longrightarrow L \longrightarrow P \longrightarrow F \longrightarrow 0$$ is called a flasque resolution of $L$, if $P$ is a permutation lattice and $F$ is flasque. Similarly, we can define a coflasque resolution of $L$ as  $$ 0 \longrightarrow C \longrightarrow P \longrightarrow L \longrightarrow 0$$ where $C$ is coflasque.
+%\end{definition}
+%
+%\begin{theorem}\cite[Lemma 2.6.1]{Lorenz}
+%For any given \glat \,\,$L$, there exists a coflasque (flasque) resolution. Furthermore, if $$ 0 \longrightarrow C \longrightarrow P \longrightarrow L \longrightarrow 0$$ and  $$ 0 \longrightarrow C' \longrightarrow P' \longrightarrow L \longrightarrow 0$$ are two coflasque resolutions of $L$, then $[C]=[C']$ (statement is true for flasque resolutions).
+%\end{theorem}
+%\begin{lemma}\cite[Lemma 2.5.1]{Lorenz}
+%Permutation projective \glat s are both flasque and coflasque.
+%\end{lemma}
+%\noindent
+%We can see that in particular permutation lattices are flasque and coflasque.
+%As an example one can consider the augmentation map \begin{center}
+%$\varepsilon_{\G/H}:\Z[\G/H] \rightarrow \Z$
+%\end{center}
+%\begin{center}
+%$gH \rightarrow 1$
+%\end{center}
+%Let $I_{\G/H} = Ker \varepsilon_{\G/H}$. We can obtain the below exact sequence $$ 0 \rightarrow I_{\G/H} \xrightarrow{i}  \Z[\G/H] \xrightarrow{\varepsilon_{\G/H}} \Z \rightarrow 0.$$
+%Considering the dual sequence where $J_{\G/H}= I_{\G/H}^*$ we get 
+%$$ 0 \rightarrow \Z \rightarrow \Z[\G/H] \rightarrow J_{\G/H}  \rightarrow 0.$$
+%Note that \Z \, and $ \Z[\G/H]$ are both flasque and coflasque.\\
+%\\
+%In general there is a construction for finding a coflasque resolution of a given lattice $L$. Let $$ P = \bigoplus_H L^H \uparrow^G_H. $$
+%where $H$ ranges through all subgroups of $G$. It can be shown that $P$ is a permutation \glat \,\,. On the other hand we can extend the inclusion $$ L^H \rightarrow L$$ to a $G$-equivariant epimorphism $$ \phi:P\twoheadrightarrow L$$ with $\phi (P^H)= L^H$ for all $H\leq \G$.
+%Now letting $C= \mathrm{ker} \phi$ we obtain an exact sequence
+%$$ 0 \rightarrow C \rightarrow P \rightarrow L \rightarrow 0.$$
+%Still we need to check if $C$ is a coflasque \glat .
+%By applying the cohomology functor to the above sequence we get
+%$$\cdots \rightarrow P^H \rightarrow L^H \rightarrow H^1(H,C)\rightarrow H^1(H,P) \rightarrow \cdots$$
+%But we know that $H^1(H,P)=0$. Since $\phi$ is a surjection from $P^H$ to $L^H$, we conclude that $H^1(H,C)=0$.
+%\begin{definition} 
+%Let $L$ be a \glat . The flasque class of $L$, which is denoted by $[L]^{fl}$ is $[F] \in \mathrm{SP}_{\G}$ where $F$ is the cokernel in any flasque resolution of $L$.
+%\end{definition}
+%\noindent
+%We write $$ L \sim _{fl} L' \Longleftrightarrow [L]^{fl} = [L']^{fl}$$
+%Note that $[0]^{fl} = [0]$ and $[L \oplus L']^{fl} = [L]^{fl}+[L']^{fl}$, since the direct sum of two flasque resolutions for $L$ and $L'$ is a flasque resoulution for $ L \oplus L'$.
+%\begin{definition}
+%A \glat \,\,$L$ which $ L \sim_{fl} 0$ is called quasi-projective i.e. $L$ is quasi projective if and only if there exists a flasque resolution for L $$ 0 \longrightarrow L \longrightarrow P \longrightarrow Q \longrightarrow 0$$ where Q is a permutation $G$-lattice.
+%\end{definition} 
+%\noindent
+%In order to summarize important facts about lattices we can mention the below diagram 
+% \begin{align*}
+%\textrm{permutation}\ \ 
+%\Rightarrow\ \ 
+%&\textrm{stably\ permutation}\ \ 
+%\Rightarrow\ \ 
+%\textrm{invertible}\ \ 
+%\Rightarrow\ \ 
+%\textrm{flasque\ and\ coflasque}\\
+%&\hspace*{8mm}\Downarrow\hspace*{34mm} \Downarrow\\
+%&\hspace*{7mm}[M]^{fl}=0\hspace*{10mm}\Rightarrow\hspace*{5mm}[M]^{fl}\ 
+%\textrm{is\ invertible}.
+%\end{align*}
+
 \section{GAP: Carat and CrystCat}
 GAP \cite{GAP4} stands for Groups, Algorithms, Programming, and is a computer 
 algebra system for computations in discrete algebra with emphasis on computations 
@@ -236,26 +364,26 @@ these classes see Table \ref{tbl:Carat}).
 The $\Q$-classes are conjugacy classes over $\Q$. We note that some $\Z$-classes 
 may belong to the same conjugacy class over the rationals.
 \end{remark}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|}
-\hline
- & \# conjugacy classes  & \# conjugacy classes & \# conjugacy classes \\
- $ n$ & of finite subgroups & of maximal finite  & of finite subgroups\\
-		 &  of $\mathrm{GL}(n,\Z)$& subgroups of $\mathrm{GL}(n,\Z)$ & over $\Q$\\
- \hline
- 1 & 2& 1 & 2\\
- 2 & 13& 2 & 10\\
- 3 & 73& 4 & 32\\ 
-  4 & 710 & 9 & 227\\
-  5 & 6079& 17 & 955\\
- 6 & 85308& 39 & 7103\\
-\hline
-\end{tabular}
-\caption{Numbers of conjugacy classes which are accessible in Carat.}
-\label{tbl:Carat}
-\end{table}
-\noindent
+%\begin{table}[H]
+%\centering
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+% & \# conjugacy classes  & \# conjugacy classes & \# conjugacy classes \\
+% $ n$ & of finite subgroups & of maximal finite  & of finite subgroups\\
+%		 &  of $\mathrm{GL}(n,\Z)$& subgroups of $\mathrm{GL}(n,\Z)$ & over $\Q$\\
+% \hline
+% 1 & 2& 1 & 2\\
+% 2 & 13& 2 & 10\\
+% 3 & 73& 4 & 32\\ 
+%  4 & 710 & 9 & 227\\
+%  5 & 6079& 17 & 955\\
+% 6 & 85308& 39 & 7103\\
+%\hline
+%\end{tabular}
+%\caption{Numbers of conjugacy classes which are accessible in Carat.}
+%\label{tbl:Carat}
+%\end{table}
+%\noindent
 It is worth mentioning that Carat contains information about crystallographic groups 
 which we will not use. The CrystCat Package in GAP also provides a catalog of 
 crystallographic groups up to dimension 4. The catalog mostly covers the data in 
@@ -279,7 +407,7 @@ Since the actions of matrix groups in GAP are considered from right, throughout
 this chapter we work with row vectors instead of columns. One may also use the 
 columns by considering the dual groups.
 
-\section{Basic Results}
+\section{Well-Known Rationality Results}
 In this section we present some important results about rationality problem for 
 algebraic tori. Before presenting the results we need the following definition 
 to avoid repeating the same assumptions.
@@ -319,8 +447,8 @@ implies $F(M) = F(x_1, \ldots, x_n) = F(y_1, \ldots, y_n)$. Hence
 $$F(M)^G = F(y_1, \ldots , y_n)^G = F^G(y_1, \dots, y_n).$$ 
 \end{proof}
 \noindent
-Note that if $\G = \mathrm{Gal} (F/K)$, then $F^\G = K$. For another version of the 
-No Name Lemma see \cite{Domokos}.
+Note that if $\G = \mathrm{Gal} (F/K)$, then $F^\G = K$. For a constructive proof see 
+\cite{Armin}, also a more general version of the No Name Lemma see \cite{Domokos}.
 \begin{theorem}\cite[Proposition 9.5.1]{Lorenz}\label{SignPermRational}
 Assume $L$ is a sign permutation $G$-lattice and $F$ is a $G$-field. Then $F(M)^G$ 
 is rational over $F^G$.
@@ -585,7 +713,9 @@ The explained method above is presented as an algorithm here.
 		\hline 
 		0 &1
 		\end{array} \right]
-		$ where $\delta_i \in \mathrm{GL}(n-1,\Z)$, and sublattices $M, N$ such that $0\longrightarrow N \longrightarrow L^*_G \longrightarrow M \longrightarrow 0$ is an exact sequence of lattices.
+		$ where $\delta_i \in \mathrm{GL}(n-1,\Z)$, and sublattices $M, N$ \\
+		\hspace{0.8cm}such that $0\longrightarrow N \longrightarrow L^*_G \longrightarrow M \longrightarrow 0$ 
+		is an exact sequence of lattices.
 		\bigskip
 		\STATE $E \gets \left[ \begin{array}{c|c|c|c}
 		\sigma^t_1-I & \sigma^t_2 -I & \cdots & \sigma^t_n -I
@@ -640,8 +770,7 @@ $$
 \\ 0&0&0&-1\\ 0&0&-1&0\end {array}
  \right].
 $$ 
-Then the $E_{1,\sigma}$ is the left nullspace of 
-$$\sigma - I_4 = \left[ \begin {array}{cccc} -1&-1&1&1\\ -1&-2&1&1 \\ 0&-1&0&0\\ 0&-1&0&0\end {array}\right].$$
+Then the $E_{1,\sigma}$ is the left nullspace of $\sigma - I_4$.
 One can verify that 
 \begin{displaymath}
 \lbrace \begin{bmatrix}
@@ -651,10 +780,8 @@ One can verify that
 \end{bmatrix}
 \rbrace
 \end{displaymath}
-is a basis for $E_{1,\sigma}$. Similarly $E_{1,\tau}$ is the left nullspace of 
-$$\tau - I_4 = \left[ \begin {array}{cccc} -1&-1&0&0\\ 1&-1&-1&-1
-\\ 0&0&-1&-1\\ 0&0&-1&-1\end {array}
- \right]$$ and it is generated by $\begin{bmatrix}
+is a basis for $E_{1,\sigma}$. Similarly $E_{1,\tau}$ is the left nullspace of $\tau - I_4$
+ which is generated by $\begin{bmatrix}
 0& 0 &-1 &1
 \end{bmatrix}$.\\
 \\It is not hard to see $\begin{bmatrix}
@@ -684,10 +811,8 @@ $$ Hence
 $$
 T \sigma T^{-1}= \left[ \begin {array}{ccc|c} 0&-1&2&1\\ -1&-1&2&1
 \\ 0&-1&1&0\\ \hline 0&0&0&1\end {array}
- \right] 
-$$
-$$
-T\sigma T^{-1}=  \left[ \begin {array}{ccc|c} 0&-1&0&0\\ 1&0&-2&-1
+ \right], \,\,\,
+T\tau T^{-1}=  \left[ \begin {array}{ccc|c} 0&-1&0&0\\ 1&0&-2&-1
 \\ 0&0&-1&-1\\ \hline 0&0&0&1\end {array}
  \right] 
 $$
@@ -733,7 +858,8 @@ This process will be called the sign fixed point algorithm and it is presented a
 		\hline 
 		0 &1
 		\end{array} \right]
-		$ where $\delta_i \in \mathrm{GL}(n-1,\Z)$, and sublattices $M, N$ such that $0\longrightarrow N \longrightarrow L^*_G \longrightarrow M \longrightarrow 0$ is an exact sequence of lattices.
+		$ where $\delta_i \in \mathrm{GL}(n-1,\Z)$, and sublattices $M, N$\\ 
+		\hspace{.8 cm}such that $0\longrightarrow N \longrightarrow L^*_G \longrightarrow M \longrightarrow 0$ is an exact sequence of lattices.
 		\bigskip
 		\STATE	 for g in $\lbrace	\sigma^t_1, \ldots , \sigma^t_m \rbrace$ do\\
 		\hspace{0.5 in} $E_g \gets $ the set of left nullspaces of $g \pm I$ over $\Q$\\
@@ -786,29 +912,16 @@ $$
 \\ 0&1&0&0\\ 0&0&-1&1\end {array}
  \right].
 $$ 
-Then 
-$$\sigma - I_4 = \left[ \begin {array}{cccc} -2&0&-1&0\\ 1&-1&0&1
-\\ 0&0&0&0\\ 1&1&1&-1\end {array}
- \right] $$
- $$\sigma + I_4 = \left[ \begin {array}{cccc} 0&0&-1&0\\ 1&1&0&1
-\\ 0&0&2&0\\ 1&1&1&1\end {array}
- \right] $$
- $$\tau - I_4 = \left[ \begin {array}{cccc} -1&0&0&-1\\ 1&-1&0&1
-\\ 0&1&-1&0\\ 0&0&-1&0\end {array}
- \right] $$
- $$\tau + I_4 = \left[ \begin {array}{cccc} 1&0&0&-1\\ 1&1&0&1
-\\ 0&1&1&0\\ 0&0&-1&2\end {array}
- \right]. $$
-By computing the left nullspaces we get 
-$$E_{1,\sigma} =\langle [ 0, 0, 1, 0 ], [ 1, 1, 0, 1 ] \rangle $$
-$$E_{-1,\sigma} =\langle [ [ 2, 0, 1, 0 ], [ 1, -1, 0, 1 ] ] \rangle $$
-$$E_{1,\tau} =\langle [ -1, -1, -1, 1 ]  \rangle $$
-$$E_{-1,\tau} =\langle [ 1, -1, 1, 1 ]\rangle $$
+By computing the left nullspaces ($\sigma \pm I_4$ and $\tau \pm I_4$) we get 
+$$E_{1,\sigma} =\langle [ 0, 0, 1, 0 ], [ 1, 1, 0, 1 ] \rangle, \,\,\, 
+E_{-1,\sigma} =\langle [ [ 2, 0, 1, 0 ], [ 1, -1, 0, 1 ] ] \rangle $$
+$$E_{1,\tau} =\langle [ -1, -1, -1, 1 ]  \rangle, \,\,\,
+E_{-1,\tau} =\langle [ 1, -1, 1, 1 ]\rangle. $$
 So 
-$$ E_{1,\sigma} \cap E_{1,\tau}= {0} $$
-$$ E_{1,\sigma} \cap E_{-1,\tau}= {0} $$
-$$ E_{-1,\sigma} \cap E_{1,\tau}= \langle [ 1, 1, 1, -1 ] \rangle $$
-$$ E_{-1,\sigma} \cap E_{-1,\tau}= {0} $$
+$$ E_{1,\sigma} \cap E_{1,\tau}= {0}, \,\,\,
+ E_{1,\sigma} \cap E_{-1,\tau}= {0} $$
+$$ E_{-1,\sigma} \cap E_{1,\tau}= \langle [ 1, 1, 1, -1 ] \rangle, \,\,\,
+ E_{-1,\sigma} \cap E_{-1,\tau}= {0}. $$
 Let $W = E_{-1,\sigma} \cap E_{1,\tau}.$ So $[ 1, 1, 1, -1 ] \in L \cap W$ is extendable to a basis for $L$ by vectors 
 $$[ 1, 0, 0, 0 ] \, , \, [ 0,1,0,0 ] \tand [ 0,0,1,0] $$
 and the corresponding transformation is 
@@ -824,8 +937,7 @@ $$
 \sigma' = T\sigma T^{-1} = \left[ \begin {array}{cccc} 0&1&-1&-1\\ 1&0&1&0
 \\ 0&0&1&1\\ 0&0&0&-1\end {array}
  \right] 
-$$
-$$
+, \,\,\,
 \tau' = T \tau T^{-1} =\left[ \begin {array}{cccc} 0&0&-1&0\\ 1&0&1&0
 \\ 1&1&0&-1\\ 0&0&0&1\end {array}
  \right].
@@ -919,42 +1031,9 @@ t_{40} & t_{41} & t_{42} & t_{43} & t_{44}
 $$
 Then 
 $$
-T \cdot
-\left[\begin{array}{rrrrr}
-0 & 0 & -1 & 0 & 1 \\
--1 & 0 & 0 & 0 & 1 \\
-0 & 1 & 0 & 0 & 0 \\
-0 & 0 & 1 & -1 & -1 \\
-0 & 0 & -1 & 0 & 0
-\end{array}\right]
-= 
-\left[\begin{array}{rrrrr}
-0 & 0 & 1 & 0 & 0 \\
-1 & -1 & 1 & 0 & 0 \\
-0 & -1 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1 \\
-0 & 0 & 0 & 1 & 0
-\end{array}\right]
-\cdot T
-$$
-$$
-T \cdot
-\left[\begin{array}{rrrrr}
--1 & 0 & 0 & -1 & 0 \\
-0 & 0 & -1 & 0 & 1 \\
-0 & 0 & 0 & 0 & -1 \\
-1 & -1 & 0 & 0 & -1 \\
--1 & 0 & 0 & 0 & 0
-\end{array}\right]
-= 
-\left[\begin{array}{rrrrr}
-1 & -1 & 1 & 0 & 0 \\
-1 & 0 & 0 & 0 & 0 \\
-0 & 0 & -1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1 \\
-0 & 0 & 0 & -1 & -1
-\end{array}\right]
- \cdot T.
+T\sigma= \sigma' T^{-1}
+, \,\,\,
+T\tau= \tau' T^{-1}
 $$
 The transformation $T$ can be found by solving (and replacing parameters) the linear system obtained from above equations as
 $$
@@ -966,20 +1045,8 @@ T =\left[\begin{array}{rrrrr}
 1 & 0 & -1 & 0 & 1
 \end{array}\right].
 $$
-Define $\Q M = \langle e_1, e_2 , e_3 \rangle_\Q$, since 
-$$T^{-1} =\left[\begin{array}{rrrrr}
--\frac{1}{4} & \frac{1}{4} & -\frac{1}{4} & \frac{1}{4} & \frac{3}{4} \\
--\frac{1}{4} & \frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & \frac{1}{4} \\
--\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} \\
-\frac{1}{2} & 0 & -\frac{1}{2} & \frac{1}{2} & 0 \\
-0 & -\frac{1}{2} & 0 & -\frac{1}{2} & 0
-\end{array}\right]
-$$
-we have 
-$$T^{-1}(e_1) =  \left[-\frac{1}{4},\,\frac{1}{4},\,-\frac{1}{4},\,\frac{1}{4},\,\frac{3}{4}\right]$$
-$$T^{-1}(e_2) =\left[-\frac{1}{4},\,\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,\frac{1}{4}\right]$$
-$$T^{-1}(e_3) =  \left[-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4}\right]$$
-Hence $T^{-1}(\Q M) = \langle   \left[-\frac{1}{4},\,\frac{1}{4},\,-\frac{1}{4},\,\frac{1}{4},\,\frac{3}{4}\right], \left[-\frac{1}{4},\,\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,\frac{1}{4}\right],  \left[-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4}\right]\rangle_\Q $
+Let $\Q M = \langle e_1, e_2 , e_3 \rangle_\Q$.
+Hence $T^{-1}(\Q M) = \langle   \left[-\frac{1}{4},\,\frac{1}{4},\,-\frac{1}{4},\,\frac{1}{4},\,\frac{3}{4}\right], \left[-\frac{1}{4},\,\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,\frac{1}{4}\right],  \left[-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4},\,-\frac{1}{4}\right]\rangle_\Q .$
 Now
 $$M = L \cap T^{-1}(\Q M) = \langle \left[\begin{array}{ccccc}1&0&1&0&-1\end{array}\right], \left[\begin{array}{rrrrr}
 0 & 1 & 0 & 0 & 1
@@ -998,13 +1065,7 @@ S =  \left[\begin{array}{rrrrr}
 $$
  which gives 
 $$
- \left[\begin{array}{rrrrr}
-1 & 0 & 1 & 0 & -1 \\
-0 & 1 & 0 & 0 & 1 \\
-0 & 0 & 0 & 1 & 1 \\
-0 & 0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1
-\end{array}\right]
+ S
 \left[\begin{array}{rrrrr}
 0 & 0 & -1 & 0 & 1 \\
 -1 & 0 & 0 & 0 & 1 \\
@@ -1012,13 +1073,7 @@ $$
 0 & 0 & 1 & -1 & -1 \\
 0 & 0 & -1 & 0 & 0
 \end{array}\right]
- \left[\begin{array}{rrrrr}
-1 & 0 & 1 & 0 & -1 \\
-0 & 1 & 0 & 0 & 1 \\
-0 & 0 & 0 & 1 & 1 \\
-0 & 0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1
-\end{array}\right]^{-1}
+S^{-1}
 = 
 \left[\begin{array}{rrr|rr}
 0 & 1 & 0 & 0 & 0 \\
@@ -1030,13 +1085,7 @@ $$
 \end{array}\right]
 $$
 $$
- \left[\begin{array}{rrrrr}
-1 & 0 & 1 & 0 & -1 \\
-0 & 1 & 0 & 0 & 1 \\
-0 & 0 & 0 & 1 & 1 \\
-0 & 0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1
-\end{array}\right]
+ S
 \left[\begin{array}{rrrrr}
 -1 & 0 & 0 & -1 & 0 \\
 0 & 0 & -1 & 0 & 1 \\
@@ -1044,13 +1093,7 @@ $$
 1 & -1 & 0 & 0 & -1 \\
 -1 & 0 & 0 & 0 & 0
 \end{array}\right]
- \left[\begin{array}{rrrrr}
-1 & 0 & 1 & 0 & -1 \\
-0 & 1 & 0 & 0 & 1 \\
-0 & 0 & 0 & 1 & 1 \\
-0 & 0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1
-\end{array}\right]^{-1}
+S^{-1}
 = 
 \left[\begin{array}{rrr|rr}
 0 & 0 & -1 & 0 & 0 \\
@@ -1064,496 +1107,8 @@ $$
 Now we can get the following exact sequence of lattices 
 $$0 \longrightarrow M \longrightarrow L \longrightarrow L/M \longrightarrow 0.$$ 
 \end{example}
-\section{Rationality Problem for 5 Dimensional Indecomposable Stably Rational Algebraic Tori}
-Up to now we have presented some algorithms to reduce a lattice and form exact sequences of specific type. In this section we apply those algorithms to the 18 indecomposable lattices which are maximal in the set of indecomposable stably rational rank 5 lattices found in \cite{Hoshi}.\\
-\\
-In some cases instead of applying any algorithm we interpret the lattice as a root lattice of a root system. The general idea is to identify the given lattice as a lattice in one of the hereditarily rational families of lattices. We also try to reduce some lattices to one of those families.\\
-\\
-There are also cases where our reduction does not provide enough information to decide about the rationality. In these cases we reduce the lattice and provide some information which may help to decide about their rationality. There are also irreducible lattices among the 18 maximal ones. A partial lattice of maximal subgroups of the irreducible cases is provided so that our algorithms work for maximal subgroups.\\
-\\
-Throughout this section for a finite subgroup $G \leq \mathrm{GL}(n,\Z)$, the corresponding algebraic torus and the corresponding lattice (see Definition \ref{Assumption}) is denoted respectively by $T_G$ and $L_G$. When we say a group is rational or a lattice is rational we mean the corresponding algebraic torus is rational.
-\bigskip
-\subsection{Case $G_1$}
-$G_1$ is one of the 7 maximal indecomposable finite subgroups of $\mathrm{GL}(5,\mathbb{Z})$. This is the automorphism group of root system $B_5$. So we can recognize the lattice as $(\mathbb{Z}(B_5), \mathrm{Aut}(B_5))$. This lattice is hereditarily rational (see \cite{Nicole1}).\\
-\\
-Alternatively by looking at the generators of $G_1$
-$$
-\left[ \begin {array}{ccccc} 0&1&0&0&0\\ 1&0&0&0&0
-\\ 0&0&1&0&0\\ 0&0&0&1&0
-\\ 0&0&0&0&1\end {array} \right] 
-\tand
- \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&-1
-\\ 1&0&0&0&0\end {array} \right] 
-$$
-One can also see that the corresponding lattice is sign permutation which implies rationality of $L_{G_1}$
-\subsection{Case $G_2$}
-This is a group isomorphic to $\mathrm{S}_6$. Following \cite{Nicole1} we show that the dual lattice is isomorphic to Chevalley module $J_{\mathrm{S}_6/\mathrm{S}_5}$. The group $G_2$ is generated by 
-$$
- \left[ \begin {array}{ccccc} 1&1&0&0&0\\  0&-1&0&0&1
-\\  0&1&1&0&0\\  0&1&0&0&0
-\\  0&-1&0&-1&0\end {array} \right] 
-\,\,\, \text{and } \,\,\,
- \left[ \begin {array}{ccccc} 0&1&0&0&-1\\  0&-1&-1&0
-&0\\  1&1&0&0&0\\  0&1&0&0&0
-\\  0&-1&0&-1&0\end {array} \right].
-$$
-The dual lattice corresponds to the group generated by
-$$
-A = \left[ \begin {array}{ccccc} 1&0&0&0&0\\  1&-1&1&1&-
-1\\  0&0&1&0&0\\  0&0&0&0&-1
-\\  0&1&0&0&0\end {array} \right] 
- \,\,\, \text{and} \,\,\,
-B = \left[ \begin {array}{ccccc} 0&0&1&0&0\\  1&-1&1&1&-
-1\\  0&-1&0&0&0\\  0&0&0&0&-1
-\\  -1&0&0&0&0\end {array} \right] 
-$$
-One can verify that $e_1$ is a cyclic generator of $L^*_{G_2}$.
 
-Now we have to make sure that the stabilizer subgroup of $e_1$ is isomorphic to $\mathrm{S}_5$.
-
-\begin{verbatim}
-gap> GD2:= GroupByGenerators([A,B]);
-<matrix group with 2 generators>
-
-gap> S:= Stabilizer(GD2 ,e1);
-<matrix group with 6 generators>
-
-gap> StructureDescription(S);
-"S5"
-\end{verbatim}
-\medskip
-The last step is to check if $ \sum_{g \in H} e_1.g= 0$
-\begin{verbatim}
-gap> n:= [0,0,0,0,0];
-0
-gap> for g in GD2 do n:= n + (e1*g); od;
-gap> n;
-[ 0, 0, 0, 0, 0 ]
-\end{verbatim}
-\medskip
-This shows that the lattice is isomorphic to $J_{\mathrm{S}_6/\mathrm{S}_5}$ and its dual is isomorphic to the augmentation ideal $I_{\mathrm{S}_6/\mathrm{S}_5}$. This implies that $G_2$ is hereditarily rational.
-
-\bigskip
-
-\subsection{Case $G_3$}
-By applying Algorithm 1 to the dual lattice, we get the change of basis matrix
-$$
- \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&0&0&0&-1\end {array} \right] 
-$$
-Now changing the basis and dualizing gives us the group
-$$
-\left[ \begin {array}{cccc|c} 0&-1&0&0&0\\ 0&0&0&-1&0
-\\ 1&0&0&0&0\\ 0&0&1&0&0
-\\ \hline 0&1&1&0&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} 0&0&0&-1&0\\ 0&1&0&0&0
-\\-1&0&0&0&0\\ 0&0&-1&0&0
-\\ \hline 1&0&0&0&1\end {array} \right] 
-$$
-This yields the following exact sequence of lattices
-$$0 \longrightarrow M \longrightarrow L_{G_3} \longrightarrow \Z \longrightarrow 0$$ where $M$ corresponds to 
-[ 4, 32, 21, 1 ].
-In \cite{Nicole1} the author has proved the corresponding lattice to [ 4, 32, 21, 1 ] is $\mathbb{Z}B_4$ which is hereditarily rational. This proves that $T_{G_3}$ is hereditarily rational.\\
-\\ Alternatively one can see from the above generators of $H$, that $M$ is a sign permutation lattice which is hereditarily rational.
-
-
-\bigskip
-
-\subsection{Case $G_4$}
-
-Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
-$$
- \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&0&-1&-1&2\end {array} \right] 
-$$
-With the above transformation we can see the new representative for $G_4$ is generated by 
-$$
-\left[ \begin {array}{cccc|c} 0&1&0&1&0\\0&1&0&0&0
-\\0&0&1&0&0\\1&-1&0&0&0
-\\\hline 0&0&0&0&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} -1&1&0&1&0\\-1&0&-1&-
-1&0\\1&0&0&-1&0\\0&0&0&1&0
-\\ \hline0&0&0&-1&-1\end {array} \right] 
-$$
-
-Now we can produce
-$$
-\exactseqs{G_4}
-,$$
-
-where $M_{G_4}$ corresponds to [4,31,7,1]. One can verify that $M_{G_4}^*$ is the Chevalley module $J_{\mathrm{S}_5/\mathrm{S}_4}$ (apply Lemma Nicole with $e_1 =[1,0,0,0]$), thus its dual lattice is hereditarily rational. However, since $L_{G_4}/M_{G_4}$ is sign permutation, we can not conclude rationality of $G_4$.
-
-\subsection{Case $G_5$}
-Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
-$$
- \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&1&0&-1&0\end {array} \right]
-$$
-With the above transformation we can see the new generators for $G_5$ are given by 
-$$
-\left[ \begin {array}{cccc|c} 1&0&0&0&0\\0&0&0&-1&0
-\\0&0&1&0&0\\0&-1&0&0&0
-\\ \hline 0&0&0&0&1\end {array} \right] 
-\,\,\, , \,\,\,
- \left[ \begin {array}{cccc|c} 0&1&0&1&0\\1&0&1&0&0
-\\0&0&0&-1&0\\0&0&-1&0&0
-\\ \hline 0&0&-1&-1&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} -1&0&-1&0&0\\0&0&0&1&0
-\\0&0&1&0&0\\0&1&0&0&0
-\\ \hline 0&0&1&0&-1\end {array} \right] 
-$$
-Now we can produce
-$$
-\exactseqs{G_5}
-.$$
-The corresponding group to $M_{G_5}$ has GAP ID [4,29,9,2]. 
-\subsection{Case $G_6$}
-Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
-$$
- \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&0&0&0&-1\end {array} \right]
-$$
-
-With the above transformation we can see the new generators for $G_6$ are given by 
-$$
- \left[ \begin {array}{cccc|c} 0&0&1&0&0\\ 0&1&0&0&0
-\\ 1&0&0&0&0\\ 0&0&0&1&0
-\\ \hline 0&0&0&0&1\end {array} \right] 
-\,\,\,
- \left[ \begin {array}{cccc|c} 0&-1&0&0&0\\ -1&0&0&0&0
-\\ 0&0&0&1&0\\ 0&0&1&0&0
-\\ \hline 0&0&0&0&-1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} -1&0&0&0&0\\ 0&1&0&0&0
-\\ 0&0&1&0&0\\ 0&0&0&1&0
-\\ \hline 1&0&0&0&1\end {array} \right] 
-$$
-Now we can produce
-$$
-\exactseqs{G_6}
-.$$
-$M_{G_6}$ is a sign permutation lattice and therefore hereditarily rational. However, since $L_{G_6}/M_{G_6}$ is sign permutation, we can not conclude rationality of $G_6$.
-
-
-\subsection{Case $G_7$}
-
-Algorithm \ref{alg:Fixed Point} produces the change of basis matrix 
-$$
-\left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&0&-1&-1&2\end {array} \right] 
-$$
-
-With the above transformation we can see the new representative for $G_7$ is generated by 
-$$
-\left[ \begin {array}{cccc|c} 0&1&0&1&0\\  0&1&0&0&0
-\\  0&0&1&0&0\\  1&-1&0&0&0
-\\  \hline 0&0&0&0&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} 0&0&1&1&0\\  0&-1&0&-1&0
-\\  -1&-1&-2&-2&0\\  0&2&1&2&0
-\\ \hline 0&-1&-1&-1&1\end {array} \right] 
-$$
-
-One can verify that its dual is the Chevalley module $J_{\mathrm{S}_5/\mathrm{S}_4}$ (apply Lemma Nicole with $e_1 = [1,0,0,0] $).
-Alternatively in \cite{Nicole1} the author has proved that [4,31,7,1] is hereditarily rational. Using GAP we can verify that [4,31,4,1] (up to conjugacy) is a subgroup of [4,31,7,1]. This proves rationality of $T_{G_7}$.
-
-\subsection{Cases $G_8$, $G_9$ and $G_{10}$}
-It is well known that a representation $\rho$ is absolutely irreducible if and only if $\langle \chi_{\rho},\chi_{\rho} \rangle =1 $ where $\chi_{\rho}$ is the corresponding character to $\rho$. Since the groups are of small order, 120, we can test if $\langle \chi_{\rho},\chi_{\rho} \rangle $ is one or not. We recall $$\langle \chi_{\rho},\chi_{\rho} \rangle = \frac{1}{n} \sum_{\sigma \in G} (tr(\sigma)^2)$$ where $G\leq \mathrm{GL}(n,\Q)$ and $|G| = n$.\\
-\\
-\begin{verbatim}
-gap> n:= 0;
-0
-gap> for g in AsList(G8) do
-> n:= n+ (1/Size(G8))*Trace(g)^2;
-> od;
-gap> n;
-1
-
-gap> n:= 0;
-0
-gap> for g in AsList(G9) do
-> n:= n+ (1/Size(G9)) *Trace(g)^2;
-> od;
-gap> n;
-1
-
-gap> n:= 0;
-0
-gap> for g in AsList(G10) do
-> n:= n+ (1/Size(G10))*Trace(g)^2;
-> od;
-gap> n;
-1
-\end{verbatim}
-\noindent
-Since all 3 groups are irreducible, we consider their maximal subgroups up to conjugacy and check if their maximal subgroups are reducible. In case that a maximal subgroup is irreducible we consider its maximal subgroups again and continue this process. \\
-\\
-Figures \ref{G8Lat}, \ref{G9Lat} and \ref{G10Lat} respectively present lattices of subgroups of $G_8$, $G_9$ and $G_{10}$. These are not the complete lattices of the mentioned groups. We just considered the lattices up to the level where algorithm one returns an output. Appendix (a) is devoted to show that the shaded groups are hereditarily rational.
-
-%%%%%%%%%%case9
-
-\subsection{Case $G_{11}$}
-Algorithm \ref{alg:Sign Fixed Point} produces the change of basis matrix 
-$$
- \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&-1&-2&-2&2\end {array} \right]
-$$
-With the above transformation we can see a new representative for $G_{11}$ is generated by 
-$$
-\left[ \begin {array}{cccc|c} -1&-1&-1&-1&0\\ 0&2&1&
-2&0\\ 0&1&2&2&0\\ 0&-2&-2&-3&0
-\\ \hline 0&1&1&1&-1\end {array} \right] 
-\,\,\,
- \left[ \begin {array}{cccc|c} 1&1&1&1&0\\ 0&-1&0&0&0
-\\ 0&0&-1&0&0\\ 0&0&0&-1&0
-\\ \hline 0&0&0&0&-1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} -1&0&0&0&0\\ 2&0&2&1&0
-\\ 2&1&2&2&0\\ -2&0&-3&-2&0
-\\ \hline 1&0&1&1&1\end {array} \right] 
-$$
- Now we can produce
-$$
-\exactseqs{G_{11}}
-.$$
-$M_{G_{11}}$ has GAP ID [4,20,20,4]. A generating set for [4,20,20,4] is given by 
-$$
- \left[ \begin {array}{cccc} 0&1&0&0\\ 1&0&0&0
-\\ 0&0&-1&0\\ 0&0&0&-1\end {array}
- \right], 
- \left[ \begin {array}{cccc} 1&0&0&0\\ 0&1&0&0
-\\ 0&0&1&1\\ 0&0&0&-1\end {array}
- \right] 
- \tand
- \left[ \begin {array}{cccc} 0&1&0&0\\ -1&0&0&0
-\\ 0&0&1&1\\ 0&0&-1&0\end {array}
- \right] 
-$$
-As we can see its corresponding lattice decompose into 2 rank two lattices which are hereditarily rational.
-
-\subsection{Case $G_{12}$}
-
-Algorithm \ref{alg:Fixed Point} provides the matrix 
-$$
- \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&-1&-2&-2&2\end {array} \right]
-$$
-
-as our desired change of basis which gives us a new representative for the conjugacy class of $G_{12}$, namely the group generated by
-$$
-\left[ \begin {array}{cccc|c} 1&0&0&0&0\\  0&2&0&1&0
-\\  0&2&1&2&0\\  0&-3&0&-2&0
-\\ \hline 0&1&0&1&1\end {array} \right] 
-\,\,\,
- \left[ \begin {array}{cccc|c} 1&0&0&0&0\\  -2&-1&-2&-
-2&0\\  -2&-2&-1&-2&0\\  2&2&2&3&0
-\\ \hline -1&-1&-1&-1&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} 1&1&1&1&0\\  0&-2&0&-1&0
-\\  0&-1&0&0&0\\  0&2&-1&0&0
-\\ \hline 0&-1&0&0&1\end {array} \right]
-$$
-Now we get the following exact sequence for $L_{G_{12}}$
-$$
-\exactseq{G_{12}},
-$$
-
-where $M_{G_{12}}$ has gap ID [4,20,17,2]. A generating set of [4,20,17,2] is given by  
-$$
-\left[ \begin {array}{cccc} 0&1&0&0\\ 1&0&0&0
-\\ 0&0&1&0\\ 0&0&0&1\end {array}
- \right] ,
- \left[ \begin {array}{cccc} 1&0&0&0\\ 0&1&0&0
-\\ 0&0&1&1\\ 0&0&0&-1\end {array}
- \right] 
- \tand
- \left[ \begin {array}{cccc} 0&-1&0&0\\ 1&0&0&0
-\\ 0&0&-1&-1\\ 0&0&1&0\end {array}
- \right].
-$$
-and its corresponding lattice is decomposable to rank 2 lattices which we know their rationality. Thus, $M_{G_{12}}$ is hereditarily rational and this implies that $T_{G_{12}}$ is hereditarily rational.
-\bigskip
-
-\subsection{Case $G_{13}$}
-By algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
-$$
-\left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&0&0&1&0\end {array} \right] 
-$$
-which provides the new generators of the representative of the conjugacy class of $G_{13}$ as
-$$
-\left[ \begin {array}{cccc|c} 0&-1&0&1&0\\  -1&0&0&1&0
-\\  0&0&1&0&0\\  0&0&0&1&0
-\\  \hline 0&0&0&0&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} -1&1&0&0&0\\  -1&0&0&0&0
-\\  -2&0&-1&2&0\\  -2&0&0&1&0
-\\ \hline  1&0&1&-1&1\end {array} \right] 
-$$
-Now we can get 
-$$\exactseq{G_{13}}.$$
-On the other hand GAP returns the GAP ID of $M_{G_{13}}$ 
-In \cite{Nicole1} the author has proved that [4,25,9,2] is hereditarily rational which means $T_{G_{13}}$ is hereditarily rational.
-\subsection{Case $G_{14}$}
-By algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
-$$
- \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 0&1&-1&1&1\end {array} \right] 
-$$
-which provides the new representative of the conjugacy class of $G_{14}$ as
-$$
-\left[ \begin {array}{cccc|c} 0&1&1&1&0\\  1&0&1&1&0
-\\  -1&0&-1&0&0\\  -1&0&0&-1&0
-\\ \hline 1&0&1&1&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} 0&1&1&1&0\\  -1&1&1&1&0
-\\  0&0&0&-1&0\\  0&0&-1&0&0
-\\  \hline 0&0&1&1&1\end {array} \right] 
-$$
-Now we can get 
-$$\exactseq{G_{14}}.$$
-On the other hand GAP returns the GAP ID of $M_{G_{14}}$  as [ 4, 25, 8, 5 ].
-In \cite{Nicole1} it is shown that the subgroups of [4,25,8,5] are rational except for possibly 8 subgroups $$[4, 6, 2, 11], [4, 12, 4, 13], [4, 13, 2, 6], [4, 13, 3, 6], [4, 13, 7, 12], [4, 24, 4, 6], [4, 25, 4, 5], [4, 25, 8, 5].$$
-Each of the above groups corresponds to a subgroup of $G_{14}$ and except for them, the rest are rational.
-\\
-\\
-\subsection{Case $G_{15}$}
-The group $G_{15} $ is isomorphic to $C_2 \times \mathrm{S}_4$ and is generated by 
-$$
-\left[ \begin {array}{ccccc} 0&0&-1&0&1\\ -1&0&0&0&
-1\\ 0&1&0&0&0\\ 0&0&1&-1&-1
-\\ 0&0&-1&0&0\end {array} \right] 
-\tand
- \left[ \begin {array}{ccccc} -1&0&0&-1&0\\ 0&0&-1&0
-&1\\ 0&0&0&0&-1\\ 1&-1&0&0&-1
-\\ -1&0&0&0&0\end {array} \right].
-$$
-This is the $G$-lattice discussed in Example \ref{exmp:Decompose}. So the information is being recalled from that example.
-$$
-T = \left[ \begin {array}{ccccc} 1&0&1&0&-1\\ 0&1&0&0&1
-\\0&0&0&1&1\\0&0&1&0&0
-\\0&0&0&0&1\end {array} \right] 
-$$
-which provides a new representative of the conjugacy class of $G_{15}$ as the group generated by  
-$$
- \left[ \begin {array}{ccc|cc} 0&1&0&0&0\\-1&0&0&0&0
-\\0&0&-1&0&0\\ \hline 0&1&0&0&-1
-\\0&0&0&-1&0\end {array} \right] 
-\tand
- \left[ \begin {array}{ccc|cc} 0&0&-1&0&0\\-1&0&0&0&0
-\\0&-1&0&0&0\\ \hline 0&0&0&0&-1
-\\-1&0&0&1&-1\end {array} \right].
-$$ 
-Now we get 
-$$0 \longrightarrow M \longrightarrow L_{G_{15}}\longrightarrow L/M \longrightarrow 0.$$
-One can see that $L/M$ is  a rank 2 lattice which is the corresponding lattice to the group, $H$ generated by 
-$$
-\begin{bmatrix}
-0&-1\\
--1&0
-\end{bmatrix}
-\tand 
-\begin{bmatrix}
-0&-1\\
-1 & -1
-\end{bmatrix}.
-$$ 
-$H$ is isomorphic to $\mathrm{S}_3$ and its corresponding lattice is not even sign permutation. We can consider maximal subgroups of $G_{15}$ as we did for the irreducible lattices.
-
-\subsection{Case $G_{16}$.}
-Algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
-$$
- \left[ \begin {array}{ccccc} 1&0&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 0&1&0&0&0\end {array} \right] 
-$$
-which provides the new generators of the representative of the conjugacy class of $G_{16}$ as
-$$
-\left[ \begin {array}{cccc|c} 1&-1&-1&1&0\\  0&1&0&0&0
-\\  0&-1&0&1&0\\  0&1&1&0&0
-\\ \hline 0&-1&-1&1&1\end {array} \right] 
-\,\,\,
- \left[ \begin {array}{cccc|c} 1&-1&-1&0&0\\  0&0&0&1&0
-\\  0&-1&-1&-1&0\\  0&1&0&0&0
-\\ \hline 0&-1&-1&0&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} -1&0&1&-1&0\\  0&1&0&0&0
-\\  0&0&1&0&0\\  0&0&0&1&0
-\\ \hline 0&0&0&0&1\end {array} \right] 
-$$
-Now we can get 
-$$\exactseq{G_{16}}.$$
-On the other hand GAP returns the GAP ID of $M_{G_{16}}$  as [ 4, 14, 10, 2 ].
-In \cite{Nicole1} it is shown that [4, 31, 7, 1] is hereditarily rational. Using GAP one can verify that [4,14,10,2] (up to conjugacy) is a subgroup of [4,31,7,1] which means $T_{G_{16}}$ is hereditarily rational.\\
-\\
-
-\subsection{Case $G_{17}$}
-Algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
-$$
- \left[ \begin {array}{ccccc} 1&0&0&-1&0\\ 0&1&0&0&0
-\\ 0&0&1&0&0\\ 0&0&0&0&1
-\\ 0&0&0&1&1\end {array} \right] 
-$$
-which provides the new generators of the representative of the conjugacy class of $G_{17}$ as
-$$
- \left[ \begin {array}{cccc|c} 0&0&-1&0&0\\  0&1&0&0&0
-\\  -1&0&0&0&0\\  1&0&1&1&0
-\\ \hline -1&0&-1&0&1\end {array} \right] 
-\,\,\,
- \left[ \begin {array}{cccc|c} -2&0&0&-1&0\\  1&-1&0&1
-&0\\  1&0&-1&1&0\\  3&0&0&2&0
-\\ \hline -3&0&0&-1&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} 1&1&0&0&0\\  0&-1&0&0&0
-\\  0&-1&1&0&0\\  0&-3&0&1&0
-\\ \hline 0&2&0&0&1\end {array} \right] 
-$$
-we can get 
-$$\exactseq{G_{17}}.$$
-On the other hand GAP returns the GAP ID of $M_{G_{17}}$  as [ 4, 13, 7, 12 ].
-In \cite{Nicole1} it is shown that the subgroups of [4,13,7,12] are rational except for possibly 5 subgroups $$[4, 6, 2, 11], [4, 12, 4, 13], [4, 13, 2, 6], [4, 13, 3, 6], [4, 13, 7, 12]$$
-Each of the above groups corresponds to a subgroup of $G_{17}$ and except for them, the rest are rational.
-
-\subsection{Case $G_{18}$}
-Algorithm \ref{alg:Fixed Point} we have the following transformation matrix 
-$$
- \left[ \begin {array}{ccccc} 0&1&0&0&0\\ 0&0&1&0&0
-\\ 0&0&0&1&0\\ 0&0&0&0&1
-\\ 1&0&-1&1&-1\end {array} \right]
-$$
-which provides the new generators of the representative of the conjugacy class of $G_{18}$ as
-$$
-\left[ \begin {array}{cccc|c} 1&0&0&0&0\\  0&1&0&0&0
-\\  0&0&0&-1&0\\  0&0&-1&0&0
-\\ \hline 0&0&0&0&1\end {array} \right] 
-\,\,\,
- \left[ \begin {array}{cccc|c} 0&-1&0&0&0\\  -1&0&0&0&0
-\\  1&-1&-1&0&0\\  -1&1&0&-1&0
-\\ \hline -1&1&1&-1&1\end {array} \right] 
-\tand
- \left[ \begin {array}{cccc|c} 1&0&0&0&0\\  0&-1&0&0&0
-\\  0&1&1&0&0\\  0&-1&0&1&0
-\\ \hline 0&-1&0&0&1\end {array} \right] 
-$$
-Now we can get 
-$$\exactseq{G_{18}}.$$
-On the other hand GAP returns the GAP ID of $M_{G_{18}}$  as [ 4, 13, 7, 12 ].
-In \cite{Nicole1} it is shown that the subgroups of [4,13,7,12] are rational except for possibly 5 subgroups $$[4, 6, 2, 11], [4, 12, 4, 13], [4, 13, 2, 6], [4, 13, 3, 6], [4, 13, 7, 12]$$
-Each of the above groups corresponds to a subgroup of $G_{18}$ and except for them, the rest are rational.
-\subsection{Conclusion}\label{conc}
+\section{Results}\label{conc}
 The 18 maximal indecomposable stably rational lattices found in \cite{Hoshi} are divided into 4 families. The first family are the ones interpreted as lattices of root systems which are hereditarily rational. The second family contains all lattices on which Algorithm \ref{alg:Fixed Point} will not fail. The third family contains lattices on which  Algorithm \ref{alg:Sign Fixed Point} does not fail while Algorithm \ref{alg:Fixed Point} fails. The last family contains all lattices on which either, both Algorithms \ref{alg:Fixed Point} and \ref{alg:Sign Fixed Point} fail but still the general idea of reduction works, or they are irreducible.\\
 \\
 All lattices of the first family are hereditarily rational. The second family contains lattices of which after reduction, rationality of the reduced component is unknown. By arguments in the previous sections we have proved the following theorem.
@@ -1640,28 +1195,28 @@ All subgroups of $G_{14},G_{17}$ and $G_{18}$ are rational except for possibly t
 \noindent
 There are 4 cases, namely $G_4, G_5,G_6$ and $G_{11}$, in which after the reduction we get a rank one sign permutation lattice (more information is given in Table \ref{SignPerm}). The same also happened in some subgroups of irreducible lattices (see Table \ref{SubIrreducible}). It is possible that these groups are hereditarily rational, but we do not currently have a proof. One possible approach to prove rationality in these cases may be the following argument.\\
 \\
-Assume $L$ is a lattice in the third family, that is, there exists an exact sequence of lattices such that 
-$$\exactseqs{}$$
-Moreover assume $M$ is a hereditarily rational. Using a flasque resolution of $L$ we have 
-\[
-\begin{tikzcd}
-  &           & 0                 \arrow{d}                 &            &   \\
-  0 \ar{r} & M \arrow{r} & L                 \arrow{r}   \arrow{d}    & \Z^-          \arrow{r} & 0 \\
-				    &          & P              \arrow{d}        &     &  \\
-                &                                 & Q \arrow{d} &           &   \\
-                &                                 & 0                                           &                               &
-\end{tikzcd}
-\]
-Suppose $K/F$ is a finite Galois extension and $G = \mathrm{Gal}(K/F)$. We note that by the No Name Lemma we obtain $K(P)^G = K(y_1, \ldots , y_t)$ and $K(M)^G = F(x_1, \ldots , x_{n-1})$ is implied by rationality of $M$. Now if there exist a permutation lattice $Q'$ such that $P \subset M \oplus Q'$ (or even if $L\subset M \oplus Q'$) then $K(L)^G \subset K(M)(Q')^G$ which implies unirationality of $K(L)^G$ over $K(M)^G$. Now L\"{u}roth's theorem implies rationality of $K(L)^G$ over $F$.
-\[
-\begin{tikzcd}[row sep=1cm]
-K(M \oplus Q')^G = K(M)^G(z_1, \ldots , z_s)\arrow [d,-]  \\
-K(P)^G = K(y_1, \ldots , y_t)\arrow [d,-]  \\
-K(L)^G =K(M)(\Z^-)^G \arrow [d,-]  \\
-K(M)^G = F(x_1, \ldots , x_{n-1}) \arrow [d,-]  \\
-F 
-\end{tikzcd}
-\]
+%Assume $L$ is a lattice in the third family, that is, there exists an exact sequence of lattices such that 
+%$$\exactseqs{}$$
+%Moreover assume $M$ is a hereditarily rational. Using a flasque resolution of $L$ we have 
+%\[
+%\begin{tikzcd}
+%  &           & 0                 \arrow{d}                 &            &   \\
+%  0 \ar{r} & M \arrow{r} & L                 \arrow{r}   \arrow{d}    & \Z^-          \arrow{r} & 0 \\
+%				    &          & P              \arrow{d}        &     &  \\
+%                &                                 & Q \arrow{d} &           &   \\
+%                &                                 & 0                                           &                               &
+%\end{tikzcd}
+%\]
+%Suppose $K/F$ is a finite Galois extension and $G = \mathrm{Gal}(K/F)$. We note that by the No Name Lemma we obtain $K(P)^G = K(y_1, \ldots , y_t)$ and $K(M)^G = F(x_1, \ldots , x_{n-1})$ is implied by rationality of $M$. Now if there exist a permutation lattice $Q'$ such that $P \subset M \oplus Q'$ (or even if $L\subset M \oplus Q'$) then $K(L)^G \subset K(M)(Q')^G$ which implies unirationality of $K(L)^G$ over $K(M)^G$. Now L\"{u}roth's theorem implies rationality of $K(L)^G$ over $F$.
+%\[
+%\begin{tikzcd}[row sep=1cm]
+%K(M \oplus Q')^G = K(M)^G(z_1, \ldots , z_s)\arrow [d,-]  \\
+%K(P)^G = K(y_1, \ldots , y_t)\arrow [d,-]  \\
+%K(L)^G =K(M)(\Z^-)^G \arrow [d,-]  \\
+%K(M)^G = F(x_1, \ldots , x_{n-1}) \arrow [d,-]  \\
+%F 
+%\end{tikzcd}
+%\]
 The following table summarizes the information about reduction of lattices in the third family.
  \begin{table}[H]
 \centering
@@ -1737,12 +1292,12 @@ The union of the set of groups in Table \ref{SubIrreducible} and the set of subg
 \end{remark}
 Appendix B presents tables of conjugacy classes of indecomposable subgroups of $\mathrm{GL}(5,\Z)$ which correspond to stably rational tori of dimension 5 from Hoshi and Yamasaki's list. From this list, those stably rational tori of dimension 5 whose rationality is unknown are listed.
 
-\begin{appendices}
+%\begin{appendices}
 %\include{appendixa}
-\include{appendixb}
-\include{appendixc}
-\include{appendixd}
-\end{appendices}
+%\include{appendixb}
+%\include{appendixc}
+%\include{appendixd}
+%\end{appendices}
 
 \bibliographystyle{plain} % (change according to your preference)
 %%%% ***   Set the bibliography file.   ***
