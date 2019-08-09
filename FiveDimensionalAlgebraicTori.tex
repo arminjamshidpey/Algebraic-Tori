@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper, 14pt]{extarticle}
 
 \usepackage{appendix}
 \usepackage{graphicx}
@@ -35,7 +35,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
-%\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage[a4paper, total={8in, 10in}]{geometry}
 
 
 \hypersetup{
@@ -77,6 +77,8 @@
 \newcommand{\exactseqs}[1]{\ensuremath{0 \longrightarrow M_{#1} \longrightarrow L_{#1} \longrightarrow \Z^{-} \longrightarrow 0}}
 \newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}
 
+\newcommand{\todo}[1]{{\bf {\color{red} #1}} }
+
 \title{Five Dimensional Algebraic Tori}
 
 
@@ -92,22 +94,25 @@
   an associated lattice to a root system (of which rationality of its corresponding 
   algebraic torus is known) or we find a reduced component of $L$ so that we can 
   relate rationality of the associated algebraic torus to lower dimensions. Using 
-  these two main methods from \cite{Nicole1}, we solve rationality problem in some cases.}
+  these two main methods from \cite{Nicole1}, we solve rationality problem in some cases. 
+  \todo{write an abstract.}}
+  
+  
 \section{Introduction}
 An interesting problem in algebraic geometry is the rationality problem, i.e. 
 for a given algebraic variety, determine if it is rational or not. Naturally 
 this is a difficult problem to solve. Hence it makes sense to consider some 
 relaxed notions of rationality. 
 
-An algebraic $F$-variety $X$ is called rational if there exists a birational map 
-form $X$ to $\mathbb{A}^n$ for some $n$. Algebraically $X$ is rational if 
-the rarional function field of $X$ is $F$-rational, i.e. it is a purely 
+An algebraic $F$-variety $X$ (for a field $F$) is called rational if there exists a birational map 
+form $X$ to $\mathbb{A}^n$ for some $n$. Algebraically, $X$ is rational if 
+the rational function field of $X$ is $F$-rational, i.e. it is a purely 
 transcendental extension of $F$. $X$ is called stably rational if $X \times 
-\mathbb{A}^n$ is rational. Similarly one can say $X$ is stably rational if 
+\mathbb{A}^n$ is rational for non-negative integer $n$. Similarly one can say $X$ is stably rational if 
 a purely transcendental extension of the rational function field of $X$ is 
 rational. Finally $X$ is called unirational if the rational function field of 
 $X$ is a subfield of a purely transcendental extension of $F$. Geometrically 
-this means there exist a dominant rational map from $\mathbb{A}^n$ to $X$ for
+this means there exists a dominant rational map from $\mathbb{A}^n$ to $X$ for
 some $n$. 
 
 It can be seen that rationality implies stable rationality and the later implies 
@@ -115,26 +120,26 @@ unirationality. It is well-known that none of the converses of these implication
 hold in general for varieties. 
 
 Assume $X$ is a quasi projective $F$-variety. A $F$-variety $Y$ is called an 
-$F$-form of $X$ if $X \otimes_k \bar{F} \cong Y$. A $d$-dimensoinal algebraic 
+$F$-form of $X$ if $X \otimes_k \bar{F} \cong Y$. A $d$-dimensional algebraic 
 $F$-torus is a $F$-form of $\mathbb{G}_m^d$.
 
-In the case of algebraic tori, we know that all of them are unirational. 
-Moreover there exists a famous conjecture by Voskeresenskii,
-which states that, any stably rational algebraic torus is rational. To the 
-best of the authors knowledge the conjucture is still open. 
+%In the case of algebraic tori, we know that all of them are unirational. 
+%Moreover there exists a famous conjecture by Voskeresenskii,
+%which states that, any stably rational algebraic torus is rational. To the 
+%best of the authors knowledge the conjecture is still open. 
 
-There is a one-to-one coresspondence between the isomorphism classes of 
+There is a one-to-one correspondence between the isomorphism classes of 
 $n$ dimensional algebraic $F$-tori and representations of $G_F = Gal(F_s/F)$ 
-into $GL(n,\Z)$, where $F_s$ is the seperable closure of $F$. It is understood 
+into $GL(n,\Z)$, where $F_s$ is the separable closure of $F$. It is understood 
 that there exist a finite Galois extension of $F$, say $K$, such that 
-$T \otimes_F K \cong \mathbb{G}_{m}^n$. The smalles such Galois extensoin 
+$T \otimes_F K \cong \mathbb{G}_{m}^n$. The smallest such Galois extension 
 (resp. Galois group) is called the splitting field (resp. splitting group)
  of $T$.
  
 The isomorphism classes of $n$ dimensional algebraic $F$-tori are in bijection 
 with conjugacy classes of finite subgroups of $GL(n,\Z)$. We know that the number 
 of these finite subgroups up to conjugacy is finite. If $G \leq GL(n,\Z)$ then 
-the standard lattice, $L = <e_i: 1 \leq i \leq n>_\Z$ where $e_i = [\delta_{1i}]$,
+the standard lattice, $L = \langle e_i: 1 \leq i \leq n \rangle_\Z$ where $e_i = [\delta_{1i}]$,
 with the action (right multiplication) of $G$ defines a $\Z G$ lattice $L_G$. 
 Assume $K/F$ is a finite Galois extension with $G = Gal(K/F)$. Now $T_G = K(L_G)^G$
 is and algebraic torus. Note that conjugate groups correspond to isomorphic 
@@ -146,7 +151,7 @@ to a conjugacy class of subgroups of $GL(n,\Z)$.
 In the case of algebraic tori, we know that all of them are unirational. 
 Moreover there exists a famous conjecture by Voskeresenskii,
 which states that, any stably rational algebraic torus is rational. To the 
-best of the authors knowledge the conjucture is still open. During the 60's and
+best of the authors knowledge the conjecture is still open. During the 60's and
 afterwards there was a substantional amount of work in rationality problem 
 for algebraic tori, which is mainly done by Voskeresenskii, Endo, Miyata, Saltman, 
 Sansuc and colliet-thelene. Their approach to address the problem was the
@@ -1104,7 +1109,7 @@ S^{-1}
 -1 & 0 & 0 & 1 & -1
 \end{array}\right]
 $$
-Now we can get the following exact sequence of lattices 
+Now we can get the following exact sequence of lattices
 $$0 \longrightarrow M \longrightarrow L \longrightarrow L/M \longrightarrow 0.$$ 
 \end{example}
 
