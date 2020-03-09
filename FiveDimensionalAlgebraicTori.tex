@@ -85,17 +85,19 @@
 
 \begin{document}
 \maketitle
-\abstract{The rationality problem for algebraic tori is well known. It is known
- that any algebraic torus is unirational over its field of definition. The first
-  purpose of this work is to solve rationality problem for 5 dimensional stably 
-  rational algebraic tori with an indecomposable character lattice. In order to 
+\abstract{It is known that any algebraic torus is unirational over its field of definition. 
+  The rationality problem for algebraic tori of dimentions 2, 3 and 4 (with a few unknown cases in dimension 4) is known. 
+  The purpose of this work is to solve rationality problem for 5 dimensional stably 
+  rational algebraic tori. In order to 
   do so, we have studied the associated character lattices of the mentioned 
-  algebraic tori. For each character lattice $L$, either we see the lattice as 
-  an associated lattice to a root system (of which rationality of its corresponding 
+  algebraic tori. For each indecomposable character lattice $L$, either we see the lattice as 
+  an associated lattice to a root system (of which the rationality of its corresponding 
   algebraic torus is known) or we find a reduced component of $L$ so that we can 
   relate rationality of the associated algebraic torus to lower dimensions. Using 
   these two main methods from \cite{Nicole1}, we solve rationality problem in some cases. 
-  \todo{write an abstract.}}
+  For those tori with a decomposable character lattice, we use the known results on the rationality 
+  of their components to determine their rationality.
+  }
   
   
 \section{Introduction}
@@ -113,15 +115,18 @@ a purely transcendental extension of the rational function field of $X$ is
 rational. Finally $X$ is called unirational if the rational function field of 
 $X$ is a subfield of a purely transcendental extension of $F$. Geometrically 
 this means there exists a dominant rational map from $\mathbb{A}^n$ to $X$ for
-some $n$. 
+some $n$. It is worth mentioning that there is a family of algebraic tori which is
+called retract rational which contains the stably rational ones and is contained in 
+unirational family. However since we have nothing to do with retract rational tori we 
+do not present their definition (see \cite{Hoshi} for more detail).
 
 It can be seen that rationality implies stable rationality and the later implies 
 unirationality. It is well-known that none of the converses of these implications
 hold in general for varieties. 
 
-Assume $X$ is a quasi projective $F$-variety. A $F$-variety $Y$ is called an 
-$F$-form of $X$ if $X \otimes_k \bar{F} \cong Y$. A $d$-dimensional algebraic 
-$F$-torus is a $F$-form of $\mathbb{G}_m^d$.
+Assume $X$ is a quasi projective $F$-variety. An $F$-variety $Y$ is called an 
+$F$-form of $X$ if $X \otimes_F \bar{F} \cong Y \otimes_F \bar{F}$ where $\bar{F}$ is the algebraic closure of $F$. A $d$-dimensional algebraic 
+$F$-torus is a group $F$-scheme such that it is an $F$-form of $\mathbb{G}_m^d$ (see \cite[Section 1.3]{Voskresenskii} for more detail).
 
 %In the case of algebraic tori, we know that all of them are unirational. 
 %Moreover there exists a famous conjecture by Voskeresenskii,
@@ -129,31 +134,32 @@ $F$-torus is a $F$-form of $\mathbb{G}_m^d$.
 %best of the authors knowledge the conjecture is still open. 
 
 There is a one-to-one correspondence between the isomorphism classes of 
-$n$ dimensional algebraic $F$-tori and representations of $G_F = Gal(F_s/F)$ 
-into $GL(n,\Z)$, where $F_s$ is the separable closure of $F$. It is understood 
-that there exist a finite Galois extension of $F$, say $K$, such that 
-$T \otimes_F K \cong \mathbb{G}_{m}^n$. The smallest such Galois extension 
+$n$ dimensional algebraic $F$-tori and representations of $G_F = \mathrm{Gal}(F_s/F)$ 
+into $\mathrm{GL}(n,\Z)$, where $F_s$ is the separable closure of $F$. We know that
+ there exists a finite Galois extension of $K/F$, such that 
+$T \otimes_F K \cong \mathbb{G}_{m,K}^n$. The smallest such Galois extension 
 (resp. Galois group) is called the splitting field (resp. splitting group)
  of $T$.
  
 The isomorphism classes of $n$ dimensional algebraic $F$-tori are in bijection 
-with conjugacy classes of finite subgroups of $GL(n,\Z)$. We know that the number 
-of these finite subgroups up to conjugacy is finite. If $G \leq GL(n,\Z)$ then 
+with conjugacy classes of finite subgroups of $\mathrm{GL}(n,\Z)$. By a theorem of Jordan
+ we know that the number 
+of these finite subgroups up to conjugacy is finite. If $G \leq \mathrm{GL}(n,\Z)$ then 
 the standard lattice, $L = \langle e_i: 1 \leq i \leq n \rangle_\Z$ where $e_i = [\delta_{1i}]$,
 with the action (right multiplication) of $G$ defines a $\Z G$ lattice $L_G$. 
-Assume $K/F$ is a finite Galois extension with $G = Gal(K/F)$. Now $T_G = K(L_G)^G$
-is and algebraic torus. Note that conjugate groups correspond to isomorphic 
+Assume $K/F$ is a finite Galois extension with $G = \mathrm{Gal}(K/F)$. Now $T_G = K(L_G)^G$
+is an algebraic torus. Note that conjugate groups correspond to isomorphic 
 lattices and hence are associated to isomorphic algebraic tori. Conversley for 
 a given $n$-dimensional algebraic torus $T$, which is defined over $F$ and split 
 by $K$, its character group is a $\Z G$ lattice of rank $n$ and hence associates 
-to a conjugacy class of subgroups of $GL(n,\Z)$.  
+to a conjugacy class of subgroups of $\mathrm{GL}(n,\Z)$.  
 
 In the case of algebraic tori, we know that all of them are unirational. 
 Moreover there exists a famous conjecture by Voskeresenskii,
-which states that, any stably rational algebraic torus is rational. To the 
-best of the authors knowledge the conjecture is still open. During the 60's and
-afterwards there was a substantional amount of work in rationality problem 
-for algebraic tori, which is mainly done by Voskeresenskii, Endo, Miyata, Saltman, 
+\begin{center}
+ ``any stably rational algebraic torus is rational''.
+ \end{center} To the 
+best of the authors knowledge the conjecture is still open. A substantional amount of work in rationality problem for algebraic tori, is done by Voskeresenskii, Endo, Miyata, Saltman, 
 Sansuc and colliet-thelene. Their approach to address the problem was the
 correspondence between algebraic tori and $G$-lattices. Their efforts led to 
 characterization of stably rational and retract rational algebraic tori based 
@@ -169,10 +175,10 @@ classified algebraic tori of dimensions 4 and 5 up to stable rationality.
 Their classification is based on computing the flasque classes of algebraic 
 tori in GAP. They showed that in rank 5,  there are exactly 311 indecomposable 
 $G$-lattices which are stably rational.  More precisely they showed their 
-stable rationality by finding the maximal groups and proved stable rationality 
+stable rationality results by finding the maximal groups and proved stable rationality 
 of their subgroups. The following table presents the maximal groups they found.
 
-\begin{table}[H]
+\begin{table}[H]\label{tbl:18Max}
 \centering
 \begin{tabular}{llllll} 
 Number & CARAT ID & $G$ & $\#G$\\ \hline
@@ -208,7 +214,8 @@ for finding generating sets of groups and lattices of subgroups in GAP. The
 rationality results we are presenting are based on the ideas used in \cite{Nicole1}. 
 We present algorithms which may be applied to character lattices of algebraic 
 tori, in order to investigate their rationality. These algorithms provide 
-machinery to reduce the rationality problem in a specific dimension to lower dimensions.\\
+machinery to reduce the rationality problem in a specific dimension to lower dimensions
+provided that the corresponding lattice is reducible.\\
 \\
 From now on we will call the groups mentioned in Table \ref{tbl:18Max} 
 respectively $G_1$ to $G_{18}$. $L_G$ represents the corresponding $G$-lattice 
@@ -223,10 +230,13 @@ In some cases, we prove that the group is hereditarily rational. There are two
 main methods that we will use, both of which were used in \cite{Nicole1}. The 
 first method is reducing the rationality of a five dimensional torus to rationality 
 in lower dimensions. The second one is to see them as lattices of which the rationality is known.
+Moreover, for for five dimensional stably rational algebraic tori with a decomposable lattice,
+we use their decomposition and known rationality results on lower dimendional algebraic tori to
+solve the problem.
 
 \section{$G$-Lattices}\label{G-Lattices}
 It is known that there is a duality between algebraic tori and \glat s. In order to be able to discuss the duality, we briefly introduce \glat s in this section. For a more detailed discussion see \cite[Chapters 1 and 2]{Lorenz}.\\ \\
-A lattice is a free $\mathbb{Z}$-module of finite rank. As a $\Z$-module, it is isomorphic to $\mathbb{Z}^n$ for some $n$. If we have a group $G$, we can endow the lattice with an action of $G$. If $G$ acts on a lattice $L$ by automorphisms i.e. there exists $$ G \longrightarrow GL(M) \cong \mathrm{GL}(n,\mathbb{Z}),$$ 
+A lattice is a free $\mathbb{Z}$-module of finite rank. As a $\Z$-module, it is isomorphic to $\mathbb{Z}^n$ for some $n$. If we have a group $G$, we can endow the lattice with an action of $G$. If $G$ acts on a lattice $L$ by automorphisms i.e. there exists $$ G \longrightarrow \mathrm{GL}(M) \cong \mathrm{GL}(n,\mathbb{Z}),$$ 
 we say $L$ is a $G$-lattice. We can equivalently say that $\G$-lattices are free $\Z$-modules of finite rank which is also $\mathbb{Z}[G]$-modules, for $\mathbb{Z}[G]$ the integral group ring over $G$. A $G$-equivariant, $ \mathbb{Z}$-linear map between $G$-lattices is called a homomorphism of $G$-lattices.\\
 \\For a given \glat \, $L$ we define $$ L^\G = \lbrace l \in L : g.l=l,  \,\, \,\,  \forall g \in \G \rbrace. $$
 
@@ -238,11 +248,7 @@ The group algebra $R[L]$ of a \glat , is isomorphic to the Laurent polynomial al
 \\
 If $L$ and $L'$ are two \glat  s then $\mathrm{Hom}_{\Z}(L,L')$, the set of all $\Z$-linear maps from $L$ to $L'$, is a \glat \,\, with the following action $$ (g.f)(m) = g.(f(g^{-1}.m)).$$
 For $L'=\Z$ (with trivial action of $G$), we get the \glat \,\,  $L^* = \mathrm{Hom}_{\Z}(L,\Z)$ which is called the dual lattice of $L$.\\
-\\Suppose $L$ is a $G$-lattice and $H$ is a subgroup of $G$. $L$ can be considered as an $H$-lattice. The new $H$-lattice is called restricted and is denoted by $L\downarrow^G_H$.\\
-\\Assume $H$ is a finite index subgroup of $G$ and $L$ is an $H$-lattice. The $G$ module $\Z[H] \otimes_{\Z[G]} L$ is a $G$-lattice which is called the induced $G$-lattice and is denoted by $L\uparrow_H^G$. 
-\begin{definition}
-A \glat \,\, $L$ is called a permutation lattice if there exists a $\Z$ -basis $X$ for $L$ such that, $G$ acts as permutation group on $X$. We denote $L$ by $\Z[X]$.
-\end{definition}
+\\Suppose $L$ is a $G$-lattice and $H$ is a subgroup of $G$. $L$ can be considered as an $H$-lattice. The new $H$-lattice is called restricted and is denoted by $L\downarrow^G_H$.Assume $H$ is a finite index subgroup of $G$ and $L$ is an $H$-lattice. The $G$ module $\Z[H] \otimes_{\Z[G]} L$ is a $G$-lattice which is called the induced $G$-lattice and is denoted by $L\uparrow_H^G$. 
 %\begin{example} Let $H$ be a finite index subgroup of a group $G$ and $G/H =\lbrace g_1H,g_2H, \ldots , g_nH \rbrace$ be a complete representative set of left cosets of $H$ in $G$. Then $ \Z [G/H]$ is a $G$-lattice with the action $g.g_iH = (gg_i)H$. It is easy to see that $G$ acts as a permutation group on the basis so it is a permutation lattice.
 %\end{example}
 %It is known that the permutation $G$-lattice $\Z[G/H]$ is isomorphic to $\Z\uparrow_H^G$.
@@ -256,14 +262,12 @@ A \glat \,\, $L$ is called a permutation lattice if there exists a $\Z$ -basis $
 %Since the trivial $H$-lattice $\Z$ is self dual, as a corollary of the above lemmas we can conclude that, any permutation lattice is self dual.\\
 %\\
 %It is important to notice that direct sum (and tensor product) of permutation lattices is still permutation.
-\begin{definition}
+\\
+\\
+A \glat \,\, $L$ is called a permutation lattice if there exists a $\Z$ -basis $X$ for $L$ such that, $G$ acts as permutation group on $X$. In this case $L$ is sometimes denoted by $\Z[X]$.
 We call a \glat \,$L$, decomposable if there are nontrivial \glat s $L_1$ and $ L_2$ such that $ L\cong L_1 \oplus L_2$. $L$ is called indecomposable if it is not decomposable.
-\end{definition}
-\noindent
 If $L$ is decomposable then it is reducible, but the converse is not true for lattices.
-\begin{definition}
 A \glat \,$L$ is called reducible if $L$ has a nontrivial $G$-invariant subspace $M$ such that $L/M$ is torsion free. $L$ is called irreducible if it is not reducible. 
-\end{definition}
 %\noindent
 %Now let $L$ and $L'$ are two \glat s. $L$ and $L'$ are stably permutation equivalent if and only if there exist permutation lattices $P$ and $P'$ such that $$ L \oplus P \cong L' \oplus P'.$$
 %In fact the above notion defines an equivalence relation on \glat s. We denote the equivalence class of $L$ by $[L]$.
@@ -363,8 +367,7 @@ The GAP package Carat provides functions of the stand-alone programs of $CARAT$,
 which is a package for the computations related to crystallographic groups. Carat 
 contains the catalog of all conjugacy classes of finite subgroups of $\mathrm{GL}(n,\Z)$ 
 for $n$ up to six. More precisely the Carat package gives access to all 
-$\Q$-classes and $\Z$-classes and maximal classes over $\Z$ (for the number of 
-these classes see Table \ref{tbl:Carat}).  
+$\Q$-classes and $\Z$-classes and maximal classes over $\Z$.  
 \begin{remark}
 The $\Q$-classes are conjugacy classes over $\Q$. We note that some $\Z$-classes 
 may belong to the same conjugacy class over the rationals.
@@ -403,14 +406,17 @@ scripts written by Hoshi and Yamasaki are available from
 \begin{center}
 http://www.math.h.kyoto-u.ac.jp/~yamasaki/Algorithm/
 \end{center}
-The algorithms introduced in the next section are implemented in GAP (needs some 
+The algorithms introduced in this paper are implemented in GAP (needs some 
 functions from the codes written by Hoshi and Yamasaki) and the code is available from
 \begin{center}
 https://github.com/armin-jamshidpey/Algebraic-Tori
 \end{center}
 Since the actions of matrix groups in GAP are considered from right, throughout 
 this chapter we work with row vectors instead of columns. One may also use the 
-columns by considering the dual groups.
+columns by considering the dual groups.\\
+\\
+We call $\G \leq \mathrm{GL}(n,\Z)$ irreducible (resp. indecomposable), if the corresponding 
+lattice to $G$ be irreducible (resp. indecomposable).
 
 \section{Well-Known Rationality Results}
 In this section we present some important results about rationality problem for 
@@ -439,24 +445,30 @@ By the duality explained before, $K(L_G)^G$ is the rational function field of $T
 From now on we work with finite subgroups of $\mathrm{GL}(n,\Z)$ (up to conjugacy) and 
 when we consider their corresponding lattice (or algebraic torus), $L_G$ ($T_G$), we 
 mean the lattice (algebraic torus) defined in Definition \ref{Assumption}. 
+\\
+\\
+The first family of of rational algebraic tori is given by the following theorem which 
+shows that any algebraic torus with a permutation character group is rational.
 \label{action}
 \begin{theorem}\cite{Speiser}\label{NoNameLemma}
-(No Name Lemma) Let $M$ be a permutation \glat \,\,and $F$ be a \G-field. Then $F(M)^\G$ 
-is rational over $F^\G$. 
+(No Name Lemma) Let $M$ be a permutation \glat \,\,and $K$ be a \G-field. Then $K(M)^\G$ 
+is rational over $K^\G$. 
 \end{theorem}
-\begin{proof}
-Let $\lbrace x_1, \ldots , x_n \rbrace$ be a $\Z$-basis which is permuted by $G$ and 
-$V = \sum^n_{i=1}Fx_i$ be a $F$ vector space. Applying Proposition \ref{Speiser'sLemma} 
-to $V$, we find $y_1, \ldots , y_n \in V^G $ such that $V = \sum^n_{i=1}Fy_i$. This 
-implies $F(M) = F(x_1, \ldots, x_n) = F(y_1, \ldots, y_n)$. Hence 
-$$F(M)^G = F(y_1, \ldots , y_n)^G = F^G(y_1, \dots, y_n).$$ 
-\end{proof}
+%\begin{proof}
+%Let $\lbrace x_1, \ldots , x_n \rbrace$ be a $\Z$-basis which is permuted by $G$ and 
+%$V = \sum^n_{i=1}Fx_i$ be a $F$ vector space. Applying Proposition \ref{Speiser'sLemma} 
+%to $V$, we find $y_1, \ldots , y_n \in V^G $ such that $V = \sum^n_{i=1}Fy_i$. This 
+%implies $F(M) = F(x_1, \ldots, x_n) = F(y_1, \ldots, y_n)$. Hence 
+%$$F(M)^G = F(y_1, \ldots , y_n)^G = F^G(y_1, \dots, y_n).$$ 
+%\end{proof}
 \noindent
-Note that if $\G = \mathrm{Gal} (F/K)$, then $F^\G = K$. For a constructive proof see 
-\cite{Armin}, also a more general version of the No Name Lemma see \cite{Domokos}.
+Note that if $\G = \mathrm{Gal} (K/F)$, then $K^\G = F$. For a constructive proof see 
+\cite{JamLemSch2019}, also a more general version of the No Name Lemma see \cite{Domokos}. The following 
+theorem generalizes the previous result to sign permutation lattices. A $G$-lattice is called 
+sign permutation if it has a basis $X$ which is permuted up to sign changes under the action of $G$.
 \begin{theorem}\cite[Proposition 9.5.1]{Lorenz}\label{SignPermRational}
-Assume $L$ is a sign permutation $G$-lattice and $F$ is a $G$-field. Then $F(M)^G$ 
-is rational over $F^G$.
+Assume $L$ is a sign permutation (permutation up to sign changes) $G$-lattice and $K$ is a $G$-field. Then $K(M)^G$ 
+is rational over $K^G$.
 \end{theorem}
 \noindent
 The rationality problem for algebraic tori of dimension one was concrete. For 
@@ -464,67 +476,67 @@ dimension two Voskresenskii used a geometric method to prove the below result.
 \begin{theorem}
 \cite{Vos67} Any 2 dimensional algebraic torus over k, is k-rational.
 \end{theorem} 
-\noindent
-We talked about the duality between category of algebraic tori and category of \glat . 
-Having the duality in hand one may ask how to interpret the notions from one side to 
-the other side. One of the important results about translating the facts about the 
-rationality of algebraic tori, into the language of \glat s is given below.
-\begin{theorem}\cite{Vos74}
-Let $M$ and $M'$ be two \glat s  and F/K be a finite Galois extension with Galois 
-Group \G . Then $[M]^{fl}=[M']^{fl}$ if and only if $ F(M)^\G $ and $ F(M')^\G$ are 
-stably isomorphic.
-\end{theorem}
-\noindent
-The next two results give us necessary and sufficient conditions for stable rationality 
-and retract rationality in terms of \glat  s. Having these two criteria gives us some 
-control over the birational classification of algebraic tori of small dimension.
-\begin{theorem}\cite[Theorem 9.5.4]{Lorenz} Let M be a \glat \,
-and $F/K$ be a finite Galois extension with Galois group $G$. $[M]^{fl}$ is invertible 
-if and only if $F(M)^\G$ is retract $K$-rational.
-\end{theorem}
-
-\begin{theorem}\cite[Theorem 1.6]{EndoMiyata}Let M be a \glat \,\, 
-and F/K be a finite Galois extension with Galois group $G$. $[M]^{fl}=0$ if and only if  
-$F(M)^\G$ is stably K-rational.
-\end{theorem}
-\noindent
-The above two theorems can be used to see any stably rational algebraic torus is retract 
-rational.\\
-\\
+%\noindent
+%We talked about the duality between category of algebraic tori and category of \glat . 
+%Having the duality in hand one may ask how to interpret the notions from one side to 
+%the other side. One of the important results about translating the facts about the 
+%rationality of algebraic tori, into the language of \glat s is given below.
+%\begin{theorem}\cite{Vos74}
+%Let $M$ and $M'$ be two \glat s  and F/K be a finite Galois extension with Galois 
+%Group \G . Then $[M]^{fl}=[M']^{fl}$ if and only if $ F(M)^\G $ and $ F(M')^\G$ are 
+%stably isomorphic.
+%\end{theorem}
+%\noindent
+%The next two results give us necessary and sufficient conditions for stable rationality 
+%and retract rationality in terms of \glat  s. Having these two criteria gives us some 
+%control over the birational classification of algebraic tori of small dimension.
+%\begin{theorem}\cite[Theorem 9.5.4]{Lorenz} Let M be a \glat \,
+%and $F/K$ be a finite Galois extension with Galois group $G$. $[M]^{fl}$ is invertible 
+%if and only if $F(M)^\G$ is retract $K$-rational.
+%\end{theorem}
+%
+%\begin{theorem}\cite[Theorem 1.6]{EndoMiyata}Let M be a \glat \,\, 
+%and F/K be a finite Galois extension with Galois group $G$. $[M]^{fl}=0$ if and only if  
+%$F(M)^\G$ is stably K-rational.
+%\end{theorem}
+%\noindent
+%The above two theorems can be used to see any stably rational algebraic torus is retract 
+%rational.\\
+%\\
 The following two theorems classifies algebraic tori of dimension 4 and  5 up to stable 
 rationality. In \cite{Hoshi} the authors gave a complete classification of mentioned tori, 
 however they did not say anything about rationality of tori of dimension 4 and 5. The 
 main idea of their work was to investigate the last 3 results above, by means of computer 
 algebra system, GAP. 
 \begin{theorem}\cite[Theorem 1.9]{Hoshi}
-Let F/K be a finite Galois extension with Galois Group $\G \leqslant \mathrm{GL}(4, \Z)$. 
-Assume $G$ acts on $L = F(x_1,x_2,x_3,x_4)$ as above. (For tables of the below subgroups 
+Let $K/F$ be a finite Galois extension with Galois Group $\G \leqslant \mathrm{GL}(4, \Z)$. 
+Assume $G$ acts on $L = K(x_1,x_2,x_3,x_4)$ as above. (For tables of the below subgroups 
 see \cite[Page 4]{Hoshi})
 \\ 
-(i) $L^\G$ is stably K-rational if $G$ is (up to conjugacy) one of a list of 487 
+(i) $L^\G$ is stably $F$-rational if $G$ is (up to conjugacy) one of a list of 487 
 subgroups of $\mathrm{GL}(4,\Z)$.
 \\ 
-(ii)  $L^\G$ is not stably but retract K-rational if $G$ is (up to conjugacy) one 
+(ii)  $L^\G$ is not stably but retract $F$-rational if $G$ is (up to conjugacy) one 
 of a list of 7 subgroups of $\mathrm{GL}(4,\Z)$.
 \\
-(iii) $L^\G$ is not retract K-rational if G is (up to conjugacy) one of a list of 
+(iii) $L^\G$ is not retract $F$-rational if $G$ is (up to conjugacy) one of a list of 
 216 subgroups of $\mathrm{GL}(4,\Z)$.
  \end{theorem}
  \noindent
 In 2015, Lemire showed that except for possibly ten, all stably rational groups found 
 by Hoshi and Yamasaki are rational (see \cite{Nicole1}).
 \begin{theorem}\label{H}\cite[Theorem 1.12]{Hoshi}
-Let F/K be a finite Galois extension with Galois Group $\G  \leqslant \mathrm{GL}(5, \Z)$. 
-Assume G acts on $L = F(x_1,x_2,x_3,x_4,x_5)$ as above. (for tables of below subgroups see 
+Let $K/F$ be a finite Galois extension with Galois Group $\G  \leqslant \mathrm{GL}(5, \Z)$. 
+Assume G acts on $L = K(x_1,x_2,x_3,x_4,x_5)$ as above. (for tables of below subgroups see 
 \cite[Pages 134-144]{Hoshi})
 \\ 
-(i) $L^\G$ is stably K-rational if G is (up to conjugacy) one of a list 3051 subgroups 
+(i) $L^\G$ is stably $F$-rational if $G$ is (up to conjugacy) one of a list 3051 subgroups 
 of $\mathrm{GL}(5,\Z)$.
 \\ 
-(ii)  $L^\G$ is not stably but retract K-rational if G is (up to conjugacy) one of a list 
+(ii)  $L^\G$ is not stably but retract $F$-rational if $G$ is (up to conjugacy) one of a list 
 25 subgroups of $\mathrm{GL}(5,\Z)$.
 \\
-(iii) $L^\G$ is not retract K-rational if G is (up to conjugacy) one of a list of 3003 
+(iii) $L^\G$ is not retract $F$-rational if $G$ is (up to conjugacy) one of a list of 3003 
 subgroups of $\mathrm{GL}(5,\Z)$.
  \end{theorem}
  \noindent
@@ -538,41 +550,31 @@ about the equivalence of stable rationality and rationality for algebraic tori.\
 % \section{Research Problem}
 According to Theorem \ref{H} we know all stably rational algebraic tori of dimension 5. 
 However, the theorem does not say anything about rationality of those tori. An interesting 
-problem is to find all rational tori between 3051 mentioned tori in the theorem.\\
-\\
-
-We call $\G \leq \mathrm{GL}(n,\Z)$ irreducible (resp. indecomposable), if the corresponding 
-lattice to $G$ be irreducible (resp. indecomposable).
-\\
+problem is to find all rational tori between 3051 mentioned tori in the theorem.
  
-\section{Families of Rational Algebraic Tori}
-In the next chapter, we investigate on rationality of stably rational algebraic tori 
+%\section{Families of Rational Algebraic Tori}
+Later on, we investigate the rationality of stably rational algebraic tori 
 of dimension 5.  We will try to reduce their rationality to the rationality of some 
-well understood algebraic torus. In this small section we present some families of 
+well understood algebraic torus. Here we present some families of 
 algebraic tori which are rational, so that we can relate our algebraic tori to one 
 of these families. It is already mentioned that every $n$ dimensional algebraic torus 
 has a corresponding finite subgroup of $\mathrm{GL}(n,\Z)$. In order to study the 
 rationality of algebraic tori, we study its corresponding group. We would rather to 
 consider maximal groups and prove rationality for their subgroups, instead of proving 
-it case by case. The following definitions are borrowed from \cite{Nicole1}.
-
-\begin{definition}
-Let $L$ be a $G$-lattice for $G\leq \mathrm{GL}(n,\Z)$. If all algebraic tori with 
-character lattice $L\downarrow_H^G$ and splitting group $H$ are rational, for any 
+it case by case. \\
+\\
+Let $L$ be a $G$-lattice for $G\leq \mathrm{GL}(n,\Z)$. Following \cite{Nicole1}, if all algebraic tori with character lattice $L\downarrow_H^G$ and splitting group $H$ are rational, for any 
 subgroup $H \leq G$, then we call $L$ hereditarily rational. 
-\end{definition} 
-\begin{definition}
-If $T$ is an algebraic torus and $L$ is its corresponding lattice, then $T$ is called 
+Moreover, if $T$ is an algebraic torus and $L$ is its corresponding lattice, then $T$ is called 
 hereditarily rational if $L$ is hereditarily rational.
-\end{definition}
-\noindent
+\\
+\\
 By Theorem \ref{NoNameLemma}, a quasi-split torus is rational. For a permutation 
 $G$-lattice $L$ and any subgroup $H\leq G$, since $L\downarrow_H^G$ is a permutation 
 lattice, the corresponding torus to $L\downarrow_H^G$ is rational. In other words a 
 quasi split torus is hereditarily rational. Simillarly by Theorem \ref{SignPermRational} 
 and above argument for (a sign permutation lattice), we conclude that any algebraic 
-torus with a sign permutation character lattice is hereditarily rational. \\ \\
-
+torus with a sign permutation character lattice is hereditarily rational. 
 In particular this is true for an algebraic torus with character lattice the root 
 lattice $\Z B_n$ as an $W(B_n)$-lattice. It is also known that any rank $n$ sign 
 permutation lattice, is isomorphic to the restriction of $\Z B_n$ to a subgroup 
