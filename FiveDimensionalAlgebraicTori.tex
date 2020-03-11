@@ -225,13 +225,13 @@ true. In dimension five our methods fail to determine the rationality of some al
 However, in any case of which our methods work, we got a positive answer.
 
 We partition the set of five dimensional stably rational algebraic tori into the ones with a 
-decomposable lattice and the ones with and indecomposable lattice. both from theoretical and 
-experimental points of view the indecomposable cases are more interesting. This is due to the
+decomposable lattice and the ones with and indecomposable lattice. For simplicity we call an algebraic tors from the first family, decomposable and if it is from the second family we call it indecomposable. Both from theoretical and 
+experimental points of view the indecomposable tori are more interesting. This is due to the
 fact that the rationality of decomposable cases can be decided based on their decomposition
  components. This is basically done by forming components and looking up in the 
- known rationality tables. For the indecomposable cases we do something different.
+ known rationality tables. 
 
-For stably rational 5 dimensional algebraic tori with an indecomposable character lattice, 
+For indecomposable stably rational 5 dimensional algebraic tori,
 we consider the ones where their groups are maximal among the 311 cases found by Hoshi and 
 Yamasaki. These maximal groups are presented in \ref{tbl:18Max} and from now on we will call them
 respectively $G_1$ to $G_{18}$. 
@@ -239,7 +239,16 @@ respectively $G_1$ to $G_{18}$.
 There are two 
 main methods that we apply to $G_1$ to $G_{18}$ (and their subgroups), both of which were used in \cite{Nicole1}. The 
 first method is reducing the rationality of a five dimensional torus to rationality 
-in lower dimensions using a reducible component of corresponding lattices. The second method is to identify them as lattices of which their rationality is known such as the root lattice of the root system $B_n$.
+in lower dimensions using a reducible component of corresponding lattices. More precisely, assuming $L_G$ is the corresponding lattice to a given indecomposable torus, we try to find a $G$-lattice, $M\subset
+L_G$ so that we get the exact sequence 
+$$0 \longrightarrow M \longrightarrow L_G \longrightarrow P \longrightarrow 0, $$
+where $P$ is a permutation $G$-lattice (see Section \ref{G-Lattices}) for a definition).
+
+The second method is to identify character lattices of indecomposable tori as lattices of which their rationality is known such as the root lattice of the root system $B_n$ or a sign permutation lattice.
+
+\todo{give detail on results here}
+
+
 
 \section{$G$-Lattices}\label{G-Lattices}
 It is known that there is a duality between algebraic tori and \glat s. In order to be able to discuss the duality, we briefly introduce \glat s in this section. For a more detailed discussion see \cite[Chapters 1 and 2]{Lorenz}.\\ \\
