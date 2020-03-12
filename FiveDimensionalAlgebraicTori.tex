@@ -77,7 +77,7 @@
 \newcommand{\exactseqs}[1]{\ensuremath{0 \longrightarrow M_{#1} \longrightarrow L_{#1} \longrightarrow \Z^{-} \longrightarrow 0}}
 \newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}
 
-\newcommand{\todo}[1]{{\bf {\color{red} #1}} }
+\newcommand{\todo}[1]{{\bf {\color{red}To do: #1}} }
 
 \title{Five Dimensional Algebraic Tori}
 
@@ -242,15 +242,20 @@ first method is reducing the rationality of a five dimensional torus to rational
 in lower dimensions using a reducible component of corresponding lattices. More precisely, assuming $L_G$ is the corresponding lattice to a given indecomposable torus, we try to find a $G$-lattice, $M\subset
 L_G$ so that we get the exact sequence 
 $$0 \longrightarrow M \longrightarrow L_G \longrightarrow P \longrightarrow 0, $$
-where $P$ is a permutation $G$-lattice (see Section \ref{G-Lattices}) for a definition).
+where $P$ is a permutation $G$-lattice (see Section \ref{sec:g-lattices}) for a definition).
 
 The second method is to identify character lattices of indecomposable tori as lattices of which their rationality is known such as the root lattice of the root system $B_n$ or a sign permutation lattice.
 
-\todo{give detail on results here}
+\todo{give detail on results}
 
+Definitions and useful facts about $G$-lattices are provided in Section \ref{sec:g-lattices}. Section 
+\ref{sec:gap} gives brief information on computer algebra system GAP and relevant computational 
+notations for groups based on GAP package, Carat. Section \ref{sec:ratres} is devoted to present 
+theoretical known results on rationality problem for algebraic tori and rational families of algebraic 
+tori. Our algorithms to find exact sequence of lattices are introduced in Section \ref{sec:redalg}. Finally Section \ref{sec:results} contains tables of results of our experiments.
+ 
 
-
-\section{$G$-Lattices}\label{G-Lattices}
+\section{$G$-Lattices}\label{sec:g-lattices}
 It is known that there is a duality between algebraic tori and \glat s. In order to be able to discuss the duality, we briefly introduce \glat s in this section. For a more detailed discussion see \cite[Chapters 1 and 2]{Lorenz}.\\ \\
 A lattice is a free $\mathbb{Z}$-module of finite rank. As a $\Z$-module, it is isomorphic to $\mathbb{Z}^n$ for some $n$. If we have a group $G$, we can endow the lattice with an action of $G$. If $G$ acts on a lattice $L$ by automorphisms i.e. there exists $$ G \longrightarrow \mathrm{GL}(M) \cong \mathrm{GL}(n,\mathbb{Z}),$$ 
 we say $L$ is a $G$-lattice. We can equivalently say that $\G$-lattices are free $\Z$-modules of finite rank which is also $\mathbb{Z}[G]$-modules, for $\mathbb{Z}[G]$ the integral group ring over $G$. A $G$-equivariant, $ \mathbb{Z}$-linear map between $G$-lattices is called a homomorphism of $G$-lattices.\\
@@ -279,7 +284,7 @@ we mean its corresponding lattice is decomposable. We say $G'$ is the dual
 group of $G$ if $G'$ is the corresponding group to the dual of $L_G$.  
 
 
-\section{GAP: Carat and CrystCat}
+\section{GAP: Carat and CrystCat}\label{sec:gap}
 GAP \cite{GAP4} stands for Groups, Algorithms, Programming, and is a computer 
 algebra system for computations in discrete algebra with emphasis on computations 
 in group theory. GAP is an open source system which is accessible directly or 
@@ -322,7 +327,7 @@ columns by considering the dual groups.\\
 We call $\G \leq \mathrm{GL}(n,\Z)$ irreducible (resp. indecomposable), if the corresponding 
 lattice to $G$ be irreducible (resp. indecomposable).
 
-\section{Well-Known Rationality Results}
+\section{Well-Known Rationality Results}\label{sec:ratres}
 In this section we present some important results about rationality problem for 
 algebraic tori. Before presenting the results we need the following definition 
 to avoid repeating the same assumptions.
@@ -352,17 +357,17 @@ mean the lattice (algebraic torus) defined in Definition \ref{Assumption}.
 
 The first family of of rational algebraic tori is given by the following theorem which 
 shows that any algebraic torus with a permutation character group is rational.
-\label{action}
-\begin{theorem}\cite{Speiser}\label{NoNameLemma}
-(No Name Lemma) Let $M$ be a permutation \glat \,\,and $K$ be a \G-field. Then $K(M)^\G$ 
+
+\begin{theorem}\cite{Speiser}\label{thm:no-name lemma}
+(no-name lemma) Let $M$ be a permutation \glat \,\,and $K$ be a \G-field. Then $K(M)^\G$ 
 is rational over $K^\G$. 
 \end{theorem}
 
 Note that if $\G = \mathrm{Gal} (K/F)$, then $K^\G = F$. For a constructive proof see 
-\cite{JamLemSch2019}, also a more general version of the No Name Lemma see \cite{Domokos}. The following 
+\cite{JamLemSch2019}, also a more general version of the no-name lemma see \cite{Domokos}. The following 
 theorem generalizes the previous result to sign permutation lattices. A $G$-lattice is called 
 sign permutation if it has a basis $X$ which is permuted up to sign changes under the action of $G$.
-\begin{theorem}\cite[Proposition 9.5.1]{Lorenz}\label{SignPermRational}
+\begin{theorem}\cite[Proposition 9.5.1]{Lorenz}\label{thm:signpermrat}
 Assume $L$ is a sign permutation (permutation up to sign changes) $G$-lattice and $K$ is a $G$-field. Then $K(M)^G$ 
 is rational over $K^G$.
 \end{theorem}
@@ -432,10 +437,10 @@ subgroup $H \leq G$, then we call $L$ hereditarily rational.
 Moreover, if $T$ is an algebraic torus and $L$ is its corresponding lattice, then $T$ is called 
 hereditarily rational if $L$ is hereditarily rational.
 
-By Theorem \ref{NoNameLemma}, a quasi-split torus is rational. For a permutation 
+By Theorem \ref{thm:no-name lemma}, a quasi-split torus is rational. For a permutation 
 $G$-lattice $L$ and any subgroup $H\leq G$, since $L\downarrow_H^G$ is a permutation 
 lattice, the corresponding torus to $L\downarrow_H^G$ is rational. In other words a 
-quasi split torus is hereditarily rational. Simillarly by Theorem \ref{SignPermRational} 
+quasi split torus is hereditarily rational. Simillarly by Theorem \ref{thm:signpermrat} 
 and above argument for (a sign permutation lattice), we conclude that any algebraic 
 torus with a sign permutation character lattice is hereditarily rational. 
 In particular this is true for an algebraic torus with character lattice the root 
@@ -446,7 +451,7 @@ of $W(B_n)$.
 The following theorem provides an important tool for our algorithm to determine rationality of a
 reducible torus. 
  
-\begin{theorem}\cite[Proposition 1.6]{Lenstra}\label{method2}
+\begin{theorem}\cite[Proposition 1.6]{Lenstra}\label{thm:lenstra}
 Suppose $P$ is a permutation $G$-lattice and $G$ is the Galois group of a finite 
 Galois extension, $K/F$.  If 
 $$0 \longrightarrow M \longrightarrow L \longrightarrow P \longrightarrow 0 $$ is 
@@ -497,11 +502,11 @@ Let $L$ be a $G$-lattice. If there exist $x\in L$ such that,
 then $L \cong J_{G/H}$.
 \end{lemma}
 
-\section{Reduction Algorithms}
+\section{Reduction Algorithms}\label{sec:redalg}
 Assume $$0 \rightarrow M  \rightarrow L_G \rightarrow N \rightarrow 0$$ is a short 
 exact sequence of $G$-lattices such that $N$ is a permutation projective $G$-lattice. 
 If $K/F$ is a finite Galois extension with $G \cong \mathrm{Gal}(K/F)$, then by 
-Theorem (\ref{method2}), $K(L_G)^G$ is rational over $K(M)^G$. Thus, rationality 
+Theorem (\ref{thm:lenstra}), $K(L_G)^G$ is rational over $K(M)^G$. Thus, rationality 
 of $K(M)^G$ over $F$ implies rationality of $K(L_G)^G$ over $F$.
 
 Suppose $L_G$ is an indecomposable $G$-lattice. In this section, we present methods 
@@ -958,7 +963,7 @@ Now we can get the following exact sequence of lattices
 $$0 \longrightarrow M \longrightarrow L \longrightarrow L/M \longrightarrow 0.$$ 
 \end{example}
 
-\section{Results}\label{conc}
+\section{Results}\label{sec:results}
 The 18 maximal indecomposable stably rational lattices found in \cite{Hoshi} are divided into 4 families. The first family are the ones interpreted as lattices of root systems which are hereditarily rational. The second family contains all lattices on which Algorithm \ref{alg:Fixed Point} will not fail. The third family contains lattices on which  Algorithm \ref{alg:Sign Fixed Point} does not fail while Algorithm \ref{alg:Fixed Point} fails. The last family contains all lattices on which either, both Algorithms \ref{alg:Fixed Point} and \ref{alg:Sign Fixed Point} fail but still the general idea of reduction works, or they are irreducible.
 All lattices of the first family are hereditarily rational. The second family contains lattices of which after reduction, rationality of the reduced component is unknown. By arguments in the previous sections we have proved the following theorem.
 \begin{theorem}
